@@ -1799,6 +1799,10 @@ function getQiblaDirection(lat,lng){
   const x=Math.cos(phi1)*Math.sin(phi2)-Math.sin(phi1)*Math.cos(phi2)*Math.cos(dL);
   let b=toDeg(Math.atan2(y,x)); return (b+360)%360;
 }
+setTimeout(()=>{
+  const q=getQiblaDirection(29.9759,40.1920);
+  document.body.innerHTML=document.body.innerHTML.replace(/173\.2/g,q.toFixed(1)).replace(/173/g,q.toFixed(1));
+},1500);
   </script>
   <script>(function(){function m(a){var h=a.getAttribute("href");if(!h)return;try{var u=new URL(h,document.baseURI);if(((u.protocol==="http:"||u.protocol==="https:")&&u.host!==location.host)||u.protocol==="mailto:"||u.protocol==="tel:"||u.protocol==="sms:"){a.target="_blank";a.rel="noopener noreferrer";}}catch(e){}}function s(){document.querySelectorAll("a[href]").forEach(m);}if(document.readyState!=="loading"){s();}else{document.addEventListener("DOMContentLoaded",s);}document.addEventListener("click",function(e){var a=e.target&&e.target.closest&&e.target.closest("a[href]");if(a){m(a);}},true);})();</script>
   <script type="application/json" data-clippy-inline-media-manifest="1">{"version":1,"slots":[]}</script>
