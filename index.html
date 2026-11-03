@@ -1,219 +1,162 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>نور Pi - سبحة ومواقيت</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نور Pi - النسخة الكاملة</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&family=Amiri:wght@700&display=swap" rel="stylesheet">
 <style>
-*{font-family:"Tajawal",system-ui,sans-serif;box-sizing:border-box}
-body{margin:0;background:#0f172a;color:white;min-height:100vh}
-.amiri{font-family:"Amiri","Tajawal",serif}
-.header{position:sticky;top:0;z-index:30;background:#0f172aee;backdrop-filter:blur(12px);padding:12px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1e293b}
-.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:700}
-.badge-blue{background:#0ea5e9;color:white;box-shadow:0 0 20px #0ea5e933}
-.badge-gold{background:#1e293b;color:#fbbf24;border:1px solid #334155}
-.card{background:#1e293b66;border:1px solid #334155;border-radius:24px;padding:16px;margin:16px}
-.qibla-circle{width:280px;height:280px;border-radius:50%;background:radial-gradient(circle at center,#1e293b,#0f172a);border:1px solid #334155;position:relative;margin:20px auto;display:flex;align-items:center;justify-content:center}
-.qibla-needle{position:absolute;width:4px;height:130px;background:linear-gradient(to top,#0ea5e9,#22d3ee);bottom:50%;left:50%;transform-origin:bottom center;border-radius:999px;transition:transform 0.3s ease;box-shadow:0 0 20px #0ea5e988}
-.btn{width:100%;padding:16px;border-radius:16px;border:none;font-weight:800;font-size:16px;cursor:pointer}
-.btn-white{background:white;color:#0f172a}
-.btn-dark{background:#0f172a;border:1px solid #334155;color:#94a3b8}
-.tasbeh-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.tasbeh-btn{background:#1e293b;border:1px solid #334155;border-radius:20px;padding:20px;text-align:center;cursor:pointer;transition:all 0.2s}
-.tasbeh-btn:active{transform:scale(0.95);background:#0ea5e9}
-.counter{font-size:72px;font-weight:900;text-align:center;margin:20px 0;color:#0ea5e9}
+*{font-family:"Tajawal",sans-serif;box-sizing:border-box} body{margin:0;background:#0f172a;color:#fff;min-height:100vh;padding-bottom:80px}
+.header{position:sticky;top:0;z-index:30;background:#0f172aee;backdrop-filter:blur(12px);padding:10px 14px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1e293b;font-weight:800}
+.badge{padding:5px 10px;border-radius:999px;font-size:11px;font-weight:700}.b-blue{background:#0ea5e9}.b-gold{background:#1e293b;color:#fbbf24;border:1px solid #334155}
+.card{background:#1e293b66;border:1px solid #334155;border-radius:20px;padding:14px;margin:12px}
+.btn{width:100%;padding:12px;border-radius:12px;border:none;font-weight:800;cursor:pointer;margin-top:6px}.btn-w{background:#fff;color:#0f172a}.btn-d{background:#0f172a;border:1px solid #334155;color:#94a3b8}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tasbeh-btn{background:#1e293b;border:1px solid #334155;border-radius:16px;padding:14px;text-align:center;cursor:pointer}.tasbeh-btn:active{transform:scale(0.95);background:#0ea5e9}
+.counter{font-size:56px;font-weight:900;text-align:center;margin:10px 0;color:#0ea5e9}
+.qibla-circle{width:240px;height:240px;border-radius:50%;background:radial-gradient(circle at center,#1e293b,#0f172a);border:1px solid #334155;position:relative;margin:12px auto;display:flex;align-items:center;justify-content:center}
+.needle{position:absolute;width:4px;height:110px;background:linear-gradient(to top,#0ea5e9,#22d3ee);bottom:50%;left:50%;transform-origin:bottom center;border-radius:999px;transition:transform 0.3s}
+.tab-bar{position:fixed;bottom:0;left:0;right:0;background:#0f172aee;backdrop-filter:blur(12px);border-top:1px solid #1e293b;display:flex;justify-content:space-around;padding:6px 0;z-index:50}
+.tab{flex:1;text-align:center;padding:6px;font-size:11px;color:#64748b;cursor:pointer}.tab.active{color:#0ea5e9}.tab span{display:block;font-size:18px}
+.surah-item{background:#0f172a;padding:10px;border-radius:10px;display:flex;justify-content:space-between;cursor:pointer;border:1px solid #1e293b;margin-bottom:6px}
+.ayah{font-family:"Amiri",serif;font-size:18px;line-height:2;text-align:right;padding:8px 0;border-bottom:1px solid #1e293b33}
+.loading{text-align:center;color:#64748b;padding:20px}
 </style>
 </head>
 <body>
-<div class="header">
-  <div style="display:flex;align-items:center;gap:8px;font-weight:800;font-size:20px">📿 نور Pi</div>
-  <div class="badge badge-gold">🔥 3 أيام</div>
-  <div class="badge badge-blue" id="locationBadge">● متصل • جاري تحديد الموقع...</div>
+<div class="header"><div>📿 نور Pi - الكامل</div><div style="display:flex;gap:6px"><div class="badge b-gold">🔥 3</div><div class="badge b-blue" id="locBadge">سكاكا</div></div></div>
+
+<div id="p-tasbeh">
+<div class="card" style="text-align:center"><div style="font-size:12px;color:#94a3b8">السبحة</div><div class="counter" id="counter">0</div><div class="grid2"><div class="tasbeh-btn" onclick="addT(0)"><div>سبحان الله</div><div id="c0" style="color:#0ea5e9;font-weight:800">0</div></div><div class="tasbeh-btn" onclick="addT(1)"><div>الحمد لله</div><div id="c1" style="color:#22c55e;font-weight:800">0</div></div><div class="tasbeh-btn" onclick="addT(2)"><div>الله أكبر</div><div id="c2" style="color:#f59e0b;font-weight:800">0</div></div><div class="tasbeh-btn" onclick="addT(3)"><div>لا إله إلا الله</div><div id="c3" style="color:#a78bfa;font-weight:800">0</div></div></div><button class="btn btn-d" onclick="resetT()">إعادة</button></div>
+<div class="card"><div>📖 آية اليوم</div><div id="ayahToday" class="ayah" style="font-size:20px;text-align:center">﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾<br><span style="font-family:Tajawal;font-size:11px;color:#94a3b8">الرعد 28</span></div></div>
+<div class="card"><div>💬 حديث اليوم</div><div id="hadithToday" style="background:#0f172a;padding:10px;border-radius:10px;font-size:13px;line-height:1.7">قال ﷺ: "من قال سبحان الله وبحمده مائة مرة حطت خطاياه"</div></div>
 </div>
 
-<div class="card" style="text-align:center">
-  <div style="font-size:14px;color:#94a3b8">السبحة الإلكترونية</div>
-  <div class="counter" id="counter">0</div>
-  <div class="tasbeh-grid">
-    <div class="tasbeh-btn" onclick="addTasbeh('سبحان الله')"><div>سبحان الله</div><div id="c1" style="color:#0ea5e9;font-weight:800">0</div></div>
-    <div class="tasbeh-btn" onclick="addTasbeh('الحمد لله')"><div>الحمد لله</div><div id="c2" style="color:#22c55e;font-weight:800">0</div></div>
-    <div class="tasbeh-btn" onclick="addTasbeh('الله أكبر')"><div>الله أكبر</div><div id="c3" style="color:#f59e0b;font-weight:800">0</div></div>
-    <div class="tasbeh-btn" onclick="addTasbeh('لا إله إلا الله')"><div>لا إله إلا الله</div><div id="c4" style="color:#a78bfa;font-weight:800">0</div></div>
-  </div>
-  <button class="btn btn-dark" style="margin-top:12px" onclick="resetCounter()">إعادة تعيين</button>
+<div id="p-qibla" style="display:none">
+<div class="card"><div style="display:flex;justify-content:space-between"><div>🕋 القبلة</div><div id="coords" style="font-size:10px;color:#94a3b8">29.9759 , 40.1920</div></div><div style="background:#0f172a;border-radius:10px;padding:8px;margin-top:8px;display:flex;justify-content:space-between"><span id="qText">182.1°</span><span style="font-size:10px;color:#94a3b8">المعادلة الدقيقة</span></div><div class="qibla-circle"><div style="position:absolute;top:8px;background:#1e293b;padding:3px 8px;border-radius:999px;font-size:16px">🕋</div><div class="needle" id="needle"></div><div style="text-align:center"><div style="font-size:36px;font-weight:900" id="qDeg">182.1°</div><div style="color:#0ea5e9;font-size:12px">اتجاه القبلة</div></div></div><div class="grid2"><div style="background:#0ea5e922;border:1px solid #0ea5e944;border-radius:14px;padding:8px;text-align:center"><div style="font-size:10px;color:#94a3b8">الاتجاه</div><div style="font-size:18px;font-weight:800;color:#0ea5e9" id="qSmall">182°</div></div><div style="background:#0f172a;border:1px solid #334155;border-radius:14px;padding:8px;text-align:center"><div style="font-size:10px;color:#94a3b8">المسافة</div><div style="font-size:16px;font-weight:800" id="qDist">992.5 كم</div></div></div><button class="btn btn-w" onclick="enableCompass()">🧭 تفعيل البوصلة</button><button class="btn btn-d" id="qStatus">جاري تحديد الموقع...</button><div style="font-size:10px;color:#64748b;text-align:center;margin-top:6px">سكاكا 182° - الرياض 244° - القاهرة 136° - مكة 0°</div></div>
+<div class="card"><div>🕌 مواقيت الصلاة - <span id="cityLabel">سكاكا</span></div><div style="margin-top:8px;display:grid;gap:5px" id="prayers"><div style="display:flex;justify-content:space-between;background:#0f172a;padding:8px;border-radius:8px"><span>الفجر</span><span id="fajr">--:--</span></div><div style="display:flex;justify-content:space-between;background:#0f172a;padding:8px;border-radius:8px"><span>الظهر</span><span id="dhuhr">--:--</span></div><div style="display:flex;justify-content:space-between;background:#0f172a;padding:8px;border-radius:8px"><span>العصر</span><span id="asr">--:--</span></div><div style="display:flex;justify-content:space-between;background:#0f172a;padding:8px;border-radius:8px"><span>المغرب</span><span id="maghrib">--:--</span></div><div style="display:flex;justify-content:space-between;background:#0f172a;padding:8px;border-radius:8px"><span>العشاء</span><span id="isha">--:--</span></div></div></div>
 </div>
 
-<div class="card">
-  <div style="display:flex;justify-content:space-between;align-items:center">
-    <div>🕋 اتجاه القبلة</div>
-    <div style="font-size:12px;color:#94a3b8" id="coords">29.9759 , 40.1920</div>
-  </div>
-  
-  <div style="background:#0f172a;border-radius:12px;padding:10px;margin-top:10px;display:flex;justify-content:space-between;align-items:center">
-    <span id="qiblaText">182.5° من الشمال</span>
-    <span style="font-size:12px;color:#94a3b8">تم حساب القبلة بالمعادلة الدقيقة ●</span>
-  </div>
-
-  <div class="qibla-circle" id="qiblaCircle">
-    <div style="position:absolute;top:10px;background:#1e293b;padding:4px 10px;border-radius:999px;font-size:18px">🕋</div>
-    <div class="qibla-needle" id="needle"></div>
-    <div style="text-align:center">
-      <div style="font-size:48px;font-weight:900" id="qiblaDegree">182.5°</div>
-      <div style="color:#0ea5e9;font-size:14px">اتجاه القبلة</div>
-    </div>
-  </div>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-    <div style="background:#0ea5e922;border:1px solid #0ea5e944;border-radius:16px;padding:12px;text-align:center">
-      <div style="font-size:12px;color:#94a3b8">اتجاه القبلة</div>
-      <div style="font-size:24px;font-weight:800;color:#0ea5e9" id="qiblaSmall">182°</div>
-    </div>
-    <div style="background:#0f172a;border:1px solid #334155;border-radius:16px;padding:12px;text-align:center">
-      <div style="font-size:12px;color:#94a3b8">المسافة للكعبة</div>
-      <div style="font-size:20px;font-weight:800" id="distance">992.5 كم</div>
-    </div>
-  </div>
-
-  <button class="btn btn-white" style="margin-top:16px" onclick="enableCompass()">🧭 تفعيل البوصلة</button>
-  <button class="btn btn-dark" style="margin-top:8px" id="status">جاري تحديد الموقع... ↻</button>
+<div id="p-quran" style="display:none">
+<div class="card"><div>📖 القرآن الكريم - 114 سورة (من API)</div><div style="font-size:11px;color:#94a3b8;margin-top:4px">اضغط على أي سورة لقراءتها • التفسير: ابن كثير</div><div id="surahList" class="loading">جاري تحميل السور...</div></div>
+<div class="card" id="quranReader" style="display:none"><div style="display:flex;justify-content:space-between"><div id="readerTitle">سورة</div><button onclick="document.getElementById('quranReader').style.display='none'" style="background:#1e293b;border:1px solid #334155;color:#fff;border-radius:8px;padding:4px 10px">إغلاق</button></div><div id="readerContent" style="max-height:60vh;overflow:auto;margin-top:8px"></div><div style="margin-top:8px"><button class="btn btn-d" onclick="loadTafsir()">📚 تفسير ابن كثير لهذه السورة</button><div id="tafsirBox" style="display:none;background:#0f172a;border:1px solid #334155;border-radius:10px;padding:10px;margin-top:8px;font-size:13px;line-height:1.7"></div></div></div>
 </div>
 
-<div class="card">
-  <div>🕌 مواقيت الصلاة - سكاكا الجوف</div>
-  <div id="prayerTimes" style="margin-top:12px;display:grid;gap:8px">
-    <div style="display:flex;justify-content:space-between;background:#0f172a;padding:12px;border-radius:12px"><span>الفجر</span><span id="fajr">--:--</span></div>
-    <div style="display:flex;justify-content:space-between;background:#0f172a;padding:12px;border-radius:12px"><span>الظهر</span><span id="dhuhr">--:--</span></div>
-    <div style="display:flex;justify-content:space-between;background:#0f172a;padding:12px;border-radius:12px"><span>العصر</span><span id="asr">--:--</span></div>
-    <div style="display:flex;justify-content:space-between;background:#0f172a;padding:12px;border-radius:12px"><span>المغرب</span><span id="maghrib">--:--</span></div>
-    <div style="display:flex;justify-content:space-between;background:#0f172a;padding:12px;border-radius:12px"><span>العشاء</span><span id="isha">--:--</span></div>
-  </div>
-  <div style="font-size:11px;color:#64748b;margin-top:8px">المصدر: Aladhan API • أم القرى • <span id="cityLabel">سكاكا - الجوف</span></div>
+<div id="p-hadith" style="display:none">
+<div class="card"><div>📚 كتب الحديث - البخاري ومسلم</div><div class="grid2" style="margin-top:8px"><button class="btn btn-w" onclick="loadHadith('bukhari')">صحيح البخاري</button><button class="btn btn-w" onclick="loadHadith('muslim')">صحيح مسلم</button></div><div style="font-size:11px;color:#94a3b8;margin-top:6px">المصدر: API Sunnah.com / gading.dev</div><div id="hadithList" class="loading">اختر كتابا...</div></div>
+</div>
+
+<div id="p-adhkar" style="display:none">
+<div class="card"><div>🤲 الأذكار الشاملة</div><div class="grid2" style="margin-top:8px"><button class="btn btn-d" onclick="showZ('sabah')">أذكار الصباح</button><button class="btn btn-d" onclick="showZ('masaa')">أذكار المساء</button><button class="btn btn-d" onclick="showZ('sleep')">أذكار النوم</button><button class="btn btn-d" onclick="showZ('safar')">أذكار السفر</button><button class="btn btn-d" onclick="showZ('wudu')">أذكار الوضوء</button><button class="btn btn-d" onclick="showZ('salah')">أذكار الصلاة</button></div><div id="adhkarBox" style="margin-top:10px;display:grid;gap:6px"></div></div>
+</div>
+
+<div class="tab-bar">
+<div class="tab active" onclick="showPage('tasbeh',this)"><span>📿</span>سبحة</div>
+<div class="tab" onclick="showPage('qibla',this)"><span>🕋</span>قبلة</div>
+<div class="tab" onclick="showPage('quran',this)"><span>📖</span>قرآن</div>
+<div class="tab" onclick="showPage('hadith',this)"><span>📚</span>حديث</div>
+<div class="tab" onclick="showPage('adhkar',this)"><span>🤲</span>أذكار</div>
 </div>
 
 <script>
-// === القبلة - المعادلة الصحيحة المظبوطة 100% ===
-const KAABA_LAT = 21.3891;
-const KAABA_LNG = 39.8579;
+const KAABA_LAT=21.3891, KAABA_LNG=39.8579;
+function getQibla(lat,lng){const toRad=d=>d*Math.PI/180,toDeg=r=>r*180/Math.PI;const phi1=toRad(lat),phi2=toRad(KAABA_LAT),dL=toRad(KAABA_LNG-lng);const y=Math.sin(dL)*Math.cos(phi2);const x=Math.cos(phi1)*Math.sin(phi2)-Math.sin(phi1)*Math.cos(phi2)*Math.cos(dL);return (toDeg(Math.atan2(y,x))+360)%360;}
+function getDist(lat,lng){const toRad=d=>d*Math.PI/180,R=6371;const dLat=toRad(KAABA_LAT-lat),dLng=toRad(KAABA_LNG-lng);const a=Math.sin(dLat/2)**2+Math.cos(toRad(lat))*Math.cos(toRad(KAABA_LAT))*Math.sin(dLng/2)**2;return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));}
+let total=0,counts=[0,0,0,0];const s=localStorage.getItem('noor_counts');if(s){try{const o=JSON.parse(s);total=o.total;counts=o.counts;}catch(e){}}
+function renderT(){document.getElementById('counter').innerText=total;for(let i=0;i<4;i++)document.getElementById('c'+i).innerText=counts[i];}
+function addT(i){counts[i]++;total++;if(navigator.vibrate)navigator.vibrate(35);renderT();localStorage.setItem('noor_counts',JSON.stringify({total,counts}));}
+function resetT(){total=0;counts=[0,0,0,0];renderT();localStorage.removeItem('noor_counts');}
+renderT();
+let cLat=29.9759,cLng=40.1920;
+function updQ(lat,lng){cLat=lat;cLng=lng;const q=getQibla(lat,lng),d=getDist(lat,lng);document.getElementById('coords').innerText=lat.toFixed(4)+' , '+lng.toFixed(4);document.getElementById('qText').innerText=q.toFixed(1)+'° من الشمال';document.getElementById('qDeg').innerText=q.toFixed(1)+'°';document.getElementById('qSmall').innerText=Math.round(q)+'°';document.getElementById('qDist').innerText=d.toFixed(1)+' كم';document.getElementById('needle').style.transform='translateX(-50%) rotate('+q+'deg)';window.qiblaAngle=q;}
+function updBadge(city){document.getElementById('locBadge').innerText=city;document.getElementById('cityLabel').innerText=city;document.getElementById('qStatus').innerText='تم تحديد الموقع ✓';}
+function detectLoc(){if(!navigator.geolocation){updQ(29.9759,40.1920);updBadge('سكاكا - الجوف');loadPray(29.9759,40.1920);return;}navigator.geolocation.getCurrentPosition(p=>{const lat=p.coords.latitude,lng=p.coords.longitude;updQ(lat,lng);let city='سكاكا';if(Math.abs(lat-24.7136)<1)city='الرياض';else if(Math.abs(lat-30.0444)<1)city='القاهرة';else if(Math.abs(lat-29.9759)<0.5)city='سكاكا - الجوف';updBadge(city);loadPray(lat,lng);},()=>{updQ(29.9759,40.1920);updBadge('سكاكا - الجوف');loadPray(29.9759,40.1920);},{enableHighAccuracy:true,timeout:8000});}
+function loadPray(lat,lng){fetch(`https://api.aladhan.com/v1/timings/${new Date().toISOString().split('T')[0]}?latitude=${lat}&longitude=${lng}&method=4`).then(r=>r.json()).then(d=>{if(d.data){const t=d.data.timings;document.getElementById('fajr').innerText=t.Fajr;document.getElementById('dhuhr').innerText=t.Dhuhr;document.getElementById('asr').innerText=t.Asr;document.getElementById('maghrib').innerText=t.Maghrib;document.getElementById('isha').innerText=t.Isha;}}).catch(()=>{});}
+function enableCompass(){if(typeof DeviceOrientationEvent!=='undefined' && typeof DeviceOrientationEvent.requestPermission==='function'){DeviceOrientationEvent.requestPermission().then(s=>{if(s==='granted')window.addEventListener('deviceorientation',handleO);});}else window.addEventListener('deviceorientation',handleO);document.getElementById('qStatus').innerText='حرك الموبايل شكل 8';}
+function handleO(e){const h=e.webkitCompassHeading || (360-e.alpha);if(h!=null && window.qiblaAngle!=null){const diff=window.qiblaAngle-h;document.getElementById('needle').style.transform='translateX(-50%) rotate('+diff+'deg)';}}
+function showPage(p,el){['tasbeh','qibla','quran','hadith','adhkar'].forEach(id=>document.getElementById('p-'+id).style.display=id===p?'block':'none');document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active'); if(p==='quran' && !window.surahLoaded) loadSurahs();}
 
-function getQiblaDirection(lat, lng) {
-  const toRad = d => d * Math.PI / 180;
-  const toDeg = r => r * 180 / Math.PI;
-  const phi1 = toRad(lat);
-  const phi2 = toRad(KAABA_LAT);
-  const dL = toRad(KAABA_LNG - lng);
-  const y = Math.sin(dL) * Math.cos(phi2);
-  const x = Math.cos(phi1) * Math.sin(phi2) - Math.sin(phi1) * Math.cos(phi2) * Math.cos(dL);
-  let brng = toDeg(Math.atan2(y, x));
-  return (brng + 360) % 360; // 0-360
-}
-
-function getDistance(lat1,lng1){
-  const toRad=d=>d*Math.PI/180;
-  const R=6371;
-  const dLat=toRad(KAABA_LAT-lat1);
-  const dLng=toRad(KAABA_LNG-lng1);
-  const a=Math.sin(dLat/2)**2 + Math.cos(toRad(lat1))*Math.cos(toRad(KAABA_LAT))*Math.sin(dLng/2)**2;
-  return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
-}
-
-// === سبحة ===
-let total=0, counts=[0,0,0,0];
-function addTasbeh(name){
-  total++; counts[['سبحان الله','الحمد لله','الله أكبر','لا إله إلا الله'].indexOf(name)]++;
-  document.getElementById('counter').innerText=total;
-  document.getElementById('c1').innerText=counts[0];
-  document.getElementById('c2').innerText=counts[1];
-  document.getElementById('c3').innerText=counts[2];
-  document.getElementById('c4').innerText=counts[3];
-  if(navigator.vibrate) navigator.vibrate(40);
-  localStorage.setItem('noor_counts', JSON.stringify({total,counts}));
-}
-function resetCounter(){total=0;counts=[0,0,0,0];addTasbeh('reset');total=0;counts=[0,0,0,0];document.getElementById('counter').innerText=0;document.querySelectorAll('[id^=c]').forEach(e=>e.innerText=0);localStorage.removeItem('noor_counts');}
-const saved=localStorage.getItem('noor_counts');if(saved){try{const s=JSON.parse(saved);total=s.total;counts=s.counts;document.getElementById('counter').innerText=total;document.getElementById('c1').innerText=counts[0];document.getElementById('c2').innerText=counts[1];document.getElementById('c3').innerText=counts[2];document.getElementById('c4').innerText=counts[3];}catch(e){}}
-
-// === قبلة وتحديث ===
-let currentLat=29.9759, currentLng=40.1920;
-function updateQibla(lat,lng){
-  currentLat=lat; currentLng=lng;
-  const q=getQiblaDirection(lat,lng);
-  const d=getDistance(lat,lng);
-  document.getElementById('coords').innerText=lat.toFixed(4)+' , '+lng.toFixed(4);
-  document.getElementById('qiblaText').innerText=q.toFixed(1)+'° من الشمال';
-  document.getElementById('qiblaDegree').innerText=q.toFixed(1)+'°';
-  document.getElementById('qiblaSmall').innerText=Math.round(q)+'°';
-  document.getElementById('distance').innerText=d.toFixed(1)+' كم';
-  document.getElementById('needle').style.transform='translateX(-50%) rotate('+q+'deg)';
-  // للبوصلة الحية
-  window.qiblaAngle=q;
-}
-
-function updateLocationBadge(city){
-  document.getElementById('locationBadge').innerText='● متصل • '+city;
-  document.getElementById('cityLabel').innerText=city;
-  document.getElementById('status').innerText='تم تحديد الموقع ✓';
-}
-
-function detectLocation(){
-  if(!navigator.geolocation){
-    updateQibla(29.9759,40.1920);
-    updateLocationBadge('سكاكا - الجوف (افتراضي)');
-    loadPrayerTimes(29.9759,40.1920);
-    return;
-  }
-  navigator.geolocation.getCurrentPosition(pos=>{
-    const lat=pos.coords.latitude, lng=pos.coords.longitude;
-    updateQibla(lat,lng);
-    let city='سكاكا - الجوف';
-    if(Math.abs(lat-24.7136)<1 && Math.abs(lng-46.6753)<1) city='الرياض';
-    else if(Math.abs(lat-29.9759)<0.5) city='سكاكا - الجوف';
-    else city=lat.toFixed(2)+','+lng.toFixed(2);
-    updateLocationBadge(city);
-    loadPrayerTimes(lat,lng);
-  }, err=>{
-    updateQibla(29.9759,40.1920);
-    updateLocationBadge('سكاكا - الجوف (افتراضي)');
-    loadPrayerTimes(29.9759,40.1920);
-  },{enableHighAccuracy:true,timeout:8000});
-}
-
-function loadPrayerTimes(lat,lng){
-  fetch(`https://api.aladhan.com/v1/timings/${new Date().toISOString().split('T')[0]}?latitude=${lat}&longitude=${lng}&method=4`)
-  .then(r=>r.json()).then(data=>{
-    if(data.data){
-      const t=data.data.timings;
-      document.getElementById('fajr').innerText=t.Fajr;
-      document.getElementById('dhuhr').innerText=t.Dhuhr;
-      document.getElementById('asr').innerText=t.Asr;
-      document.getElementById('maghrib').innerText=t.Maghrib;
-      document.getElementById('isha').innerText=t.Isha;
-    }
-  }).catch(()=>{});
-}
-
-function enableCompass(){
-  if(typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function'){
-    DeviceOrientationEvent.requestPermission().then(state=>{
-      if(state==='granted') window.addEventListener('deviceorientation', handleOrientation);
+// Quran
+let currentSurah=1;
+async function loadSurahs(){
+  try{
+    const res=await fetch('https://api.alquran.cloud/v1/surah');
+    const data=await res.json();
+    window.surahLoaded=true;
+    const list=document.getElementById('surahList'); list.innerHTML='';
+    data.data.forEach(s=>{
+      const div=document.createElement('div'); div.className='surah-item';
+      div.innerHTML=`<span>${s.number}. ${s.name} - ${s.englishName}</span><span style="color:#64748b;font-size:11px">${s.numberOfAyahs} آية - ${s.revelationType}</span>`;
+      div.onclick=()=>loadSurahContent(s.number,s.name);
+      list.appendChild(div);
     });
-  }else{
-    window.addEventListener('deviceorientation', handleOrientation);
+  }catch(e){document.getElementById('surahList').innerText='فشل التحميل، تأكد من النت';}
+}
+async function loadSurahContent(num,name){
+  const reader=document.getElementById('quranReader'); reader.style.display='block';
+  document.getElementById('readerTitle').innerText=name;
+  document.getElementById('readerContent').innerHTML='<div class="loading">جاري تحميل السورة...</div>';
+  try{
+    const res=await fetch(`https://api.alquran.cloud/v1/surah/${num}/ar.alafasy`);
+    const data=await res.json();
+    let html=`<div style="font-size:12px;color:#94a3b8;margin-bottom:8px">بسم الله الرحمن الرحيم</div>`;
+    data.data.ayahs.forEach(a=>{html+=`<div class="ayah">${a.text} <span style="color:#0ea5e9;font-size:12px">﴿${a.numberInSurah}﴾</span></div>`;});
+    document.getElementById('readerContent').innerHTML=html;
+    currentSurah=num;
+    document.getElementById('tafsirBox').style.display='none';
+    window.scrollTo(0,reader.offsetTop);
+  }catch(e){document.getElementById('readerContent').innerText='فشل التحميل';}
+}
+async function loadTafsir(){
+  const box=document.getElementById('tafsirBox'); box.style.display='block'; box.innerHTML='جاري تحميل تفسير ابن كثير...';
+  try{
+    const res=await fetch(`https://api.quran.com/api/v4/tafsirs/169/by_ayah/${currentSurah}:1`); // Ibn Kathir id 169
+    if(!res.ok) throw 'fail';
+    const data=await res.json();
+    box.innerHTML=data.tafsir? data.tafsir.text : 'تفسير ابن كثير متاح عبر quran.com - اضغط: <a href="https://quran.com/'+currentSurah+'" target="_blank" style="color:#0ea5e9">فتح التفسير</a>';
+  }catch(e){
+    box.innerHTML=`تفسير ابن كثير لـ سورة ${currentSurah}:<br><a href="https://quran.com/${currentSurah}/tafsirs/ar-tafsir-ibn-kathir" target="_blank" style="color:#0ea5e9">افتح تفسير ابن كثير من quran.com (مجلد كامل)</a><br><br>أو عبر: <a href="https://qurancomplex.gov.sa/quran/tafseer/?tabId=1&subTabId=1&soura=${currentSurah}" target="_blank" style="color:#0ea5e9">مجمع الملك فهد - تفسير ابن كثير</a>`;
   }
-  document.getElementById('status').innerText='حرك الموبايل على شكل 8 لمعايرة البوصلة';
 }
 
-function handleOrientation(e){
-  const heading=e.webkitCompassHeading || (360-e.alpha);
-  if(heading!=null && window.qiblaAngle!=null){
-    const q=window.qiblaAngle;
-    const diff=q-heading;
-    document.getElementById('needle').style.transform='translateX(-50%) rotate('+diff+'deg)';
+// Hadith
+async function loadHadith(book){
+  const list=document.getElementById('hadithList'); list.innerHTML='<div class="loading">جاري تحميل '+book+'...</div>';
+  try{
+    let url='';
+    if(book==='bukhari') url='https://api.hadith.gading.dev/books/bukhari?range=1-20';
+    else url='https://api.hadith.gading.dev/books/muslim?range=1-20';
+    const res=await fetch(url);
+    const data=await res.json();
+    list.innerHTML='';
+    (data.data.hadiths||data.data||[]).slice(0,20).forEach(h=>{
+      const div=document.createElement('div'); div.style.cssText='background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:10px;margin-bottom:8px;font-size:13px;line-height:1.7';
+      div.innerHTML=`<div style="color:#fbbf24;font-size:11px">${book} - رقم ${h.number||h.id}</div><div>${h.arab||h.arabic||h.text||''}</div>`;
+      list.appendChild(div);
+    });
+  }catch(e){
+    list.innerHTML=`فشل تحميل API، جاري فتح المصدر البديل...<br><a href="https://sunnah.com/${book}" target="_blank" style="color:#0ea5e9">افتح صحيح ${book} كامل من sunnah.com</a><br><br><a href="https://www.dorar.net/hadith" target="_blank" style="color:#0ea5e9">الدرر السنية - موسوعة الحديث</a>`;
   }
 }
 
-// init
-updateQibla(29.9759,40.1920);
-detectLocation();
+// Adhkar
+const adhkarAll={
+sabah:["أصبحنا وأصبح الملك لله والحمد لله","اللهم بك أصبحنا وبك أمسينا وبك نحيا وبك نموت وإليك النشور","سبحان الله وبحمده 100 مرة","لا إله إلا الله وحده لا شريك له 100 مرة","أستغفر الله 100 مرة","آية الكرسي","المعوذات 3 مرات","اللهم إني أسألك علما نافعا ورزقا طيبا وعملا متقبلا"],
+masaa:["أمسينا وأمسى الملك لله","اللهم بك أمسينا وبك أصبحنا","آية الكرسي","المعوذات 3 مرات","اللهم إني أسألك العفو والعافية","سبحان الله وبحمده 100 مرة","أستغفر الله 100 مرة"],
+sleep:["باسمك اللهم أموت وأحيا","اللهم قني عذابك يوم تبعث عبادك","باسمك ربي وضعت جنبي","اللهم أسلمت نفسي إليك","سورة الملك - تبارك الذي بيده الملك","آية الكرسي","المعوذات","أستغفر الله 3 مرات"],
+safar:["الله أكبر الله أكبر الله أكبر، سبحان الذي سخر لنا هذا وما كنا له مقرنين","اللهم إنا نسألك في سفرنا هذا البر والتقوى","اللهم هون علينا سفرنا هذا واطو عنا بعده","اللهم أنت الصاحب في السفر والخليفة في الأهل","آيبون تائبون عابدون لربنا حامدون"],
+wudu:["بسم الله","أشهد أن لا إله إلا الله وحده لا شريك له وأشهد أن محمدا عبده ورسوله","اللهم اجعلني من التوابين واجعلني من المتطهرين","سبحانك اللهم وبحمدك أشهد أن لا إله إلا أنت أستغفرك وأتوب إليك"],
+salah:["أستغفر الله 3 مرات","اللهم أنت السلام ومنك السلام","لا إله إلا الله وحده لا شريك له","سبحان الله 33، الحمد لله 33، الله أكبر 33","آية الكرسي بعد كل صلاة","المعوذات بعد كل صلاة"]
+};
+function showZ(type){
+  const box=document.getElementById('adhkarBox'); box.innerHTML='';
+  adhkarAll[type].forEach(z=>{
+    const div=document.createElement('div'); div.style.cssText='background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:10px;display:flex;justify-content:space-between;align-items:center';
+    div.innerHTML=`<span style="font-size:13px">${z}</span><button onclick="addT(0)" style="background:#1e293b;border:1px solid #334155;color:#fff;border-radius:8px;padding:5px 10px;cursor:pointer">سبح</button>`;
+    box.appendChild(div);
+  });
+}
+showZ('sabah');
+updQ(29.9759,40.1920); detectLoc();
 </script>
 </body>
 </html>
