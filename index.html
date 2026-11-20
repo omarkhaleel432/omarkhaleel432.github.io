@@ -1,0 +1,783 @@
+<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#123c3a">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/icon-192.png"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23123c3a'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='%23f2a54a' font-family='Arial'%3E%D9%8A%3C/text%3E%3C/svg%3E"><title>يومك YOMAK</title>
+<style>
+:root{--g:#155b50;--dark:#123c3a;--mint:#e8f5ef;--gold:#f2a54a;--bg:#f5f7f4;--line:#e5ece8;--muted:#5d6965}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--dark);font-family:system-ui,Tahoma,Arial;padding-bottom:82px}.app{max-width:520px;margin:auto;min-height:100vh}.hide{display:none!important}header{background:var(--dark);color:white;padding:18px;border-radius:0 0 24px 24px}.top{display:flex;justify-content:space-between;align-items:center}.brand{font-size:23px;font-weight:900}.brand small{display:block;font-size:10px;letter-spacing:2px;color:#bcd8cf}.loc{max-width:62%;display:flex;align-items:center;gap:4px;border:1px solid #ffffff30;background:#ffffff15;color:white;padding:8px 10px;border-radius:12px}.hello{font-size:22px;font-weight:850;margin-top:18px}.sub{font-size:12px;color:#bdd4ce}.search{display:flex;background:#fff;border-radius:13px;margin-top:14px;padding:3px}.search input{border:0;outline:0;flex:1;padding:10px}.search button{background:var(--gold);border:0;border-radius:10px;padding:0 12px;font-weight:bold}main{padding:15px}.card{background:#fff;border:1px solid var(--line);border-radius:17px;padding:14px;margin-bottom:12px;box-shadow:0 5px 18px #123c3a08}.budget{background:linear-gradient(130deg,#155b50,#123c3a);color:#fff}.muted{color:var(--muted);font-size:12px}.budget .muted{color:#c4dad2}.row{display:flex;align-items:center;gap:10px}.between{justify-content:space-between}.big{font-size:23px;font-weight:900}.progress{height:7px;border-radius:9px;background:#ffffff30;margin:12px 0;overflow:hidden}.progress span{height:100%;display:block;background:var(--gold)}.section{display:flex;justify-content:space-between;align-items:center;margin:18px 2px 10px}.section h3{font-size:16px;margin:0}.section button{border:0;background:none;color:var(--g);font-weight:bold}.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.quick button{border:1px solid var(--line);border-radius:14px;background:white;padding:10px 3px;display:grid;gap:5px;justify-items:center;font-size:12px;color:var(--dark)}.quick span{font-size:23px}.tiles,.list{display:grid;gap:9px}.service{width:100%;display:flex;align-items:center;text-align:right;gap:10px;background:#fff;border:1px solid var(--line);border-radius:15px;padding:11px;color:var(--dark)}.icon{width:43px;height:43px;border-radius:13px;background:var(--mint);display:grid;place-items:center;font-size:23px}.service small{display:block;font-size:11px;color:var(--muted);margin-top:3px}.pill{font-size:11px;background:var(--mint);color:var(--g);padding:5px 8px;border-radius:20px}.closed{background:#fff0ee;color:#b0352d}.title{font-size:22px;font-weight:900;margin:6px 2px}.desc{font-size:13px;color:var(--muted);margin:0 2px 14px}.primary,.secondary{width:100%;border:0;border-radius:13px;padding:13px;min-height:46px;font-weight:800}.primary{background:var(--g);color:white}.secondary{background:var(--mint);color:var(--g)}.input{width:100%;border:1px solid var(--line);border-radius:12px;padding:13px;min-height:46px;font-size:14px;background:white;margin:5px 0;outline:0}.expense{display:flex;justify-content:space-between;align-items:center;background:white;border:1px solid var(--line);padding:11px;border-radius:14px}.expense .eicon{width:38px;height:38px;background:var(--mint);display:grid;place-items:center;border-radius:12px}.expense small{display:block;color:var(--muted);font-size:11px}.empty{text-align:center;color:var(--muted);padding:25px}.nav{position:fixed;bottom:0;left:0;right:0;margin:auto;max-width:520px;display:grid;grid-template-columns:repeat(5,1fr);background:#ffffffed;border-top:1px solid var(--line);padding:7px 3px calc(7px + env(safe-area-inset-bottom))}.nav button{border:0;background:none;color:var(--muted);font-size:10px;display:grid;gap:3px;justify-items:center}.nav button span{font-size:20px}.nav .active{color:var(--g);font-weight:900}.modal{position:fixed;inset:0;background:#102d2b88;display:flex;align-items:flex-end;z-index:5}.sheet{max-width:520px;width:100%;margin:auto;background:white;border-radius:22px 22px 0 0;padding:18px;max-height:90vh;overflow:auto}.close{float:left;border:0;background:#eef3f0;border-radius:50%;width:40px;height:40px;font-size:20px}.onboard{min-height:100vh;max-width:520px;margin:auto;background:linear-gradient(150deg,#123c3a,#1b6557);color:white;padding:22px;display:flex;flex-direction:column}.onbrand{font-size:26px;font-weight:900}.onbrand small{display:block;font-size:10px;letter-spacing:2px;color:#c6ded6}.onbody{margin:auto 0}.step{font-size:12px;color:#c4dcd4}.onbody h1{font-size:27px;margin:16px 0 5px}.onbody p{color:#c5ded6}.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}.choices button{background:#ffffff15;color:white;border:1px solid #ffffff35;border-radius:16px;padding:20px;font-weight:900;font-size:17px}.choices .selected{background:var(--gold);color:var(--dark)}.onboard .primary{background:var(--gold);color:var(--dark);margin-top:8px}.onboard .secondary{background:#ffffff20;color:white;margin-top:8px}.results{display:grid;gap:7px;margin-top:8px;max-height:42vh;overflow:auto}.result{border:0;border-radius:12px;padding:13px;background:white;color:var(--dark);text-align:right}.result:active{transform:scale(.99)}.city-search{position:sticky;top:0;z-index:1;background:#f5f7f4;border-radius:13px;padding:3px;margin:10px 0}.city-head{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#ffffff18;border:1px solid #ffffff25;border-radius:13px;padding:10px 12px;margin:8px 0}.city-head small{color:#c6ded6}.city-clear{border:0;border-radius:9px;padding:8px 10px;background:#ffffff20;color:white;font-weight:700}.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:var(--dark);color:white;padding:10px 15px;border-radius:12px;z-index:9;font-size:13px;white-space:normal;text-align:center;width:max-content;max-width:calc(100% - 32px)}@media(min-width:520px){body{padding:16px 0 98px}.app,.onboard{border-radius:23px;overflow:hidden}.nav{bottom:16px;border-radius:0 0 23px 23px}}
+body{overflow-wrap:anywhere}#loc{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.service>span:nth-child(2){min-width:0}.icon,.eicon,.pill{flex-shrink:0}.expense{cursor:pointer;text-align:right;gap:8px}.expense .row{min-width:0;flex:1}.expense .row>div{min-width:0}.expense>b{max-width:45%;flex-shrink:0}.expense:active{background:var(--mint)}.quick button.on{border-color:var(--g);background:var(--mint);font-weight:900}.progress span.over{background:#ff6b5e}.warn{font-weight:700}.budget .warn{color:#ffc9c2}.card:not(.budget) .warn{color:#b0352d}.fav{color:#d6455d}.service b{display:block}.onboard .secondary.hide{display:none}.search input{padding:13px 10px}.search button{min-width:56px}.section button{padding:12px 8px;min-height:44px}.nav button{min-height:52px}.close{width:44px;height:44px}.loc{min-height:44px}.nav button{overflow-wrap:normal;white-space:nowrap;min-width:0}.quick button{overflow-wrap:normal}
+.nav{z-index:3}.modal{z-index:6}
+.page{position:fixed;inset:0;z-index:5;max-width:520px;margin:auto;background:var(--bg);display:flex;flex-direction:column}
+.phead{display:flex;align-items:center;gap:8px;background:var(--dark);color:#fff;padding:10px 12px;border-radius:0 0 18px 18px;flex-shrink:0}
+.phead h2{font-size:18px;margin:0;flex:1}
+.pback,.pact{border:1px solid #ffffff30;background:#ffffff18;color:#fff;border-radius:12px;min-width:44px;min-height:44px;font-size:18px;padding:0 12px;font-weight:700}
+.pbody .pact{background:var(--mint);color:var(--g);border-color:var(--line)}
+.pbody{flex:1;overflow:auto;padding:14px 15px 40px}
+.lbl{display:block;font-size:12px;color:var(--muted);margin:8px 2px 0}
+.chkrow{display:flex;align-items:center;gap:10px;margin:12px 2px;font-size:14px}.chkrow input{width:22px;height:22px;accent-color:var(--g)}
+textarea.input{resize:vertical;font-family:inherit}
+.seg{display:grid;grid-auto-flow:column;gap:6px;margin-bottom:12px}.seg button{border:1px solid var(--line);background:#fff;border-radius:12px;min-height:44px;font-weight:700;color:var(--dark);font-size:13px}.seg .on{background:var(--g);color:#fff;border-color:var(--g)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.chip{border:1px solid var(--line);background:#fff;border-radius:20px;min-height:40px;padding:0 14px;font-weight:700;color:var(--dark)}.chip.on{background:var(--g);color:#fff;border-color:var(--g)}
+.hello2{font-size:19px;font-weight:900}.sub2{font-size:13px;font-weight:800;color:var(--g);margin:14px 2px 6px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}.stats>div{background:var(--mint);border-radius:13px;padding:10px}.stats small{display:block;font-size:11px;color:var(--muted)}.stats b{font-size:15px}.stats a{color:var(--g);text-decoration:underline}.neg{color:#b0352d}
+.task{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px 10px;margin-bottom:7px}.task.done .tbody b{text-decoration:line-through;color:var(--muted)}
+.tbody{flex:1;min-width:0;cursor:pointer;min-height:40px;display:flex;flex-direction:column;justify-content:center}.tbody small{color:var(--muted);font-size:11px}
+.chk{width:44px;height:44px;border-radius:50%;border:2px solid var(--g);background:#fff;color:#fff;font-size:20px;font-weight:900;flex-shrink:0}.task.done .chk,.chk[aria-pressed=true]{background:var(--g)}.chk.big{width:52px;height:52px}
+.eic{font-size:22px;width:44px;text-align:center}
+.alertbox{background:#fff7ea;border-color:var(--gold)}.alrt{display:flex;gap:8px;padding:5px 0;font-weight:700;font-size:14px}
+.tour{background:var(--mint)}
+.hub{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:6px}.hub button{border:1px solid var(--line);border-radius:14px;background:#fff;padding:10px 2px;display:grid;gap:4px;justify-items:center;font-size:12px;color:var(--dark);min-height:74px}.hub span{font-size:24px}
+.pts{text-align:center}.pts b{display:block;font-size:26px}.habit small{display:block}.wk{display:flex;gap:5px;margin-top:6px}.dot{width:14px;height:14px;border-radius:50%;background:#dfe8e4;display:block}.dot.on{background:var(--gold)}
+.note{cursor:pointer}.ntext{white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.cgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:8px}.cgrid.wd span{text-align:center;font-size:11px;color:var(--muted)}
+.cd{position:relative;border:1px solid var(--line);background:#fff;border-radius:10px;min-height:44px;font-weight:700;color:var(--dark)}.cd.today{border-color:var(--gold);border-width:2px}.cd.sel{background:var(--g);color:#fff}.cd u{position:absolute;bottom:5px;left:50%;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:var(--gold)}
+.calh{margin-bottom:4px}
+.plist{margin-top:8px}.pr{display:flex;justify-content:space-between;padding:11px 8px;border-radius:10px;font-size:15px}.pr.next{background:var(--mint);font-weight:900;color:var(--g)}
+.prw{cursor:pointer}.big2{font-size:18px;font-weight:900;margin:6px 0}
+.dhk{cursor:pointer}.dhk.done{background:var(--mint)}.atext{font-size:19px;line-height:2;margin:8px 0}.verse .atext{font-size:17px}
+.pill.demo{background:#fff0d9;color:#8a5200}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}.mcard{border:1px solid var(--line);background:#fff;border-radius:15px;padding:8px;display:grid;gap:4px;text-align:right;color:var(--dark);align-content:start}
+.thumb{width:100%;aspect-ratio:1;object-fit:cover;border-radius:11px;background:var(--mint)}.thumb.ph{display:grid;place-items:center;font-size:38px}
+.prev{max-width:100%;max-height:160px;border-radius:12px;margin-top:8px;display:block}.prev.big{max-height:240px;width:100%;object-fit:cover}
+.price{font-weight:900;color:var(--g)}.tel{display:inline-block;background:var(--mint);color:var(--g);font-weight:800;padding:10px 14px;border-radius:12px;text-decoration:none;min-height:44px}
+input[type=file].input{padding:10px}
+.msgs{max-height:55vh;overflow:auto;display:flex;flex-direction:column;gap:6px;padding:4px}.bub{background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px 10px;max-width:86%;align-self:flex-start;overflow-wrap:anywhere}.bub.me{background:var(--mint);align-self:flex-end}.bub small{display:block;color:var(--muted);font-size:11px}
+
+</style>
+<div id="onboard" class="onboard hide"><div class="onbrand">يومك <small>YOMAK · EVERYDAY, EASIER</small></div><div class="onbody"><div id="stepLabel" class="step"></div><h1 id="onTitle"></h1><p id="onDesc"></p><div id="onContent"></div><button id="next" class="primary" onclick="nextStep()">التالي</button><button id="back" class="secondary hide" onclick="backStep()">رجوع</button><button id="cancelLoc" class="secondary hide" onclick="cancelLoc()">إلغاء التغيير</button></div><p class="muted" style="text-align:center;color:#c1d9d1">نسخة اختبار 0.1</p></div>
+<div id="app" class="app hide"><header><div class="top"><div class="brand">يومك <small>YOMAK</small></div><button class="loc" aria-label="تغيير الموقع" onclick="changeLoc()">📍 <span id="loc"></span>⌄</button></div><div class="hello" id="hello"></div><div class="sub" id="date"></div><div class="search"><input id="search" maxlength="60" placeholder="دور على مطعم أو خدمة" aria-label="دور على مطعم أو خدمة" oninput="search(this.value)"><button aria-label="بحث" onclick="search(document.getElementById('search').value)">بحث</button></div></header><main id="main"></main><nav class="nav"><button data-t="home" onclick="go('home')"><span>⌂</span>الرئيسية</button><button data-t="services" onclick="go('services')"><span>▦</span>الخدمات</button><button data-t="expenses" onclick="go('expenses')"><span>◉</span>مصروفاتي</button><button data-t="orders" onclick="go('orders')"><span>▣</span>طلباتي</button><button data-t="profile" onclick="go('profile')"><span>♙</span>حسابي</button></nav></div><div id="page" class="page hide"></div><div id="modal" class="modal hide" onclick="if(event.target===this)closeModal()"><div id="sheet" class="sheet" role="dialog" aria-modal="true"></div></div>
+<input id="backupFile" type="file" accept="application/json,.json" style="display:none" onchange="importBackup(this.files&&this.files[0]);this.value=''">
+<script>
+const EG=['القاهرة','الجيزة','القليوبية','الإسكندرية','البحيرة','مطروح','الدقهلية','دمياط','كفر الشيخ','الغربية','المنوفية','الشرقية','بورسعيد','الإسماعيلية','السويس','الفيوم','بني سويف','المنيا','أسيوط','سوهاج','قنا','الأقصر','أسوان','البحر الأحمر','الوادي الجديد','شمال سيناء','جنوب سيناء'];
+const SA=['الرياض','مكة المكرمة','المدينة المنورة','القصيم','المنطقة الشرقية','عسير','تبوك','حائل','الحدود الشمالية','جازان','نجران','الباحة','الجوف'];
+const GEO={EG:{
+'القاهرة':['القاهرة','مدينة نصر','مصر الجديدة','المعادي','حلوان','التجمع الأول','التجمع الخامس','الشروق','بدر','العبور','عين شمس','المطرية','المرج','السلام','روض الفرج','شبرا','الزيتون','الوايلي','دار السلام','السيدة زينب','وسط البلد'],
+'الجيزة':['الجيزة','6 أكتوبر','الشيخ زايد','الهرم','فيصل','العياط','البدرشين','أوسيم','إمبابة','كرداسة','أبو النمرس','منشأة القناطر','الصف','أطفيح','حوامدية','الواحات البحرية'],
+'القليوبية':['بنها','شبرا الخيمة','قليوب','القناطر الخيرية','الخانكة','العبور','كفر شكر','طوخ','قها','شبين القناطر','الخصوص'],
+'الإسكندرية':['الإسكندرية','برج العرب','برج العرب الجديدة','العجمي','أبو قير','العامرية','المنتزه','سموحة','محرم بك','سيدي بشر','ميامي'],
+'البحيرة':['دمنهور','كفر الدوار','رشيد','إيتاي البارود','أبو حمص','أبو المطامير','حوش عيسى','الدلنجات','شبراخيت','كوم حمادة','وادي النطرون','النوبارية','المحمودية','الرحمانية','بدر'],
+'مطروح':['مرسى مطروح','العلمين','العلمين الجديدة','الحمام','الضبعة','سيدي براني','السلوم','سيوة','النجيلة'],
+'الدقهلية':['المنصورة','ميت غمر','دكرنس','طلخا','السنبلاوين','أجا','منية النصر','بلقاس','شربين','تمي الأمديد','بني عبيد','الجمالية','المطرية','المنزلة','محلة دمنة','نبروه'],
+'دمياط':['دمياط','دمياط الجديدة','رأس البر','فارسكور','الزرقا','كفر سعد','كفر البطيخ','عزبة البرج'],
+'كفر الشيخ':['كفر الشيخ','دسوق','بلطيم','فوه','مطوبس','الحامول','بيلا','سيدي سالم','قلين','الرياض','برج البرلس'],
+'الغربية':['طنطا','المحلة الكبرى','زفتى','كفر الزيات','سمنود','قطور','بسيون','السنطة'],
+'المنوفية':['شبين الكوم','منوف','السادات','أشمون','تلا','الباجور','قويسنا','بركة السبع','سرس الليان'],
+'الشرقية':['الزقازيق','العاشر من رمضان','بلبيس','منيا القمح','فاقوس','أبو كبير','ههيا','الإبراهيمية','ديرب نجم','كفر صقر','أولاد صقر','الحسينية','صان الحجر','مشتول السوق','القنايات','القرين'],
+'بورسعيد':['بورسعيد','بورفؤاد'],
+'الإسماعيلية':['الإسماعيلية','فايد','القنطرة شرق','القنطرة غرب','التل الكبير','أبو صوير','القصاصين الجديدة'],
+'السويس':['السويس','الأربعين','عتاقة','الجناين','فيصل'],
+'الفيوم':['الفيوم','سنورس','إطسا','طامية','أبشواي','يوسف الصديق'],
+'بني سويف':['بني سويف','الفشن','ببا','سمسطا','ناصر','إهناسيا','الواسطى'],
+'المنيا':['المنيا','مغاغة','بني مزار','مطاي','سمالوط','أبو قرقاص','ملوي','دير مواس','العدوة'],
+'أسيوط':['أسيوط','ديروط','القوصية','منفلوط','أبنوب','الفتح','الغنايم','ساحل سليم','البداري','صدفا'],
+'سوهاج':['سوهاج','طهطا','جرجا','البلينا','أخميم','المراغة','المنشأة','ساقلتة','دار السلام','جهينة'],
+'قنا':['قنا','نجع حمادي','دشنا','قفط','قوص','فرشوط','أبو تشت','نقادة','الوقف'],
+'الأقصر':['الأقصر','إسنا','القرنة','أرمنت','الطود','الزينية','البياضية'],
+'أسوان':['أسوان','كوم أمبو','إدفو','دراو','نصر النوبة','أبو سمبل'],
+'البحر الأحمر':['الغردقة','رأس غارب','سفاجا','القصير','مرسى علم','الشلاتين','حلايب'],
+'الوادي الجديد':['الخارجة','الداخلة','الفرافرة','باريس','بلاط'],
+'شمال سيناء':['العريش','بئر العبد','الشيخ زويد','رفح','الحسنة','نخل'],
+'جنوب سيناء':['الطور','شرم الشيخ','دهب','نويبع','طابا','سانت كاترين','أبو رديس','أبو زنيمة','رأس سدر']
+},SA:{
+'الرياض':['الرياض','الخرج','الدرعية','المجمعة','الزلفي','وادي الدواسر','شقراء','عفيف','الدوادمي','القويعية','الأفلاج','حوطة بني تميم','السليل','الغاط','رماح','ثادق','حريملاء','مرات','الدلم','المزاحمية'],
+'مكة المكرمة':['مكة المكرمة','جدة','الطائف','رابغ','القنفذة','الليث','الجموم','خليص','الكامل','الخرمة','تربة','رنية','ميسان','أضم','العرضيات','بحرة'],
+'المدينة المنورة':['المدينة المنورة','ينبع','العلا','بدر','خيبر','الحناكية','المهد','وادي الفرع'],
+'القصيم':['بريدة','عنيزة','الرس','المذنب','البكيرية','البدائع','رياض الخبراء','الخبراء','عيون الجواء','الأسياح','الشماسية','النبهانية','عقلة الصقور','ضرية'],
+'المنطقة الشرقية':['الدمام','الخبر','الظهران','الأحساء','الهفوف','المبرز','الجبيل','القطيف','حفر الباطن','الخفجي','رأس تنورة','بقيق','النعيرية','قرية العليا','أبو حدرية'],
+'عسير':['أبها','خميس مشيط','بيشة','محايل عسير','النماص','أحد رفيدة','سراة عبيدة','رجال ألمع','ظهران الجنوب','تثليث','البرك','المجاردة','بلقرن','تنومة'],
+'تبوك':['تبوك','الوجه','ضباء','أملج','حقل','تيماء','البدع'],
+'حائل':['حائل','بقعاء','الغزالة','الشنان','موقق','الحائط','السليمي','سميراء'],
+'الحدود الشمالية':['عرعر','رفحاء','طريف','العويقيلة'],
+'جازان':['جازان','صبيا','أبو عريش','صامطة','فرسان','الدرب','بيش','الحرث','العارضة','أحد المسارحة','الريث','ضمد','فيفاء','هروب','الداير'],
+'نجران':['نجران','شرورة','حبونا','بدر الجنوب','يدمة','ثار','خباش'],
+'الباحة':['الباحة','بلجرشي','المندق','المخواة','قلوة','العقيق','القرى','بني حسن','غامد الزناد'],
+'الجوف':['سكاكا','دومة الجندل','القريات','طبرجل','صوير']
+}};
+
+
+const demo=[{id:1,cat:'مطاعم',name:'مطعم وجبات سريعة',desc:'وجبات وبرجر · مثال',icon:'🍔',open:true},{id:2,cat:'كافيهات',name:'قهوة مختصة',desc:'قهوة ومشروبات · مثال',icon:'☕',open:true},{id:3,cat:'صيدليات',name:'صيدلية قريبة',desc:'بيانات توضيحية',icon:'💊',open:false},{id:4,cat:'خدمات المنزل',name:'فني كهرباء',desc:'خدمات صيانة · مثال',icon:'🔧',open:true},{id:5,cat:'بقالة',name:'سوبر ماركت',desc:'احتياجات يومية · مثال',icon:'🛒',open:true},{id:6,cat:'مواصلات',name:'نقل محلي',desc:'بيانات توضيحية',icon:'🚗',open:true}];
+const STORAGE_KEY='yomak',UNDO_KEY='yomak_backup_before_restore',MAX_AMOUNT=1e9;
+const CATS=['أكل','مواصلات','تسوق','فواتير','صحة','أخرى'],SVC_CATS=['مطاعم','كافيهات','صيدليات','خدمات المنزل','بقالة','مواصلات','أخرى'];
+const SAVE_ERR='تعذر حفظ البيانات على هذا الجهاز؛ تحقق من مساحة التخزين';
+
+/* ---------- helpers ---------- */
+function el(id){return document.getElementById(id)}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function isObj(x){return x&&typeof x==='object'&&!Array.isArray(x)}
+function cleanStr(v,max){return typeof v==='string'?v.trim().slice(0,max):(typeof v==='number'&&isFinite(v)?String(v).slice(0,max):'')}
+function todayKey(){let z=new Date(),y=z.getFullYear(),m=String(z.getMonth()+1).padStart(2,'0'),day=String(z.getDate()).padStart(2,'0');return `${y}-${m}-${day}`}
+function isDateKey(s){return typeof s==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(s)&&!isNaN(Date.parse(s))}
+function svcIcon(c){return ({'مطاعم':'🍔','كافيهات':'☕','صيدليات':'💊','خدمات المنزل':'🔧','بقالة':'🛒','مواصلات':'🚗'})[c]||'🏪'}
+function icon(c){return ({'أكل':'🍔','مواصلات':'🚗','تسوق':'🛒','فواتير':'🧾','صحة':'💊','أخرى':'💸'})[c]||'💸'}
+function defaultData(){return {country:'',region:'',city:'',name:'',budget:0,budgets:{EGP:0,SAR:0},expenses:[],orders:[],favs:[],added:[],...extraDefaults()}}
+
+/* ---------- data sanitising (used for localStorage and for restored backups) ---------- */
+function sanitizeData(raw){
+  if(!isObj(raw))return defaultData();
+  const out=defaultData();
+  out.country=['EG','SA'].includes(raw.country)?raw.country:'';
+  out.region=cleanStr(raw.region,80);out.city=cleanStr(raw.city,80);out.name=cleanStr(raw.name,60);
+  if(out.country==='SA'&&out.region==='الشرقية')out.region='المنطقة الشرقية';
+  const num=v=>{v=Number(v);return Number.isFinite(v)&&v>=0&&v<=MAX_AMOUNT?v:0};
+  const rb=isObj(raw.budgets)?raw.budgets:null;
+  out.budgets={EGP:num(rb&&rb.EGP),SAR:num(rb&&rb.SAR)};
+  if(!rb&&num(raw.budget)>0)out.budgets[out.country==='SA'?'SAR':'EGP']=num(raw.budget);
+  out.budget=out.budgets[out.country==='SA'?'SAR':'EGP'];
+  const used=new Set(),uid=v=>{let n=Number(v);if(!Number.isFinite(n)||n<=0||used.has(n)){n=Date.now();while(used.has(n))n++}used.add(n);return n};
+  const defCur=out.country==='SA'?'SAR':'EGP';
+  out.expenses=(Array.isArray(raw.expenses)?raw.expenses:[]).filter(isObj).map(e=>{
+    const a=Number(e.amount);if(!Number.isFinite(a)||a<=0||a>MAX_AMOUNT)return null;
+    const cat=CATS.includes(e.cat)?e.cat:'أخرى';
+    return {id:uid(e.id),amount:a,title:cleanStr(e.title,60)||cat,cat,date:isDateKey(e.date)?e.date:todayKey(),currency:['EGP','SAR'].includes(e.currency)?e.currency:defCur};
+  }).filter(Boolean);
+  out.orders=(Array.isArray(raw.orders)?raw.orders:[]).filter(isObj);
+  demo.forEach(s=>used.add(s.id));
+  out.added=(Array.isArray(raw.added)?raw.added:[]).filter(isObj).map(s=>{
+    const name=cleanStr(s.name,60);if(!name)return null;
+    const cat=SVC_CATS.includes(s.cat)?s.cat:'أخرى';
+    return {id:uid(s.id),name,cat,icon:svcIcon(cat),desc:cleanStr(s.desc,120)||'نشاط مضاف',phone:cleanStr(s.phone,20),open:s.open!==false};
+  }).filter(Boolean);
+  const ids=new Set([...demo,...out.added].map(s=>s.id));
+  out.favs=(Array.isArray(raw.favs)?raw.favs:[]).filter(x=>typeof x==='number'&&ids.has(x)).filter((x,i,a)=>a.indexOf(x)===i);
+  sanitizeExtra(raw,out);
+  return out;
+}
+function loadData(){try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return defaultData();return sanitizeData(JSON.parse(raw))}catch(err){return defaultData()}}
+
+/* ===== extra data model (phase 1): dates, sanitisers ===== */
+const AR_DAYS=['الأحد','الاثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+const AR_MONTHS=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+const MARKET_CATS=['أجهزة','أثاث','ملابس','سيارات','أخرى'],JOB_TYPES=['وظيفة','طلب شغل'],FOOD_CATS=['وجبات','مخبوزات','حلويات','مشروبات','أخرى'];
+const EVENT_TYPES=[['birthday','🎂','عيد ميلاد'],['residency','🪪','تجديد إقامة'],['license','🚗','تجديد رخصة'],['doctor','🩺','موعد دكتور'],['other','📌','أخرى']];
+function an(n){return String(n).replace(/\d/g,c=>'٠١٢٣٤٥٦٧٨٩'[c])}
+function pad2(n){return String(n).padStart(2,'0')}
+function keyOf(z){return z.getFullYear()+'-'+pad2(z.getMonth()+1)+'-'+pad2(z.getDate())}
+function keyToDate(k){const p=String(k).split('-').map(Number);return new Date(p[0],p[1]-1,p[2],12)}
+function addDays(k,n){const z=keyToDate(k);z.setDate(z.getDate()+n);return keyOf(z)}
+function daysBetween(a,b){return Math.round((keyToDate(b)-keyToDate(a))/864e5)}
+function dim(y,m){return new Date(y,m,0).getDate()}
+function fmtDate(k){const z=keyToDate(k);return AR_DAYS[z.getDay()]+'، '+an(z.getDate())+' '+AR_MONTHS[z.getMonth()]}
+function fmtTime(t){if(!t)return '';const p=t.split(':').map(Number),h=p[0],m=p[1];return an((h%12)||12)+':'+an(pad2(m))+(h<12?' ص':' م')}
+function uid2(){return Date.now().toString(36)+Math.random().toString(36).slice(2,7)}
+function extraDefaults(){return {tasks:[],habits:[],notes:[],events:[],market:[],jobs:[],apps:[],homefood:[],settings:{tourDone:false,notif:false,lat:0,lng:0,method:''},cache:{},fired:{}}}
+/* generic cleaners */
+function N_(v,def,max){v=Number(v);return Number.isFinite(v)&&Math.abs(v)<=(max||1e12)?v:def}
+function K_(v){return isDateKey(v)?v:''}
+function T_(v){return typeof v==='string'&&/^([01]\d|2[0-3]):[0-5]\d$/.test(v)?v:''}
+function IMG_(v){return typeof v==='string'&&/^data:image\/(jpeg|png|webp);base64,/.test(v)&&v.length<700000?v:''}
+function boolMap_(o){const r={};if(isObj(o))Object.keys(o).slice(0,6000).forEach(k=>{if(/^\d{4}-\d{2}-\d{2}$/.test(k)&&(o[k]===true||o[k]===1))r[k]=1});return r}
+function list_(x,fn){const seen=new Set(),out=[];(Array.isArray(x)?x:[]).filter(isObj).slice(0,3000).forEach(o=>{let r;try{r=fn(o)}catch(e){r=null}if(!r)return;let id=(typeof o.id==='string'||typeof o.id==='number')&&/^[A-Za-z0-9_-]{1,39}$/.test(String(o.id))?String(o.id):'';if(!id||seen.has(id))id=uid2()+out.length;seen.add(id);r.id=id;out.push(r)});return out}
+function sanitizeExtra(raw,out){
+  const C=out.country,pick=(v,arr,def)=>arr.includes(v)?v:def,ctry=v=>['EG','SA'].includes(v)?v:C;
+  out.tasks=list_(raw.tasks,t=>{const title=cleanStr(t.title,100);if(!title)return null;return {title,date:K_(t.date)||todayKey(),time:T_(t.time),notes:cleanStr(t.notes,300),repeat:pick(t.repeat,['none','daily','weekly','monthly'],'none'),remind:t.remind===true,done:boolMap_(t.done),created:N_(t.created,Date.now(),4e12)}});
+  out.habits=list_(raw.habits,h=>{const name=cleanStr(h.name,40);if(!name)return null;return {name,icon:cleanStr(h.icon,4)||'⭐',checks:boolMap_(h.checks),created:N_(h.created,Date.now(),4e12)}});
+  out.notes=list_(raw.notes,n=>{const text=cleanStr(n.text,3000);if(!text)return null;return {text,created:N_(n.created,Date.now(),4e12),updated:N_(n.updated,Date.now(),4e12)}});
+  out.events=list_(raw.events,e=>{const title=cleanStr(e.title,100),date=K_(e.date);if(!title||!date)return null;return {title,date,time:T_(e.time),type:pick(e.type,EVENT_TYPES.map(x=>x[0]),'other'),repeat:e.repeat==='yearly'?'yearly':'none',remind:e.remind!==false}});
+  out.market=list_(raw.market,m=>{const title=cleanStr(m.title,80);if(!title)return null;return {title,price:N_(m.price,0,1e9),desc:cleanStr(m.desc,400),phone:cleanStr(m.phone,20),cat:pick(m.cat,MARKET_CATS,'أخرى'),img:IMG_(m.img),country:ctry(m.country),ts:N_(m.ts,Date.now(),4e12)}});
+  out.jobs=list_(raw.jobs,j=>{const title=cleanStr(j.title,80);if(!title)return null;return {title,kind:pick(j.kind,JOB_TYPES,'وظيفة'),company:cleanStr(j.company,60),desc:cleanStr(j.desc,400),phone:cleanStr(j.phone,20),country:ctry(j.country),ts:N_(j.ts,Date.now(),4e12)}});
+  out.apps=list_(raw.apps,a=>{const jobId=cleanStr(a.jobId,40);if(!jobId)return null;return {jobId,jobTitle:cleanStr(a.jobTitle,80),name:cleanStr(a.name,60),phone:cleanStr(a.phone,20),msg:cleanStr(a.msg,300),ts:N_(a.ts,Date.now(),4e12)}});
+  out.homefood=list_(raw.homefood,f=>{const title=cleanStr(f.title,80);if(!title)return null;return {title,price:N_(f.price,0,1e9),cook:cleanStr(f.cook,60),desc:cleanStr(f.desc,400),phone:cleanStr(f.phone,20),cat:pick(f.cat,FOOD_CATS,'وجبات'),img:IMG_(f.img),country:ctry(f.country),ts:N_(f.ts,Date.now(),4e12)}});
+  const s=isObj(raw.settings)?raw.settings:{};
+  out.settings={tourDone:s.tourDone===true,notif:s.notif===true,lat:N_(s.lat,0,90),lng:N_(s.lng,0,180),method:['','Egypt','Makkah','MWL','Karachi'].includes(s.method)?s.method:''};
+  const c=isObj(raw.cache)?raw.cache:{},cc={};
+  ['weather','rates','gold'].forEach(k=>{if(isObj(c[k])&&Number.isFinite(Number(c[k].ts))){const o={ts:Number(c[k].ts),demo:c[k].demo===true};Object.keys(c[k]).forEach(q=>{if(q!=='ts'&&q!=='demo'&&Number.isFinite(Number(c[k][q])))o[q]=Number(c[k][q])});cc[k]=o}});
+  out.cache=cc;
+  out.fired={};if(isObj(raw.fired))Object.keys(raw.fired).slice(-400).forEach(k=>{if(raw.fired[k]===1)out.fired[k]=1});
+}
+
+let d=loadData(),step=1,current='home',svcFilter='',navPushed=false,ignorePops=0,locBackup=null,lastDay='';
+function save(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(d));return true}catch(err){console.warn('YOMAK save failed',err);return false}}
+/* apply a change; if saving fails, roll the in-memory data back so memory never differs from storage */
+function tx(fn){const snap=JSON.stringify(d);try{fn()}catch(err){d=JSON.parse(snap);return false}if(!save()){d=JSON.parse(snap);msg(SAVE_ERR);return false}return true}
+function newId(){let n=Date.now();const used=new Set([...demo,...d.expenses,...d.added].map(x=>x.id));while(used.has(n))n++;return n}
+function cur(){return d.country==='SA'?'SAR':'EGP'}
+function budgetVal(){return Number(d.budgets&&d.budgets[cur()]||0)}
+function cash(n,currency){const c=currency||cur();return Number(n||0).toLocaleString('ar-EG',{maximumFractionDigits:2})+(c==='SAR'?' ر.س':' ج.م')}
+function loc(){return [d.city,d.region].filter(Boolean).join('، ')}
+function norm(s){return String(s||'').toLocaleLowerCase('ar').normalize('NFC').replace(/[٠-٩]/g,c=>c.charCodeAt(0)-1632).replace(/[۰-۹]/g,c=>c.charCodeAt(0)-1776).replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/[ً-ٟـ]/g,'').replace(/\s+/g,' ').trim()}
+function cities(q){let base=GEO[d.country]?.[d.region]||[];return base.filter(x=>norm(x).includes(norm(q)))}
+
+/* ---------- onboarding ---------- */
+function init(){refreshDate();d.name&&d.city?showApp():showOn();startup()}
+function refreshDate(){lastDay=todayKey();el('date').textContent=new Date().toLocaleDateString('ar-EG',{weekday:'long',day:'numeric',month:'long'})}
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&lastDay&&lastDay!==todayKey()){refreshDate();if(!el('app').classList.contains('hide'))render()}});
+function showOn(){el('app').classList.add('hide');el('onboard').classList.remove('hide');drawStep()}
+function drawStep(){let titles=['اختار دولتك','اختار المحافظة أو المنطقة','اختار المدينة أو المركز','عرفنا اسمك'],descs=['هنظبط الخدمات على مكانك.','حدد منطقتك.','اختار مدينة تابعة للمنطقة المحددة.','اكتب اسمك لبدء يومك.'];el('stepLabel').textContent=`الخطوة ${step} من 4`;el('onTitle').textContent=titles[step-1];el('onDesc').textContent=descs[step-1];el('onContent').innerHTML='';
+  if(step===1)el('onContent').innerHTML=`<div class="choices"><button class="${d.country==='EG'?'selected':''}" onclick="pickCountry('EG')">🇪🇬<br>مصر</button><button class="${d.country==='SA'?'selected':''}" onclick="pickCountry('SA')">🇸🇦<br>السعودية</button></div>`;
+  if(step===2)el('onContent').innerHTML=`<input class="input" placeholder="ابحث عن المحافظة أو المنطقة" aria-label="ابحث عن المحافظة أو المنطقة" oninput="options(this.value,2)"><div class="results" id="opts">${(d.country==='EG'?EG:SA).map(x=>option(x,2)).join('')}</div>`;
+  if(step===3)el('onContent').innerHTML=`<div class="city-head"><span>📍 <b>${esc(d.region)}</b><br><small>المدن التابعة للمنطقة فقط</small></span><button class="city-clear" onclick="step=2;drawStep()">تغيير المنطقة</button></div><div class="city-search"><input id="citySearch" class="input" style="margin:0" placeholder="ابحث عن مدينة أو مركز" aria-label="ابحث عن مدينة أو مركز" oninput="options(this.value,3)"></div><div class="results" id="opts">${cities('').map(x=>option(x,3)).join('')}</div>`;
+  if(step===4)el('onContent').innerHTML=`<input id="nameIn" class="input" maxlength="40" placeholder="اسمك" aria-label="اسمك" value="${esc(d.name)}">`;
+  el('next').textContent=step===4?'ابدأ يومك':'التالي';el('back').classList.toggle('hide',step===1);el('cancelLoc').classList.toggle('hide',!locBackup)}
+function option(x,s){return `<button class="result" onclick="${s===2?`pickRegion('${esc(x)}')`:`pickCity('${esc(x)}')`}">${esc(x)}</button>`}
+function pickCountry(x){d.country=x;d.region='';d.city='';step=2;drawStep()}
+function options(q,s){const list=el('opts');if(!list)return;const query=norm(q);let source=s===2?(d.country==='EG'?EG:SA):cities('');const a=source.filter(x=>norm(x).includes(query));list.innerHTML=a.map(x=>option(x,s)).join('')||'<div class="empty">لا توجد نتائج مطابقة</div>'}
+function pickRegion(x){d.region=x;d.city='';step=3;drawStep()}
+function pickCity(x){d.city=x;step=4;drawStep()}
+function nextStep(){if(step===1&&!d.country)return msg('اختار الدولة');if(step===2&&!d.region)return msg('اختار المنطقة');if(step===3&&!d.city)return msg('اختار المدينة');if(step===4){let n=el('nameIn').value.trim();if(!n)return msg('اكتب اسمك');d.name=n.slice(0,40);locBackup=null;if(!save())msg(SAVE_ERR);showApp();return}step++;drawStep()}
+function backStep(){if(step>1){step--;drawStep()}}
+/* changing location is only committed when the flow is finished; "cancel" restores the saved one */
+function changeLoc(){locBackup={country:d.country,region:d.region,city:d.city};step=1;showOn()}
+function cancelLoc(){if(locBackup){d.country=locBackup.country;d.region=locBackup.region;d.city=locBackup.city;locBackup=null}showApp()}
+
+/* ---------- shell ---------- */
+function showApp(){el('onboard').classList.add('hide');el('app').classList.remove('hide');el('loc').textContent=loc();el('hello').textContent='أهلاً يا '+d.name+' 👋';go(current,true)}
+function render(){el('main').innerHTML=current==='home'?home():current==='services'?services():current==='expenses'?expenses():current==='orders'?orders():profile()}
+function todaySpend(){return d.expenses.filter(x=>x.date===todayKey()&&x.currency===cur()).reduce((s,x)=>s+Number(x.amount),0)}
+function monthSpend(){let m=todayKey().slice(0,7);return d.expenses.filter(x=>typeof x.date==='string'&&x.date.startsWith(m)&&x.currency===cur()).reduce((s,x)=>s+Number(x.amount),0)}
+function budgetNote(b,sp){return b?(sp>b?`<span class="muted warn">⚠ تجاوزت الميزانية بمقدار ${cash(sp-b)}</span>`:`<span class="muted">المتبقي ${cash(b-sp)}</span>`):'<span class="muted">حدد ميزانيتك لمتابعة مصروفك</span>'}
+
+/* ---------- home ---------- */
+function homeBase(){let b=budgetVal(),sp=monthSpend(),pct=b?Math.min(100,sp/b*100):0,favs=allServices().filter(s=>d.favs.includes(s.id));
+  return `<div class="card budget"><div class="row between"><div><div class="muted">مصروف النهارده</div><div class="big">${cash(todaySpend())}</div></div><div><div class="muted">ميزانية الشهر</div><b>${b?cash(b):'غير محددة'}</b></div></div><div class="progress"><span class="${b&&sp>b?'over':''}" style="width:${pct}%"></span></div><div class="row between">${budgetNote(b,sp)}<button class="secondary" onclick="budgetModal()">${b?'تعديل':'حدد الميزانية'}</button></div></div><div class="section"><h3>اختصاراتك</h3></div><div class="quick"><button onclick="go('services')"><span>🍔</span>أكل</button><button onclick="go('services')"><span>🛠️</span>خدمات</button><button onclick="expenseModal()"><span>💸</span>مصروف</button><button onclick="go('orders')"><span>📦</span>طلباتي</button></div><div class="section"><h3>خدمات قريبة منك</h3><button onclick="go('services')">الكل</button></div><div class="tiles">${demo.slice(0,4).map(serviceCard).join('')}</div>${favs.length?`<div class="section"><h3>مفضلتي</h3></div><div class="tiles">${favs.map(serviceCard).join('')}</div>`:''}<div class="section"><h3>آخر مصروفات</h3><button onclick="go('expenses')">الكل</button></div>${d.expenses.length?`<div class="list">${d.expenses.slice(-3).reverse().map(expItem).join('')}</div>`:'<div class="card empty">سجّل أول مصروف عشان تتابع يومك ✨</div>'}<div class="section"><h3>عندك نشاط؟</h3></div><div class="card row between"><div><b>ضيف نشاطك لأهل منطقتك</b><div class="muted">إضافة للمراجعة المحلية</div></div><button class="secondary" onclick="addServiceModal()">＋ أضف</button></div>`}
+
+/* ---------- services ---------- */
+function serviceCard(s){const f=d.favs.includes(s.id);return `<button class="service" onclick="details(${Number(s.id)})"><span class="icon">${s.icon||'🏪'}</span><span style="flex:1"><b>${esc(s.name)}${f?' <span class="fav" aria-label="مفضلة">♥</span>':''}</b><small>${esc(s.cat)} · ${esc(s.desc)}</small></span><span class="pill ${s.open?'':'closed'}">${s.open?'مفتوح':'مغلق'}</span></button>`}
+function allServices(){return [...demo,...d.added]}
+function visibleServices(){const inp=el('search'),q=norm(inp?inp.value:'');let a=allServices();if(svcFilter)a=a.filter(s=>s.cat===svcFilter);if(q)a=a.filter(s=>norm([s.name,s.cat,s.desc,s.phone].filter(Boolean).join(' ')).includes(q));return a}
+function serviceListHtml(){const a=visibleServices(),inp=el('search');return a.map(serviceCard).join('')||(inp&&inp.value.trim()?'<div class="empty">لا توجد نتائج مطابقة. جرّب كلمة أخرى.</div>':'<div class="empty">لا توجد بيانات في القسم بعد</div>')}
+function servicesBase(){const cats=['مطاعم','كافيهات','صيدليات','خدمات المنزل'];return `<div class="title">الخدمات</div><p class="desc">في ${esc(d.city)} · البطاقات الحالية أمثلة وليست أنشطة حقيقية</p>${servicesHub()}<div class="quick" style="margin-bottom:12px">${cats.map((c,i)=>`<button class="${svcFilter===c?'on':''}" aria-pressed="${svcFilter===c}" onclick="filter('${c}')"><span>${['🍔','☕','💊','🔧'][i]}</span>${c}</button>`).join('')}</div>${svcFilter?`<button class="secondary" style="margin-bottom:12px" onclick="filter('${svcFilter}')">عرض كل الخدمات ✕</button>`:''}<div id="serviceList" class="list">${serviceListHtml()}</div><button class="primary" style="margin-top:12px" onclick="addServiceModal()">＋ أضف نشاطك</button>`}
+function filter(c){svcFilter=svcFilter===c?'':c;const s=el('search');if(s)s.value='';if(current==='services')render();else go('services')}
+function search(q){svcFilter='';if(current!=='services')go('services');else render()}
+function details(id){let s=allServices().find(x=>x.id===id);if(!s)return;let fv=d.favs.includes(id),mine=d.added.some(x=>x.id===id);
+  openModal(`<button class="close" aria-label="إغلاق" onclick="closeModal()">×</button><div class="row"><span class="icon">${s.icon||'🏪'}</span><div><h3>${esc(s.name)}</h3><span class="pill ${s.open?'':'closed'}">${s.open?'مفتوح':'مغلق'}</span></div></div><p class="muted">${esc(d.city)} · ${mine?'نشاط مضاف على جهازك':'بيانات تجريبية'}</p>${mine?`<p class="muted">${esc(s.desc)}${s.phone?' · '+esc(s.phone):''}</p>`:''}<button class="primary" onclick="msg('الطلبات الحقيقية ستتوفر بعد ربط الأنشطة');closeModal()">اطلب الآن</button><button class="secondary" style="margin-top:8px" onclick="fav(${id})">${fv?'إزالة المفضلة':'♡ أضف للمفضلة'}</button>${mine?`<div class="row" style="margin-top:8px"><button class="secondary" onclick="addServiceModal(${id})">✎ تعديل</button><button class="secondary" style="color:#b0352d" onclick="deleteService(${id})">🗑 حذف</button></div>`:''}`)}
+function fav(id){if(!tx(()=>{d.favs=d.favs.includes(id)?d.favs.filter(x=>x!==id):[...d.favs,id]}))return;closeModal();render();msg('تم تحديث المفضلة')}
+function addServiceModal(id){const s=id?d.added.find(x=>x.id===id):null;
+  openModal(`<button class="close" aria-label="إغلاق" onclick="closeModal()">×</button><h3>${s?'تعديل النشاط':'أضف نشاطك'}</h3><p class="muted">هذه الإضافة محلية للتجربة ولن تظهر لمستخدمين آخرين.</p><input id="sName" class="input" maxlength="60" placeholder="اسم النشاط" aria-label="اسم النشاط" value="${esc(s&&s.name)}"><select id="sCat" class="input" aria-label="الفئة">${SVC_CATS.map(c=>`<option${s&&s.cat===c?' selected':''}>${c}</option>`).join('')}</select><input id="sPhone" class="input" maxlength="20" inputmode="tel" placeholder="رقم الهاتف (اختياري)" aria-label="رقم الهاتف (اختياري)" value="${esc(s&&s.phone)}"><input id="sDesc" class="input" maxlength="120" placeholder="وصف النشاط" aria-label="وصف النشاط" value="${esc(s&&s.desc!=='نشاط مضاف'?s.desc:'')}"><button class="primary" onclick="saveService(${s?s.id:''})">${s?'حفظ التعديل':'إضافة'}</button>`)}
+function saveService(id){let n=el('sName').value.trim().slice(0,60);if(!n)return msg('اكتب اسم النشاط');let c=el('sCat').value,desc=el('sDesc').value.trim().slice(0,120)||'نشاط مضاف',phone=el('sPhone').value.trim().slice(0,20);
+  const ok=tx(()=>{if(id){const s=d.added.find(x=>x.id===id);if(!s)throw 0;s.name=n;s.cat=c;s.icon=svcIcon(c);s.desc=desc;s.phone=phone}else d.added.push({id:newId(),name:n,cat:c,icon:svcIcon(c),desc,phone,open:true})});
+  if(!ok)return;closeModal();render();msg(id?'تم تعديل النشاط':'تمت الإضافة محليًا')}
+function deleteService(id){if(!confirm('حذف هذا النشاط؟'))return;if(!tx(()=>{d.added=d.added.filter(x=>x.id!==id);d.favs=d.favs.filter(x=>x!==id)}))return;closeModal();render();msg('تم حذف النشاط')}
+
+/* ---------- expenses ---------- */
+function expenses(){const b=budgetVal(),sp=monthSpend();return `<div class="title">مصروفاتي 💰</div><p class="desc">تابع صرفك وميزانيتك. اضغط على أي مصروف لتعديله أو حذفه.</p><div class="card"><div class="row between"><div><small class="muted">إجمالي الشهر</small><div class="big">${cash(sp)}</div></div><div><small class="muted">مصروف اليوم</small><div class="big">${cash(todaySpend())}</div></div></div>${b?`<div class="progress" style="background:#e7efeb"><span style="width:${Math.min(100,sp/b*100)}%;background:${sp>b?'#d9534f':'var(--g)'}"></span></div>${budgetNote(b,sp)}`:''}<button class="primary" style="margin-top:12px" onclick="expenseModal()">＋ سجّل مصروف</button></div><div class="section"><h3>كل المصروفات</h3><button onclick="exportCSV()">تصدير CSV</button></div><div class="list">${d.expenses.slice().reverse().map(expItem).join('')||'<div class="empty">لا توجد مصروفات مسجلة</div>'}</div>`}
+function expItem(e){const id=Number(e.id);return `<div class="expense" role="button" tabindex="0" onclick="expenseModal(${id})" onkeydown="if(event.key==='Enter')expenseModal(${id})"><div class="row"><span class="eicon">${icon(e.cat)}</span><div><b>${esc(e.title)}</b><small>${esc(e.cat)} · ${esc(e.date)}</small></div></div><b>${cash(e.amount,e.currency)}</b></div>`}
+function expenseModal(id){const e=id?d.expenses.find(x=>x.id===id):null;
+  openModal(`<button class="close" aria-label="إغلاق" onclick="closeModal()">×</button><h3>${e?'تعديل المصروف':'سجل مصروف'}</h3><input id="exTitle" class="input" maxlength="60" placeholder="مثلاً قهوة" aria-label="وصف المصروف" value="${esc(e&&e.title)}"><input id="exAmount" class="input" type="number" inputmode="decimal" min="0" max="${MAX_AMOUNT}" step="any" placeholder="المبلغ" aria-label="المبلغ" value="${e?esc(e.amount):''}"><select id="exCat" class="input" aria-label="الفئة">${CATS.map(c=>`<option${e&&e.cat===c?' selected':''}>${c}</option>`).join('')}</select><button class="primary" onclick="saveExpense(${e?e.id:''})">${e?'حفظ التعديل':'حفظ'}</button>${e?`<button class="secondary" style="margin-top:8px;color:#b0352d" onclick="deleteExpense(${e.id})">🗑 حذف المصروف</button>`:''}`)}
+function saveExpense(id){let a=Number(el('exAmount').value),c=el('exCat').value,t=el('exTitle').value.trim().slice(0,60);
+  if(!Number.isFinite(a)||a<=0)return msg('أدخل مبلغ أكبر من صفر');
+  if(a>MAX_AMOUNT)return msg('المبلغ كبير جدًا');
+  const ok=tx(()=>{if(id){const e=d.expenses.find(x=>x.id===id);if(!e)throw 0;e.amount=a;e.title=t||c;e.cat=c}else d.expenses.push({id:newId(),amount:a,title:t||c,cat:c,date:todayKey(),currency:cur()})});
+  if(!ok)return;closeModal();render();msg(id?'تم تعديل المصروف':'تم تسجيل المصروف')}
+function deleteExpense(id){if(!confirm('حذف هذا المصروف؟'))return;if(!tx(()=>{d.expenses=d.expenses.filter(x=>x.id!==id)}))return;closeModal();render();msg('تم حذف المصروف')}
+function budgetModal(){openModal(`<button class="close" aria-label="إغلاق" onclick="closeModal()">×</button><h3>ميزانية الشهر</h3><input id="budgetIn" class="input" type="number" inputmode="decimal" min="0" max="${MAX_AMOUNT}" step="any" placeholder="المبلغ" aria-label="المبلغ" value="${budgetVal()||''}"><button class="primary" onclick="saveBudget()">حفظ</button>`)}
+function saveBudget(){const v=Number(el('budgetIn').value||0);if(!Number.isFinite(v)||v<0||v>MAX_AMOUNT)return msg('أدخل ميزانية صحيحة');if(!tx(()=>{d.budgets[cur()]=v;d.budget=v}))return;closeModal();render();msg('تم حفظ الميزانية')}
+function csvCell(v){let s=String(v==null?'':v);if(/^[=+\-@\t\r]/.test(s))s="'"+s;return '"'+s.replaceAll('"','""')+'"'}
+function exportCSV(){if(!d.expenses.length)return msg('لا توجد مصروفات لتصديرها');
+  try{let rows=[['التاريخ','الاسم','الفئة','المبلغ','العملة'],...d.expenses.map(x=>[x.date,x.title,x.cat,x.amount,x.currency||cur()])];let csv='﻿'+rows.map(r=>r.map(csvCell).join(',')).join('\n');let blob=new Blob([csv],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='yomak-expenses.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}catch(err){msg('تعذر تصدير الملف. حاول مرة أخرى')}}
+
+/* ---------- orders / profile ---------- */
+function orders(){return `<div class="title">طلباتي 📦</div><p class="desc">سجل الطلبات ومتابعتها (التوصيل غير مفعّل بعد)</p><div class="card empty">لا توجد طلبات حتى الآن. الطلبات الحقيقية ستعمل بعد ربط المطاعم.</div>`}
+function hasUndo(){try{return localStorage.getItem(UNDO_KEY)!==null}catch(e){return false}}
+function profile(){return `<div class="title">حسابي 👤</div><div class="card row"><span class="icon">👤</span><div><b>${esc(d.name)}</b><small class="muted">${esc(loc())}</small></div></div><div class="list"><button class="service" onclick="changeLoc()"><span class="icon">📍</span><span><b>غير مدينتك</b><small>إعادة اختيار الدولة والمنطقة والمدينة</small></span></button><button class="service" onclick="budgetModal()"><span class="icon">💰</span><span><b>ميزانيتي</b><small>تعديل ميزانية الشهر</small></span></button><button class="service" onclick="addServiceModal()"><span class="icon">🏪</span><span><b>أضف نشاطك</b><small>إضافة تجريبية على جهازك</small></span></button><button class="service" onclick="exportBackup()"><span class="icon">📤</span><span><b>إنشاء نسخة احتياطية</b><small>احفظ بياناتك في ملف على جهازك</small></span></button><button class="service" onclick="document.getElementById('backupFile').click()"><span class="icon">📥</span><span><b>استرجاع نسخة احتياطية</b><small>استعادة بياناتك من ملف سابق</small></span></button>${hasUndo()?`<button class="service" onclick="undoRestore()"><span class="icon">↩️</span><span><b>التراجع عن آخر استرجاع</b><small>العودة للبيانات التي كانت قبل الاسترجاع</small></span></button>`:''}${extraProfileItems()}<button class="service" onclick="about()"><span class="icon">ℹ️</span><span><b>عن يومك</b><small>الإصدار 0.1</small></span></button></div>`}
+
+/* ---------- backup / restore ---------- */
+function exportBackup(){
+  try{
+    const payload={app:'YOMAK',backupVersion:1,exportedAt:new Date().toISOString(),data:d};
+    const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json;charset=utf-8'});
+    const url=URL.createObjectURL(blob),a=document.createElement('a');
+    a.href=url;a.download='yomak-backup-'+todayKey()+'.json';document.body.appendChild(a);a.click();a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);msg('تم تجهيز النسخة الاحتياطية');
+  }catch(err){msg('لم نتمكن من إنشاء النسخة. حاول مرة أخرى');}
+}
+function normalizeBackupData(raw){
+  if(!isObj(raw))throw new Error('invalid');
+  for(const key of ['expenses','orders','favs','added'])if(raw[key]!==undefined&&!Array.isArray(raw[key]))throw new Error('invalid-'+key);
+  return sanitizeData(raw);
+}
+function afterRestore(){closeAllLayers();step=1;locBackup=null;if(d.name&&d.city)showApp();else showOn()}
+function importBackup(file){
+  if(!file)return;
+  if(file.size>15*1024*1024){msg('حجم ملف النسخة أكبر من المسموح');return;}
+  const reader=new FileReader();
+  reader.onerror=()=>msg('تعذر قراءة الملف. تأكد أنه ملف نسخة يومك');
+  reader.onload=()=>{
+    let incoming;
+    try{
+      const parsed=JSON.parse(String(reader.result||'').replace(/^﻿/,''));
+      if(!parsed||parsed.app!=='YOMAK'||parsed.backupVersion!==1||!parsed.data)throw new Error('format');
+      incoming=normalizeBackupData(parsed.data);
+    }catch(err){msg('الملف غير صالح أو ليس نسخة احتياطية من يومك');return;}
+    if(!confirm('سيتم استبدال البيانات الحالية بالبيانات الموجودة في النسخة الاحتياطية. هل تريد المتابعة؟'))return;
+    const previous=d;
+    try{
+      localStorage.setItem(UNDO_KEY,JSON.stringify(previous));
+      d=incoming;
+      if(!save()){d=previous;msg('لم نتمكن من حفظ الاسترجاع. بياناتك الحالية لم تتغير');return;}
+      closeModal();afterRestore();msg('تم استرجاع النسخة الاحتياطية بنجاح');
+    }catch(err){d=previous;try{save()}catch(e){}msg('تعذر استرجاع النسخة. بياناتك الحالية لم تتغير');}
+  };
+  try{reader.readAsText(file);}catch(err){msg('تعذر فتح الملف. حاول اختيار النسخة مرة أخرى');}
+}
+function undoRestore(){
+  let raw=null;try{raw=localStorage.getItem(UNDO_KEY)}catch(e){}
+  if(!raw)return msg('لا توجد نسخة سابقة للتراجع إليها');
+  if(!confirm('سيتم استبدال البيانات الحالية بالبيانات التي كانت قبل آخر استرجاع. هل تريد المتابعة؟'))return;
+  const previous=d;
+  try{
+    const inc=sanitizeData(JSON.parse(raw));
+    localStorage.setItem(UNDO_KEY,JSON.stringify(previous));
+    d=inc;
+    if(!save()){d=previous;msg('لم نتمكن من حفظ التراجع. بياناتك الحالية لم تتغير');return;}
+    afterRestore();msg('تم التراجع عن الاسترجاع');
+  }catch(err){d=previous;msg('تعذر التراجع. بياناتك الحالية لم تتغير');}
+}
+function about(){openModal(`<button class="close" aria-label="إغلاق" onclick="closeModal()">×</button><h3>يومك YOMAK</h3><p>كل احتياجات يومك في مكان واحد.</p><p class="muted">نسخة أولية 0.1. بيانات الأنشطة أمثلة، ولا توجد طلبات أو دفع أو تتبع مباشر حقيقي في النسخة الحالية.</p><button class="primary" onclick="closeModal()">تمام</button>`)}
+
+
+
+/* ===== navigation layers (Android back), pages, forms, helpers ===== */
+const layers=[],pageStack=[],PAGES={};
+function pushLayer(t,replace){layers.push(t);try{replace?history.replaceState({y:t},''):history.pushState({y:t},'')}catch(e){}}
+function hideModalEl(){el('modal').classList.add('hide')}
+function openModal(s){el('sheet').innerHTML=s;el('sheet').scrollTop=0;el('modal').classList.remove('hide');if(!layers.includes('m'))pushLayer('m')}
+function closeModal(fromPop){hideModalEl();const i=layers.lastIndexOf('m');if(i>=0){layers.splice(i,1);if(!fromPop){ignorePops++;try{history.back()}catch(e){ignorePops--}}}}
+function closeTopLayer(fromPop){const t=layers.pop();if(!t)return;if(t==='m')hideModalEl();else if(t==='p'){pageStack.pop();renderPage()}if(!fromPop){ignorePops++;try{history.back()}catch(e){ignorePops--}}}
+function closeAllLayers(){const n=layers.length;layers.length=0;pageStack.length=0;hideModalEl();renderPage();if(n){ignorePops++;try{history.go(-n)}catch(e){ignorePops--}}}
+function backBtn(){if(layers.length)closeTopLayer(false);else go('home')}
+window.addEventListener('popstate',()=>{if(ignorePops>0){ignorePops--;return}if(layers.length){closeTopLayer(true);return}if(navPushed){navPushed=false;go('home',true)}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&layers.length)closeTopLayer(false)});
+function msg(s){document.querySelectorAll('.toast').forEach(t=>t.remove());let t=document.createElement('div');t.className='toast';t.setAttribute('role','status');t.textContent=s;document.body.append(t);setTimeout(()=>t.remove(),2100)}
+function openPage(n,p){if(!PAGES[n])return;if(n==='calendar')cal.sel='';if(layers[layers.length-1]==='m'){hideModalEl();layers.pop();pageStack.push({n,p});pushLayer('p',true)}else{pageStack.push({n,p});pushLayer('p')}renderPage()}
+function renderPage(){const pg=el('page');if(!pg)return;const t=pageStack[pageStack.length-1];if(!t){pg.classList.add('hide');pg.innerHTML='';document.body.classList.remove('nopage');return}
+  const P=PAGES[t.n],old=pg.querySelector('.pbody'),sc=old?old.scrollTop:0,same=pg.dataset.n===t.n+'|'+pageStack.length;
+  pg.dataset.n=t.n+'|'+pageStack.length;pg.classList.remove('hide');
+  pg.innerHTML=`<div class="phead"><button class="pback" aria-label="رجوع" onclick="backBtn()">→</button><h2>${P.title(t.p)}</h2>${P.act?P.act(t.p):''}</div><div class="pbody">${P.render(t.p)}</div>`;
+  if(same){const b=pg.querySelector('.pbody');if(b)b.scrollTop=sc}if(P.after)P.after(t.p)}
+function curPage(){const t=pageStack[pageStack.length-1];return t?t.n:''}
+function refresh(){render();renderPage()}
+function go(t,fromPop){
+  if(!fromPop){
+    if(t!=='home'&&current==='home'&&!navPushed&&!layers.length){try{history.pushState({y:'t'},'')}catch(e){}navPushed=true}
+    else if(t==='home'&&navPushed&&!layers.length){navPushed=false;ignorePops++;try{history.back()}catch(e){ignorePops--}}
+  }
+  current=t;
+  if(t!=='services'){const s=el('search');if(s)s.value=''}
+  document.querySelectorAll('.nav button').forEach(b=>{const on=b.dataset.t===t;b.classList.toggle('active',on);b.setAttribute('aria-current',on?'page':'false')});
+  render();
+}
+/* ----- form helpers ----- */
+let formFn=null,formDel=null,formImg='';
+function val(id){const e=el(id);return e?String(e.value).trim():''}
+function chkv(id){const e=el(id);return !!(e&&e.checked)}
+function inp(id,label,v,o){o=o||{};const a=`id="${id}" class="input" aria-label="${esc(label)}" placeholder="${esc(o.ph||label)}"`;
+  return `<label class="lbl" for="${id}">${esc(label)}</label>`+(o.area?`<textarea ${a} rows="${o.rows||3}" maxlength="${o.max||500}">${esc(v)}</textarea>`:`<input ${a} type="${o.type||'text'}" maxlength="${o.max||80}"${o.min!=null?` min="${o.min}"`:''}${o.hi!=null?` max="${o.hi}"`:''}${o.type==='number'?' step="any" inputmode="decimal"':''}${o.mode?` inputmode="${o.mode}"`:''} value="${esc(v)}">`)}
+function selF(id,label,opts,v){return `<label class="lbl" for="${id}">${esc(label)}</label><select id="${id}" class="input" aria-label="${esc(label)}">${opts.map(o=>{const a=Array.isArray(o)?o:[o,o];return `<option value="${esc(a[0])}"${a[0]===v?' selected':''}>${esc(a[1])}</option>`}).join('')}</select>`}
+function chkF(id,label,on){return `<label class="chkrow"><input type="checkbox" id="${id}"${on?' checked':''}><span>${esc(label)}</span></label>`}
+function formModal(title,body,fn,o){o=o||{};formFn=fn;formDel=o.del||null;formImg=o.img||'';
+  openModal(`<button class="close" aria-label="إغلاق" onclick="closeModal()">×</button><h3>${title}</h3>${body}<button class="primary" style="margin-top:12px" onclick="runForm()">${o.save||'حفظ'}</button>${o.del?`<button class="secondary" style="margin-top:8px;color:#b0352d" onclick="runDel()">🗑 حذف</button>`:''}`)}
+function runForm(){if(!formFn)return;const r=formFn();if(r===false)return;closeModal();refresh();if(typeof r==='string')msg(r)}
+function runDel(){if(!formDel||!confirm('متأكد من الحذف؟'))return;const r=formDel();if(r===false)return;closeModal();refresh();msg(typeof r==='string'?r:'تم الحذف')}
+function readImage(file,max,q){return new Promise((res,rej)=>{if(!file||!/^image\//.test(file.type))return rej(new Error('type'));const fr=new FileReader();fr.onerror=()=>rej(new Error('read'));fr.onload=()=>{const im=new Image();im.onerror=()=>rej(new Error('img'));im.onload=()=>{const sc=Math.min(1,(max||720)/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.max(1,Math.round(im.width*sc));c.height=Math.max(1,Math.round(im.height*sc));c.getContext('2d').drawImage(im,0,0,c.width,c.height);res(c.toDataURL('image/jpeg',q||0.62))};im.src=fr.result};fr.readAsDataURL(file)})}
+function imgField(id){return `<label class="lbl" for="${id}">صورة (اختياري)</label><input type="file" accept="image/*" id="${id}" class="input" onchange="pickImg(this)"><div id="${id}Prev">${formImg?`<img class="prev" alt="" src="${formImg}">`:''}</div>`}
+function pickImg(inp){const f=inp.files&&inp.files[0];if(!f)return;readImage(f).then(u=>{formImg=u;const p=el(inp.id+'Prev');if(p)p.innerHTML=`<img class="prev" alt="" src="${u}"> <button class="secondary" type="button" onclick="formImg='';this.parentNode.innerHTML=''">إزالة الصورة</button>`}).catch(()=>msg('تعذر قراءة الصورة، جرّب صورة أخرى'))}
+function ph(num,tel){return tel?`<a class="tel" href="tel:${esc(num)}">📞 ${esc(num)}</a>`:''}
+/* ----- hub (all sections) + help ----- */
+const HUB=[['tasks','✅','المهام'],['habits','🔥','عاداتي'],['notes','📝','نوتاتي'],['calendar','📅','التقويم'],['prayer','🕌','الصلاة'],['adhkar','📿','الأذكار'],['live','🌤️','الطقس والأسعار'],['market','🛍️','سوق مستعمل'],['jobs','💼','سوق شغل'],['homefood','🍲','أكل بيتي'],['groups','👥','الجروبات'],['chat','💬','الشات'],['stories','🖼️','الستوريز'],['calls','📞','مكالمات'],['help','❓','مساعدة']];
+function hubGrid(only){return `<div class="hub">${HUB.filter(h=>PAGES[h[0]]&&(!only||only.includes(h[0]))).map(h=>`<button onclick="openPage('${h[0]}')"><span>${h[1]}</span>${h[2]}</button>`).join('')}</div>`}
+PAGES.hub={title:()=>'كل الأقسام',render:()=>hubGrid()+`<p class="muted" style="margin-top:14px">الجروبات والشات تحتاج حسابًا واتصالًا بالإنترنت. الستوريز والمكالمات تحتاج سيرفر وتفعيل لاحقًا.</p>`};
+PAGES.help={title:()=>'مساعدة',render:()=>`<div class="card"><b>التنقل</b><p class="muted">الشريط السفلي فيه الأقسام الخمسة. زر "كل الأقسام" في الرئيسية يفتح كل الميزات. زر الرجوع في الأندرويد (أو السهم → فوق) يرجعك للصفحة اللي قبلها بدل ما يقفل التطبيق.</p></div>
+<div class="card"><b>يومي</b><p class="muted">من الرئيسية تشوف مهام ومواعيد النهاردة وصرفك وباقي ميزانية اليوم. اضغط "＋ أضف مهمة" لإضافة مهمة، واضغط على المهمة لتعديلها أو حذفها.</p></div>
+<div class="card"><b>التذكيرات</b><p class="muted">التنبيهات تظهر في الرئيسية. لتفعيل إشعارات الجهاز: حسابي ← الإعدادات. الإشعارات وقت إغلاق التطبيق تحتاج دعم المتصفح ولا تُضمن بدون سيرفر.</p></div>
+<div class="card"><b>الأسواق</b><p class="muted">سوق المستعمل وسوق الشغل والأكل البيتي محلية لكل دولة: تشوف فقط ما أضفته أنت على هذا الجهاز لدولتك الحالية.</p></div>
+<div class="card"><b>بياناتك</b><p class="muted">كل شيء محفوظ على جهازك. من حسابي اعمل نسخة احتياطية JSON لتنقل بياناتك لجهاز آخر.</p></div>
+<div class="card"><b>بيانات تجريبية</b><p class="muted">الطقس وأسعار العملة والذهب حاليًا قيم تجريبية مكتوب عليها "تجريبي" إلى أن يتم ربط مصادر رسمية موثوقة.</p></div>`};
+/* sections reserved for the server phase: UI-only placeholders, no fake users, no data */
+function needsServer(title){return `<div class="card empty"><div style="font-size:34px">🔌</div><b>${title}</b><p class="muted">يحتاج سيرفر — الربط الدولي بين مصر والسعودية غير مفعّل بعد.</p></div>`}
+
+/* ===== يومي: tasks, habits, notes, calendar, alerts ===== */
+function greet(){const h=new Date().getHours();return h<5?'ليلة سعيدة':h<12?'صباح الخير':h<17?'نهارك سعيد':'مساء الخير'}
+function occursOn(t,k){if(k<t.date)return false;if(t.repeat==='none')return k===t.date;if(t.repeat==='daily')return true;const a=keyToDate(t.date),b=keyToDate(k);if(t.repeat==='weekly')return a.getDay()===b.getDay();if(t.repeat==='monthly')return b.getDate()===Math.min(a.getDate(),dim(b.getFullYear(),b.getMonth()+1));return false}
+function eventOn(e,k){if(e.repeat!=='yearly')return e.date===k;const a=keyToDate(e.date),b=keyToDate(k);if(a.getMonth()!==b.getMonth())return false;return b.getDate()===Math.min(a.getDate(),dim(b.getFullYear(),b.getMonth()+1))}
+function nextEventDate(e,k){if(e.repeat!=='yearly')return e.date>=k?e.date:null;const a=keyToDate(e.date),y=keyToDate(k).getFullYear();for(let yy=y;yy<=y+1;yy++){const day=Math.min(a.getDate(),dim(yy,a.getMonth()+1)),c=yy+'-'+pad2(a.getMonth()+1)+'-'+pad2(day);if(c>=k)return c}return null}
+function tasksOn(k){return d.tasks.filter(t=>occursOn(t,k)).sort((a,b)=>(a.time||'99:99').localeCompare(b.time||'99:99'))}
+function eventsOn(k){return d.events.filter(e=>eventOn(e,k)).sort((a,b)=>(a.time||'99:99').localeCompare(b.time||'99:99'))}
+function evIcon(t){return (EVENT_TYPES.find(x=>x[0]===t)||EVENT_TYPES[4])[1]}
+function repLabel(r){return r==='daily'?'يوميًا':r==='weekly'?'أسبوعيًا':r==='monthly'?'شهريًا':''}
+function dailyLeft(){const b=budgetVal();if(!b)return null;const z=new Date();return b/dim(z.getFullYear(),z.getMonth()+1)-todaySpend()}
+/* ---------- alerts / reminders ---------- */
+const alertSources=[];
+function computeAlerts(now){now=now||new Date();const tk=keyOf(now),mins=now.getHours()*60+now.getMinutes(),out=[];
+  d.tasks.forEach(t=>{if(!t.remind||!t.time||!occursOn(t,tk)||t.done[tk])return;const p=t.time.split(':').map(Number),tm=p[0]*60+p[1];if(mins>=tm-60&&mins<=tm+120)out.push({key:'t:'+t.id+':'+tk,icon:'⏰',title:'تذكير بمهمة',text:t.title+' — '+(mins<tm?'بعد '+an(tm-mins)+' دقيقة':'الآن')})});
+  d.events.forEach(e=>{if(!e.remind)return;const nx=nextEventDate(e,tk);if(!nx)return;const df=daysBetween(tk,nx);if(df===1)out.push({key:'e1:'+e.id+':'+nx,icon:evIcon(e.type),title:'تنبيه موعد',text:'غدًا: '+e.title});if(df===0)out.push({key:'e0:'+e.id+':'+nx,icon:evIcon(e.type),title:'موعد اليوم',text:'اليوم: '+e.title+(e.time?' — '+fmtTime(e.time):'')})});
+  alertSources.forEach(f=>{try{f(now,tk,mins).forEach(a=>out.push(a))}catch(e){}});return out}
+function canNotify(){return 'Notification' in window&&Notification.permission==='granted'&&d.settings.notif}
+function notify(title,body,tag){if(!canNotify())return;try{const sw=navigator.serviceWorker;(sw&&sw.getRegistration?sw.getRegistration():Promise.resolve(null)).then(reg=>{if(reg&&reg.showNotification)reg.showNotification(title,{body,tag,icon:'icons/icon-192.png',dir:'rtl',lang:'ar'});else new Notification(title,{body,tag,dir:'rtl',lang:'ar'})}).catch(()=>{})}catch(e){}}
+function enableNotif(){if(!('Notification' in window))return msg('الإشعارات غير مدعومة في هذا المتصفح');Notification.requestPermission().then(p=>{tx(()=>{d.settings.notif=p==='granted'});msg(p==='granted'?'تم تفعيل التنبيهات':'لم يتم السماح بالتنبيهات');refresh()})}
+function disableNotif(){tx(()=>{d.settings.notif=false});refresh()}
+function checkReminders(){if(!d.name)return;const fresh=computeAlerts().filter(a=>!d.fired[a.key]);if(!fresh.length)return;tx(()=>{fresh.forEach(a=>{d.fired[a.key]=1});const ks=Object.keys(d.fired);if(ks.length>400)ks.slice(0,ks.length-400).forEach(k=>delete d.fired[k])});fresh.forEach(a=>notify(a.title,a.text,a.key));if(current==='home'&&!layers.length)render()}
+/* ---------- home "يومي" card ---------- */
+function taskRow(t,k,small){const done=!!t.done[k];return `<div class="task${done?' done':''}"><button class="chk" aria-label="${done?'إلغاء الإنجاز':'تم'}" aria-pressed="${done}" onclick="toggleTask('${t.id}','${k}')">${done?'✓':''}</button><div class="tbody" role="button" tabindex="0" onclick="taskModal('${t.id}')" onkeydown="if(event.key==='Enter')taskModal('${t.id}')"><b>${esc(t.title)}</b><small>${[t.time?fmtTime(t.time):'',repLabel(t.repeat),t.remind&&t.time?'⏰':''].filter(Boolean).join(' · ')}</small></div></div>`}
+function dayHome(){const k=todayKey(),ts=tasksOn(k),es=eventsOn(k),left=dailyLeft(),doneN=ts.filter(t=>t.done[k]).length,al=computeAlerts();
+  return `${d.settings.tourDone?'':`<div class="card tour"><b>👋 أهلاً بيك في يومك</b><p class="muted">اضغط "كل الأقسام" لتشوف كل الميزات، أو "مساعدة" لشرح سريع.</p><div class="row"><button class="secondary" onclick="openPage('help')">مساعدة</button><button class="secondary" onclick="dismissTour()">تمام</button></div></div>`}
+  ${al.length?`<div class="card alertbox" role="status">${al.map(a=>`<div class="alrt"><span>${a.icon}</span><span>${esc(a.text)}</span></div>`).join('')}</div>`:''}
+  <div class="card daycard"><div class="hello2">${greet()} يا ${esc(d.name)} ☀️</div><div class="muted">${fmtDate(k)}</div>
+  <div class="stats"><div><small>مهام النهاردة</small><b>${an(doneN)}/${an(ts.length)}</b></div><div><small>مواعيد النهاردة</small><b>${an(es.length)}</b></div><div><small>صرفت النهاردة</small><b>${cash(todaySpend())}</b></div><div><small>فاضل من ميزانية اليوم</small><b class="${left!==null&&left<0?'neg':''}">${left===null?'<a onclick="budgetModal()" role="button" tabindex="0">حدد الميزانية</a>':cash(left)}</b></div></div>
+  ${es.length?`<div class="sub2">مواعيد</div>${es.map(e=>`<div class="task"><span class="eic">${evIcon(e.type)}</span><div class="tbody" role="button" tabindex="0" onclick="eventModal('${e.id}')"><b>${esc(e.title)}</b><small>${e.time?fmtTime(e.time):'طول اليوم'}</small></div></div>`).join('')}`:''}
+  <div class="sub2">مهام النهاردة</div>${ts.length?ts.slice(0,5).map(t=>taskRow(t,k)).join('')+(ts.length>5?`<button class="secondary" onclick="openPage('tasks')">عرض كل المهام (${an(ts.length)})</button>`:''):'<div class="muted" style="padding:6px 2px">مفيش مهام النهاردة ✨</div>'}
+  <button class="primary" style="margin-top:10px" onclick="taskModal()">＋ أضف مهمة</button></div>
+  <div class="section"><h3>أقسامك</h3><button onclick="openPage('hub')">كل الأقسام</button></div>${hubGrid(['tasks','habits','notes','calendar','prayer','adhkar','live','market'])}${prayerWidget()}${verseCard()}`}
+function dismissTour(){tx(()=>{d.settings.tourDone=true});render()}
+/* ---------- tasks ---------- */
+function toggleTask(id,k){const t=d.tasks.find(x=>x.id===id);if(!t)return;tx(()=>{if(t.done[k])delete t.done[k];else t.done[k]=1});refresh()}
+function taskModal(id,dateKey){const t=id?d.tasks.find(x=>x.id===id):null;if(id&&!t)return;
+  formModal(t?'تعديل مهمة':'إضافة مهمة',inp('tTitle','عنوان المهمة',t&&t.title,{max:100})+inp('tDate','التاريخ',t?t.date:(dateKey||todayKey()),{type:'date'})+inp('tTime','الوقت (اختياري)',t&&t.time,{type:'time'})+selF('tRep','التكرار',[['none','مرة واحدة'],['daily','يوميًا'],['weekly','أسبوعيًا'],['monthly','شهريًا']],t?t.repeat:'none')+chkF('tRem','ذكّرني قبل الموعد بساعة (محتاج وقت)',t?t.remind:false)+inp('tNotes','ملاحظات',t&&t.notes,{area:1,max:300,rows:2}),
+  ()=>{const title=val('tTitle'),date=val('tDate'),time=val('tTime');if(!title){msg('اكتب عنوان المهمة');return false}if(!isDateKey(date)){msg('اختار تاريخ صحيح');return false}if(chkv('tRem')&&!time){msg('اختار وقت علشان التذكير');return false}
+    const o={title,date,time,repeat:val('tRep'),remind:chkv('tRem'),notes:val('tNotes')};
+    if(!tx(()=>{if(t){const x=d.tasks.find(q=>q.id===id);Object.assign(x,o)}else d.tasks.push({...o,id:uid2(),done:{},created:Date.now()})}))return false;return t?'تم تعديل المهمة':'تمت إضافة المهمة'},
+  t?{del:()=>{if(!tx(()=>{d.tasks=d.tasks.filter(x=>x.id!==id)}))return false;return 'تم حذف المهمة'}}:{})}
+PAGES.tasks={title:()=>'المهام ✅',act:()=>`<button class="pact" onclick="taskModal()">＋ مهمة</button>`,render:()=>{const k=todayKey();let h=`<div class="sub2">النهاردة · ${fmtDate(k)}</div>`;const ts=tasksOn(k);h+=ts.length?ts.map(t=>taskRow(t,k)).join(''):'<div class="card empty">مفيش مهام النهاردة</div>';
+  for(let i=1;i<=7;i++){const kk=addDays(k,i),l=tasksOn(kk);if(l.length)h+=`<div class="sub2">${fmtDate(kk)}</div>`+l.map(t=>taskRow(t,kk)).join('')}return h}};
+/* ---------- habits ---------- */
+function streakOf(h){let k=todayKey();if(!h.checks[k])k=addDays(k,-1);let n=0;while(h.checks[k]){n++;k=addDays(k,-1)}return n}
+function habitPoints(h){const ks=Object.keys(h.checks).sort();let pts=ks.length*5,run=0,prev='';ks.forEach(k=>{run=(prev&&addDays(prev,1)===k)?run+1:1;if(run%7===0)pts+=20;prev=k});return pts}
+function totalPoints(){return d.habits.reduce((s,h)=>s+habitPoints(h),0)}
+function dayWord(n){return n===1?'يوم واحد':n===2?'يومين':n<=10?an(n)+' أيام':an(n)+' يومًا'}
+function toggleHabit(id){const h=d.habits.find(x=>x.id===id);if(!h)return;const k=todayKey();tx(()=>{if(h.checks[k])delete h.checks[k];else h.checks[k]=1});refresh()}
+function habitModal(id){const h=id?d.habits.find(x=>x.id===id):null;if(id&&!h)return;
+  formModal(h?'تعديل عادة':'إضافة عادة',`<div class="chips">${[['صلاة','🕌'],['رياضة','🏃'],['قراءة','📖'],['توفير','💰']].map(p=>`<button type="button" class="chip" onclick="el('hName').value='${p[0]}';el('hIcon').value='${p[1]}'">${p[1]} ${p[0]}</button>`).join('')}</div>`+inp('hName','اسم العادة',h&&h.name,{max:40})+inp('hIcon','أيقونة',h?h.icon:'⭐',{max:4}),
+  ()=>{const n=val('hName');if(!n){msg('اكتب اسم العادة');return false}const ic=val('hIcon')||'⭐';if(!tx(()=>{if(h){const x=d.habits.find(q=>q.id===id);x.name=n;x.icon=ic}else d.habits.push({id:uid2(),name:n,icon:ic,checks:{},created:Date.now()})}))return false;return h?'تم التعديل':'تمت إضافة العادة'},
+  h?{del:()=>{if(!tx(()=>{d.habits=d.habits.filter(x=>x.id!==id)}))return false;return 'تم حذف العادة'}}:{})}
+PAGES.habits={title:()=>'عاداتي 🔥',act:()=>`<button class="pact" onclick="habitModal()">＋ عادة</button>`,render:()=>{const k=todayKey();let h=`<div class="card pts"><small>نقاطي</small><b>⭐ ${an(totalPoints())}</b></div>`;
+  h+=d.habits.length?d.habits.map(x=>{const n=streakOf(x),done=!!x.checks[k];let wk='';for(let i=6;i>=0;i--)wk+=`<i class="dot${x.checks[addDays(k,-i)]?' on':''}"></i>`;return `<div class="card habit"><div class="row between"><div><b>${esc(x.icon)} ${esc(x.name)}</b><small class="muted">${n?'🔥 بقالك '+dayWord(n)+' متواصل':'ابدأ النهاردة'} · ⭐ ${an(habitPoints(x))}</small><div class="wk">${wk}</div></div><div class="row"><button class="chk big" aria-label="تعليم اليوم" aria-pressed="${done}" onclick="toggleHabit('${x.id}')">${done?'✓':''}</button><button class="pact" aria-label="تعديل" onclick="habitModal('${x.id}')">⋯</button></div></div></div>`}).join(''):'<div class="card empty">ضيف أول عادة: صلاة، رياضة، قراءة، توفير…</div>';return h}};
+/* ---------- notes ---------- */
+let noteQ='';
+function noteListHtml(){const q=norm(noteQ),l=d.notes.filter(n=>!q||norm(n.text).includes(q)).sort((a,b)=>b.updated-a.updated);return l.length?l.map(n=>`<div class="card note" role="button" tabindex="0" onclick="noteModal('${n.id}')" onkeydown="if(event.key==='Enter')noteModal('${n.id}')"><div class="ntext">${esc(n.text)}</div><small class="muted">${fmtDate(keyOf(new Date(n.updated)))}</small></div>`).join(''):`<div class="card empty">${q?'مفيش نتائج':'مفيش نوتات لسه ✍️'}</div>`}
+function noteSearch(v){noteQ=v;const l=el('noteList');if(l)l.innerHTML=noteListHtml()}
+function noteModal(id){const n=id?d.notes.find(x=>x.id===id):null;if(id&&!n)return;
+  formModal(n?'تعديل نوتة':'نوتة سريعة',inp('nText','النوتة',n&&n.text,{area:1,max:3000,rows:6}),()=>{const t=val('nText');if(!t){msg('اكتب النوتة');return false}if(!tx(()=>{if(n){const x=d.notes.find(q=>q.id===id);x.text=t;x.updated=Date.now()}else d.notes.push({id:uid2(),text:t,created:Date.now(),updated:Date.now()})}))return false;return 'تم الحفظ'},n?{del:()=>{if(!tx(()=>{d.notes=d.notes.filter(x=>x.id!==id)}))return false;return 'تم حذف النوتة'}}:{})}
+PAGES.notes={title:()=>'نوتاتي 📝',act:()=>`<button class="pact" onclick="noteModal()">＋ نوتة</button>`,render:()=>`<input class="input" id="noteQ" placeholder="ابحث في النوتات" aria-label="ابحث في النوتات" value="${esc(noteQ)}" oninput="noteSearch(this.value)"><div id="noteList" class="list" style="margin-top:8px">${noteListHtml()}</div>`};
+/* ---------- calendar ---------- */
+let cal={y:0,m:0,sel:''};
+function calInit(){if(!cal.sel){const z=new Date();cal={y:z.getFullYear(),m:z.getMonth(),sel:todayKey()}}}
+function calNav(n){cal.m+=n;if(cal.m<0){cal.m=11;cal.y--}if(cal.m>11){cal.m=0;cal.y++}refresh()}
+function calSel(k){cal.sel=k;refresh()}
+function eventModal(id,dateKey){const e=id?d.events.find(x=>x.id===id):null;if(id&&!e)return;
+  formModal(e?'تعديل موعد':'إضافة موعد',selF('evType','النوع',EVENT_TYPES.map(x=>[x[0],x[1]+' '+x[2]]),e?e.type:'birthday').replace('<select ','<select onchange="el(\'evRep\').value=this.value===\'birthday\'?\'yearly\':\'none\'" ')+inp('evTitle','العنوان',e&&e.title,{max:100})+inp('evDate','التاريخ',e?e.date:(dateKey||todayKey()),{type:'date'})+inp('evTime','الوقت (اختياري)',e&&e.time,{type:'time'})+selF('evRep','التكرار',[['none','مرة واحدة'],['yearly','كل سنة']],e?e.repeat:'yearly')+chkF('evRem','نبّهني قبلها بيوم',e?e.remind:true),
+  ()=>{const title=val('evTitle'),date=val('evDate');if(!title){msg('اكتب العنوان');return false}if(!isDateKey(date)){msg('اختار تاريخ صحيح');return false}const o={title,date,time:val('evTime'),type:val('evType'),repeat:val('evRep'),remind:chkv('evRem')};
+    if(!tx(()=>{if(e)Object.assign(d.events.find(q=>q.id===id),o);else d.events.push({...o,id:uid2()})}))return false;if(cal.sel!==undefined){cal.sel=date;const z=keyToDate(date);cal.y=z.getFullYear();cal.m=z.getMonth()}return e?'تم تعديل الموعد':'تمت إضافة الموعد'},
+  e?{del:()=>{if(!tx(()=>{d.events=d.events.filter(x=>x.id!==id)}))return false;return 'تم حذف الموعد'}}:{})}
+PAGES.calendar={title:()=>'التقويم 📅',act:()=>`<button class="pact" onclick="eventModal(null,cal.sel)">＋ موعد</button>`,render:()=>{calInit();const first=new Date(cal.y,cal.m,1),start=d.country==='SA'?0:6,off=(first.getDay()-start+7)%7,n=dim(cal.y,cal.m+1),tk=todayKey(),days=[];for(let i=0;i<7;i++)days.push(AR_DAYS[(start+i)%7].replace('ال','').slice(0,3));
+  let cells='';for(let i=0;i<off;i++)cells+='<i></i>';for(let dd=1;dd<=n;dd++){const k=cal.y+'-'+pad2(cal.m+1)+'-'+pad2(dd),has=eventsOn(k).length+tasksOn(k).length>0;cells+=`<button class="cd${k===tk?' today':''}${k===cal.sel?' sel':''}" aria-label="${fmtDate(k)}" onclick="calSel('${k}')">${an(dd)}${has?'<u></u>':''}</button>`}
+  const es=eventsOn(cal.sel),ts=tasksOn(cal.sel);let up=[];for(let i=0;i<=45;i++){const k=addDays(tk,i);eventsOn(k).forEach(e=>up.push([k,e]))}
+  return `<div class="card"><div class="row between calh"><button class="pact" aria-label="الشهر السابق" onclick="calNav(-1)">›</button><b>${AR_MONTHS[cal.m]} ${an(cal.y)}</b><button class="pact" aria-label="الشهر التالي" onclick="calNav(1)">‹</button></div><div class="cgrid wd">${days.map(x=>`<span>${x}</span>`).join('')}</div><div class="cgrid">${cells}</div></div>
+  <div class="sub2">${fmtDate(cal.sel)}</div>${es.map(e=>`<div class="task"><span class="eic">${evIcon(e.type)}</span><div class="tbody" role="button" tabindex="0" onclick="eventModal('${e.id}')"><b>${esc(e.title)}</b><small>${e.time?fmtTime(e.time):'طول اليوم'}${e.repeat==='yearly'?' · كل سنة':''}</small></div></div>`).join('')}${ts.map(t=>taskRow(t,cal.sel)).join('')}${es.length+ts.length?'':'<div class="muted" style="padding:6px 2px">مفيش حاجة في اليوم ده</div>'}
+  <div class="sub2">مواعيد قادمة (٤٥ يوم)</div>${up.length?up.slice(0,12).map(a=>`<div class="task"><span class="eic">${evIcon(a[1].type)}</span><div class="tbody" role="button" tabindex="0" onclick="eventModal('${a[1].id}')"><b>${esc(a[1].title)}</b><small>${fmtDate(a[0])}</small></div></div>`).join(''):'<div class="muted" style="padding:6px 2px">مفيش مواعيد قادمة</div>'}`}};
+
+/* ===== prayer times, adhkar, verse/dua, live data (demo), settings ===== */
+const EG_REG={'القاهرة':[30.04,31.24],'الجيزة':[30.01,31.21],'القليوبية':[30.46,31.18],'الإسكندرية':[31.20,29.92],'البحيرة':[31.04,30.47],'مطروح':[31.35,27.24],'الدقهلية':[31.04,31.38],'دمياط':[31.42,31.82],'كفر الشيخ':[31.11,30.94],'الغربية':[30.79,31.00],'المنوفية':[30.55,31.01],'الشرقية':[30.59,31.50],'بورسعيد':[31.27,32.30],'الإسماعيلية':[30.60,32.27],'السويس':[29.97,32.55],'الفيوم':[29.31,30.84],'بني سويف':[29.07,31.10],'المنيا':[28.11,30.75],'أسيوط':[27.18,31.18],'سوهاج':[26.56,31.70],'قنا':[26.16,32.72],'الأقصر':[25.69,32.64],'أسوان':[24.09,32.90],'البحر الأحمر':[27.26,33.81],'الوادي الجديد':[25.45,30.55],'شمال سيناء':[31.13,33.80],'جنوب سيناء':[28.24,33.62]};
+const SA_REG={'الرياض':[24.71,46.68],'مكة المكرمة':[21.39,39.86],'المدينة المنورة':[24.47,39.61],'القصيم':[26.33,43.97],'المنطقة الشرقية':[26.43,50.10],'عسير':[18.22,42.51],'تبوك':[28.38,36.57],'حائل':[27.52,41.70],'الحدود الشمالية':[30.98,41.02],'جازان':[16.89,42.55],'نجران':[17.49,44.13],'الباحة':[20.01,41.47],'الجوف':[29.97,40.21]};
+const CITY_XY={'طبرجل':[30.50,38.22],'القريات':[31.33,37.34],'دومة الجندل':[29.81,39.87],'جدة':[21.54,39.17],'الطائف':[21.27,40.42],'الخبر':[26.28,50.21],'ينبع':[24.09,38.06],'الجبيل':[27.01,49.66],'الهفوف':[25.38,49.59],'6 أكتوبر':[29.97,30.93],'الشيخ زايد':[30.02,30.97],'مدينة نصر':[30.06,31.34],'شرم الشيخ':[27.91,34.33],'الغردقة':[27.26,33.81],'برج العرب':[30.85,29.60]};
+function coords(){const s=d.settings;if(s.lat||s.lng)return {lat:s.lat,lng:s.lng,src:'موقعك المحدد'};const c=CITY_XY[d.city];if(c)return {lat:c[0],lng:c[1],src:d.city};const r=(d.country==='SA'?SA_REG:EG_REG)[d.region];if(r)return {lat:r[0],lng:r[1],src:d.region};return d.country==='SA'?{lat:24.71,lng:46.68,src:'الرياض'}:{lat:30.04,lng:31.24,src:'القاهرة'}}
+const PM={Egypt:{f:19.5,i:17.5},Makkah:{f:18.5,im:90},MWL:{f:18,i:17},Karachi:{f:18,i:18}};
+function pmethod(){return d.settings.method||(d.country==='SA'?'Makkah':'Egypt')}
+const rad=x=>x*Math.PI/180,deg=x=>x*180/Math.PI,sinD=x=>Math.sin(rad(x)),cosD=x=>Math.cos(rad(x)),tanD=x=>Math.tan(rad(x));
+const fixA=a=>{a=a-360*Math.floor(a/360);return a},fixH=a=>{a=a-24*Math.floor(a/24);return a};
+function julian(y,m,dd){if(m<=2){y-=1;m+=12}const A=Math.floor(y/100),B=2-A+Math.floor(A/4);return Math.floor(365.25*(y+4716))+Math.floor(30.6001*(m+1))+dd+B-1524.5}
+function sunPos(jd){const D=jd-2451545.0,g=fixA(357.529+0.98560028*D),q=fixA(280.459+0.98564736*D),L=fixA(q+1.915*sinD(g)+0.020*sinD(2*g)),e=23.439-0.00000036*D,RA=fixH(deg(Math.atan2(cosD(e)*sinD(L),cosD(L)))/15);return {decl:deg(Math.asin(sinD(e)*sinD(L))),eqt:q/15-RA}}
+function prayerTimes(date,lat,lng,tz,method){const P=PM[method]||PM.MWL,jd=julian(date.getFullYear(),date.getMonth()+1,date.getDate())-lng/(15*24);
+  const mid=t=>fixH(12-sunPos(jd+t).eqt),ang=(a,t,ccw)=>{const dc=sunPos(jd+t).decl,x=(-sinD(a)-sinD(dc)*sinD(lat))/(cosD(dc)*cosD(lat)),h=deg(Math.acos(x))/15;return mid(t)+(ccw?-h:h)},
+  asr=(f,t)=>{const dc=sunPos(jd+t).decl,a=-deg(Math.atan(1/(f+tanD(Math.abs(lat-dc)))));return ang(a,t,false)};
+  const adj=tz-lng/15;let fajr=ang(P.f,5/24,true)+adj,sunrise=ang(0.833,6/24,true)+adj,dhuhr=mid(12/24)+adj+1/60,as=asr(1,13/24)+adj,maghrib=ang(0.833,18/24,false)+adj,isha=P.im?maghrib+P.im/60:ang(P.i,18/24,false)+adj;
+  return {fajr,sunrise,dhuhr,asr:as,maghrib,isha}}
+function hhmm(h){if(!Number.isFinite(h))return '--:--';h=fixH(h+0.5/60);const H=Math.floor(h),M=Math.floor((h-H)*60);return pad2(H)+':'+pad2(M)}
+const PR_NAMES=[['fajr','الفجر'],['sunrise','الشروق'],['dhuhr','الظهر'],['asr','العصر'],['maghrib','المغرب'],['isha','العشاء']];
+function todayPrayer(z){z=z||new Date();const c=coords(),tz=-z.getTimezoneOffset()/60;return prayerTimes(z,c.lat,c.lng,tz,pmethod())}
+function nextPrayer(z){z=z||new Date();const now=z.getHours()+z.getMinutes()/60,t=todayPrayer(z);for(const p of PR_NAMES){if(p[0]==='sunrise')continue;if(t[p[0]]>now)return {k:p[0],name:p[1],at:t[p[0]],min:Math.round((t[p[0]]-now)*60)}}const tm=new Date(z.getFullYear(),z.getMonth(),z.getDate()+1),t2=todayPrayer(tm);return {k:'fajr',name:'الفجر',at:t2.fajr,min:Math.round((24-now+t2.fajr)*60)}}
+function minsText(m){const h=Math.floor(m/60),mm=m%60;return (h?an(h)+' ساعة ':'')+(mm||!h?an(mm)+' دقيقة':'')}
+function prayerWidget(){const n=nextPrayer();return `<div class="card prw" role="button" tabindex="0" onclick="openPage('prayer')"><div class="row between"><div><small class="muted">الصلاة القادمة</small><div class="big2">🕌 ${n.name} · ${fmtTime(hhmm(n.at))}</div></div><div class="muted">بعد ${minsText(n.min)}</div></div></div>`}
+PAGES.prayer={title:()=>'مواقيت الصلاة 🕌',render:()=>{const t=todayPrayer(),n=nextPrayer(),c=coords();return `<div class="card"><small class="muted">${fmtDate(todayKey())} · ${esc(c.src)}</small><div class="plist">${PR_NAMES.map(p=>`<div class="pr${p[0]===n.k?' next':''}"><span>${p[1]}</span><b>${fmtTime(hhmm(t[p[0]]))}</b></div>`).join('')}</div></div><p class="muted">الصلاة القادمة: <b>${n.name}</b> بعد ${minsText(n.min)}.</p><p class="muted">الحساب فلكي داخل التطبيق (طريقة: ${({Egypt:'الهيئة المصرية العامة للمساحة',Makkah:'أم القرى',MWL:'رابطة العالم الإسلامي',Karachi:'جامعة العلوم الإسلامية كراتشي'})[pmethod()]}) حسب موقعك. قد يختلف عن التقويم الرسمي بدقائق، فراجع الجهة الرسمية في بلدك.</p><button class="secondary" onclick="openPage('settings')">تغيير الموقع / الطريقة</button>`}};
+/* ---------- adhkar ---------- */
+const ADHKAR={
+ morning:[['آية الكرسي','اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِندَهُ إِلَّا بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلَا يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلَّا بِمَا شَاءَ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ وَلَا يَئُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ',1],
+  ['سورة الإخلاص','قُلْ هُوَ اللَّهُ أَحَدٌ * اللَّهُ الصَّمَدُ * لَمْ يَلِدْ وَلَمْ يُولَدْ * وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ',3],
+  ['سورة الفلق','قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ * مِن شَرِّ مَا خَلَقَ * وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ * وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ * وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ',3],
+  ['سورة الناس','قُلْ أَعُوذُ بِرَبِّ النَّاسِ * مَلِكِ النَّاسِ * إِلَٰهِ النَّاسِ * مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ * الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ * مِنَ الْجِنَّةِ وَالنَّاسِ',3],
+  ['','أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ',1],
+  ['','اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ النُّشُورُ',1],
+  ['','رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ صلى الله عليه وسلم نَبِيًّا',3],
+  ['','بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ',3],
+  ['','حَسْبِيَ اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ وَهُوَ رَبُّ الْعَرْشِ الْعَظِيمِ',7],
+  ['','سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',100]],
+ evening:[['آية الكرسي','اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِندَهُ إِلَّا بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلَا يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلَّا بِمَا شَاءَ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ وَلَا يَئُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ',1],
+  ['سورة الإخلاص','قُلْ هُوَ اللَّهُ أَحَدٌ * اللَّهُ الصَّمَدُ * لَمْ يَلِدْ وَلَمْ يُولَدْ * وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ',3],
+  ['سورة الفلق','قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ * مِن شَرِّ مَا خَلَقَ * وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ * وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ * وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ',3],
+  ['سورة الناس','قُلْ أَعُوذُ بِرَبِّ النَّاسِ * مَلِكِ النَّاسِ * إِلَٰهِ النَّاسِ * مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ * الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ * مِنَ الْجِنَّةِ وَالنَّاسِ',3],
+  ['','أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ',1],
+  ['','اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ الْمَصِيرُ',1],
+  ['','بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ',3],
+  ['','أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ',3],
+  ['','سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',100]],
+ after:[['','أَسْتَغْفِرُ اللَّهَ',3],['','اللَّهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ، تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ',1],['','سُبْحَانَ اللَّهِ',33],['','الْحَمْدُ لِلَّهِ',33],['','اللَّهُ أَكْبَرُ',33],['تمام المئة','لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ',1]]};
+const adhkarCnt={};
+let adTab='morning';
+function adKey(i){return todayKey()+adTab+i}
+function adTap(i){const t=ADHKAR[adTab][i][2],k=adKey(i);adhkarCnt[k]=Math.min(t,(adhkarCnt[k]||0)+1);renderPage()}
+function adTabSet(t){adTab=t;renderPage()}
+PAGES.adhkar={title:()=>'الأذكار 📿',render:()=>`<div class="seg">${[['morning','☀️ الصباح'],['evening','🌙 المساء'],['after','🕌 بعد الصلاة']].map(x=>`<button class="${adTab===x[0]?'on':''}" onclick="adTabSet('${x[0]}')">${x[1]}</button>`).join('')}</div>`+ADHKAR[adTab].map((a,i)=>{const c=adhkarCnt[adKey(i)]||0,done=c>=a[2];return `<div class="card dhk${done?' done':''}" role="button" tabindex="0" onclick="adTap(${i})">${a[0]?`<b>${a[0]}</b>`:''}<div class="atext">${a[1]}</div><div class="row between"><small class="muted">اضغط للعد</small><span class="pill">${an(c)}/${an(a[2])}${done?' ✓':''}</span></div></div>`}).join('')+`<p class="muted">العدّاد للجلسة الحالية فقط.</p>`};
+const VERSES=[['إِنَّ مَعَ الْعُسْرِ يُسْرًا','الشرح: 6'],['وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا * وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ','الطلاق: 2-3'],['أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ','الرعد: 28'],['وَقُل رَّبِّ زِدْنِي عِلْمًا','طه: 114'],['إِنَّ اللَّهَ مَعَ الصَّابِرِينَ','البقرة: 153'],['فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُونِ','البقرة: 152'],['وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَىٰ','الضحى: 5'],['وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ','الطلاق: 3'],['لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا','البقرة: 286'],['ادْعُونِي أَسْتَجِبْ لَكُمْ','غافر: 60'],['وَهُوَ مَعَكُمْ أَيْنَ مَا كُنتُمْ','الحديد: 4'],['فَاصْبِرْ صَبْرًا جَمِيلًا','المعارج: 5']];
+const DUAS=['رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ (البقرة: 201)','رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي (طه: 25-26)','اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلًا مُتَقَبَّلًا','يَا مُقَلِّبَ الْقُلُوبِ ثَبِّتْ قَلْبِي عَلَىٰ دِينِكَ','اللَّهُمَّ أَعِنِّي عَلَىٰ ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ','اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ','اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ','رَبَّنَا لَا تُؤَاخِذْنَا إِن نَّسِينَا أَوْ أَخْطَأْنَا (البقرة: 286)'];
+function dayIdx(){const z=new Date();return Math.floor((Date.UTC(z.getFullYear(),z.getMonth(),z.getDate())-Date.UTC(z.getFullYear(),0,0))/864e5)}
+function verseCard(){const v=VERSES[dayIdx()%VERSES.length],du=DUAS[dayIdx()%DUAS.length];return `<div class="card verse"><small class="muted">آية اليوم</small><div class="atext">﴿${v[0]}﴾ <small>(${v[1]})</small></div><small class="muted">دعاء اليوم</small><div class="atext">${du}</div></div>`}
+/* ---------- live data: DEMO placeholders until trusted sources are verified ---------- */
+const DEMO_LIVE={weather:{temp:24,min:17,max:27,code:0},rates:{SAR_EGP:13.0},gold:{g24:300,cur:'SAR'}};
+const WCODE=c=>c===0?'صافي ☀️':c<=3?'غائم جزئيًا ⛅':c<=48?'ضباب 🌫️':c<=67?'أمطار 🌧️':c<=77?'ثلوج ❄️':c<=82?'زخات 🌦️':'عواصف ⛈️';
+function liveGet(k){const c=d.cache[k];return c?{...c,manual:!c.demo}:{...DEMO_LIVE[k],ts:0,demo:true,manual:false}}
+function liveBadge(o){return o.demo?'<span class="pill demo">تجريبي</span>':'<span class="pill">يدوي · '+an(fmtDate(keyOf(new Date(o.ts))))+'</span>'}
+function goldRows(o){const cur=d.country==='SA'?'SAR':'EGP',r=liveGet('rates').SAR_EGP,g=cur===o.cur?o.g24:(cur==='EGP'?o.g24*r:o.g24/r);return [['عيار 24',g],['عيار 21',g*21/24],['عيار 18',g*18/24]].map(x=>`<div class="pr"><span>${x[0]} (جرام)</span><b>${cash(Math.round(x[1]*100)/100,cur)}</b></div>`).join('')+(cur==='EGP'?`<div class="pr"><span>جنيه ذهب (٨ جم عيار 21)</span><b>${cash(Math.round(g*21/24*8),cur)}</b></div>`:'')}
+function liveModal(k){const o=liveGet(k);
+  const f={weather:()=>inp('lTemp','درجة الحرارة',o.temp,{type:'number'}),rates:()=>inp('lRate','١ ريال = كام جنيه',o.SAR_EGP,{type:'number'}),gold:()=>inp('lGold','سعر جرام عيار 24 بعملة '+(o.cur==='SAR'?'الريال':'الجنيه'),o.g24,{type:'number'})}[k]();
+  formModal('تعديل يدوي',f+'<p class="muted">القيمة تُحفظ كإدخال يدوي منك إلى أن يتم ربط مصدر موثوق.</p>',()=>{const n=Number(val(k==='weather'?'lTemp':k==='rates'?'lRate':'lGold'));if(!Number.isFinite(n)||(k!=='weather'&&n<=0)){msg('أدخل رقم صحيح');return false}
+    return tx(()=>{const prev=liveGet(k),c={...prev,ts:Date.now(),demo:false};delete c.manual;if(k==='weather')c.temp=n;if(k==='rates')c.SAR_EGP=n;if(k==='gold')c.g24=n;d.cache[k]=c})?'تم الحفظ':false})}
+function resetLive(k){tx(()=>{delete d.cache[k]});refresh()}
+PAGES.live={title:()=>'الطقس والأسعار 🌤️',render:()=>{const w=liveGet('weather'),r=liveGet('rates'),g=liveGet('gold'),c=coords();return `<div class="card"><div class="row between"><b>🌤️ الطقس · ${esc(c.src)}</b>${liveBadge(w)}</div><div class="big2">${an(Math.round(w.temp))}° ${WCODE(w.code||0)}</div><small class="muted">العظمى ${an(w.max)}° · الصغرى ${an(w.min)}°</small><div class="row"><button class="secondary" onclick="liveModal('weather')">تعديل يدوي</button>${w.manual?`<button class="secondary" onclick="resetLive('weather')">رجوع للتجريبي</button>`:''}</div></div>
+  <div class="card"><div class="row between"><b>💱 الريال والجنيه</b>${liveBadge(r)}</div><div class="big2">١ ر.س = ${cash(r.SAR_EGP,'EGP')}</div><div class="row"><button class="secondary" onclick="liveModal('rates')">تعديل يدوي</button>${r.manual?`<button class="secondary" onclick="resetLive('rates')">رجوع للتجريبي</button>`:''}</div></div>
+  <div class="card"><div class="row between"><b>🥇 الذهب</b>${liveBadge(g)}</div>${goldRows(g)}<div class="row"><button class="secondary" onclick="liveModal('gold')">تعديل يدوي</button>${g.manual?`<button class="secondary" onclick="resetLive('gold')">رجوع للتجريبي</button>`:''}</div></div>
+  <p class="muted">⚠️ الأرقام المكتوب عليها "تجريبي" ليست أسعارًا حقيقية. سيتم ربط مصادر رسمية موثوقة لاحقًا بعد التحقق منها، ولا تعتمد عليها في أي قرار مالي.</p>`}};
+/* ---------- settings ---------- */
+function useMyLocation(){if(!navigator.geolocation)return msg('تحديد الموقع غير مدعوم');navigator.geolocation.getCurrentPosition(p=>{tx(()=>{d.settings.lat=Math.round(p.coords.latitude*1e4)/1e4;d.settings.lng=Math.round(p.coords.longitude*1e4)/1e4});msg('تم تحديد موقعك');refresh()},()=>msg('لم يتم السماح بتحديد الموقع'),{timeout:10000,maximumAge:600000})}
+function clearMyLocation(){tx(()=>{d.settings.lat=0;d.settings.lng=0});refresh()}
+function setMethod(v){tx(()=>{d.settings.method=v});refresh()}
+PAGES.settings={title:()=>'الإعدادات ⚙️',render:()=>{const c=coords(),perm='Notification' in window?Notification.permission:'unsupported';return `<div class="card"><b>🔔 التنبيهات</b><p class="muted">تظهر دائمًا داخل الرئيسية. لإشعارات الجهاز اسمح بها هنا (${perm==='granted'?'مسموح':perm==='denied'?'محظور من إعدادات المتصفح':perm==='unsupported'?'غير مدعوم':'لم تُطلب بعد'}).</p><button class="secondary" onclick="${d.settings.notif?'disableNotif()':'enableNotif()'}">${d.settings.notif?'إيقاف إشعارات الجهاز':'تفعيل إشعارات الجهاز'}</button></div>
+  <div class="card"><b>📍 الموقع لمواقيت الصلاة</b><p class="muted">الحالي: ${esc(c.src)} (${an(c.lat)}, ${an(c.lng)})</p><button class="secondary" onclick="useMyLocation()">استخدم موقعي الحالي</button>${d.settings.lat||d.settings.lng?`<button class="secondary" style="margin-top:8px" onclick="clearMyLocation()">رجوع لموقع مدينتي</button>`:''}</div>
+  <div class="card">${selF('stMethod','طريقة حساب الصلاة',[['','تلقائي حسب الدولة'],['Egypt','الهيئة المصرية'],['Makkah','أم القرى'],['MWL','رابطة العالم الإسلامي'],['Karachi','كراتشي']],d.settings.method).replace('<select ','<select onchange="setMethod(this.value)" ')}</div>`}};
+function extraProfileItems(){return `<button class="service" onclick="openPage('hub')"><span class="icon">🧭</span><span><b>كل الأقسام</b><small>كل ميزات يومك في مكان واحد</small></span></button><button class="service" onclick="openPage('settings')"><span class="icon">⚙️</span><span><b>الإعدادات</b><small>التنبيهات والموقع وطريقة الصلاة</small></span></button><button class="service" onclick="openPage('help')"><span class="icon">❓</span><span><b>مساعدة</b><small>شرح سريع لاستخدام التطبيق</small></span></button>`}
+
+/* ===== local markets (per country, this device only): used market, jobs, home food ===== */
+const mq={market:'',jobs:'',homefood:''},mcat={market:'',jobs:'',homefood:''};
+function mine(arr){return arr.filter(x=>x.country===d.country).sort((a,b)=>b.ts-a.ts)}
+function priceTxt(p){return p>0?cash(p):'السعر بالاتفاق'}
+function mFilter(k,arr,fields,catKey){const q=norm(mq[k]),c=mcat[k];return mine(arr).filter(x=>(!c||x[catKey]===c)&&(!q||norm(fields(x)).includes(q)))}
+function mChips(k,cats){return `<div class="chips"><button class="chip${mcat[k]?'':' on'}" onclick="mSetCat('${k}','')">الكل</button>${cats.map(c=>`<button class="chip${mcat[k]===c?' on':''}" onclick="mSetCat('${k}','${c}')">${c}</button>`).join('')}</div>`}
+function mSetCat(k,c){mcat[k]=c;renderPage()}
+function mSearch(k,v){mq[k]=v;const l=el('mList');if(l)l.innerHTML=({market:marketListHtml,jobs:jobsListHtml,homefood:foodListHtml})[k]()}
+function mSearchBox(k){return `<input class="input" id="mQ" placeholder="ابحث" aria-label="ابحث" value="${esc(mq[k])}" oninput="mSearch('${k}',this.value)">`}
+function localNote(){return `<p class="muted">📍 سوق ${d.country==='SA'?'السعودية':'مصر'} — محلي على جهازك فقط. ${''}العروض لا تظهر لمستخدمين آخرين قبل ربط السيرفر.</p>`}
+/* --- used market --- */
+function marketListHtml(){const l=mFilter('market',d.market,x=>x.title+' '+x.desc+' '+x.cat,'cat');return l.length?`<div class="mgrid">${l.map(x=>`<button class="mcard" onclick="marketView('${x.id}')">${x.img?`<img class="thumb" alt="" src="${x.img}">`:'<div class="thumb ph">🛍️</div>'}<b>${esc(x.title)}</b><span class="price">${priceTxt(x.price)}</span><small class="muted">${esc(x.cat)}</small></button>`).join('')}</div>`:`<div class="card empty">${mq.market||mcat.market?'مفيش نتائج':'مفيش منتجات لسه. اضغط ＋ لإضافة أول منتج'}</div>`}
+function marketView(id){const x=d.market.find(q=>q.id===id);if(!x)return;openModal(`<button class="close" aria-label="إغلاق" onclick="closeModal()">×</button><h3>${esc(x.title)}</h3>${x.img?`<img class="prev big" alt="" src="${x.img}">`:''}<div class="price">${priceTxt(x.price)}</div><p class="muted">${esc(x.cat)}</p><p>${esc(x.desc)||'—'}</p>${x.phone?`<p>${ph(x.phone,true)}</p>`:''}<button class="secondary" onclick="marketModal('${x.id}')">✎ تعديل</button><button class="secondary" style="margin-top:8px;color:#b0352d" onclick="marketSold('${x.id}')">✅ تم البيع (حذف المنتج)</button>`)}
+function marketSold(id){if(!confirm('تم بيع المنتج؟ سيتم حذفه من السوق.'))return;if(!tx(()=>{d.market=d.market.filter(x=>x.id!==id)}))return;closeModal();refresh();msg('تم حذف المنتج بعد البيع')}
+function marketModal(id){const x=id?d.market.find(q=>q.id===id):null;if(id&&!x)return;
+  formModal(x?'تعديل منتج':'إضافة منتج',inp('mTitle','اسم المنتج',x&&x.title,{max:80})+inp('mPrice','السعر ('+(cur()==='SAR'?'ريال':'جنيه')+')',x?x.price||'':'',{type:'number',min:0})+selF('mCat','القسم',MARKET_CATS,x?x.cat:'أخرى')+inp('mDesc','الوصف',x&&x.desc,{area:1,max:400})+inp('mPhone','رقم التواصل',x&&x.phone,{type:'tel',max:20,mode:'tel'})+imgField('mImg'),
+  ()=>{const title=val('mTitle');if(!title){msg('اكتب اسم المنتج');return false}const price=val('mPrice')===''?0:Number(val('mPrice'));if(!Number.isFinite(price)||price<0||price>1e9){msg('السعر غير صحيح');return false}
+    const o={title,price,cat:val('mCat'),desc:val('mDesc'),phone:val('mPhone'),img:formImg};
+    if(!tx(()=>{if(x)Object.assign(d.market.find(q=>q.id===id),o);else d.market.push({...o,id:uid2(),country:d.country,ts:Date.now()})}))return false;return x?'تم تعديل المنتج':'تمت إضافة المنتج'},{img:x?x.img:''})}
+PAGES.market={title:()=>'سوق مستعمل 🛍️',act:()=>`<button class="pact" onclick="marketModal()">＋ منتج</button>`,render:()=>localNote()+mSearchBox('market')+mChips('market',MARKET_CATS)+`<div id="mList">${marketListHtml()}</div>`};
+/* --- jobs --- */
+function jobsListHtml(){const l=mFilter('jobs',d.jobs,x=>x.title+' '+x.company+' '+x.desc,'kind');return l.length?`<div class="list">${l.map(x=>{const n=d.apps.filter(a=>a.jobId===x.id).length;return `<button class="service" onclick="jobView('${x.id}')"><span class="icon">${x.kind==='وظيفة'?'💼':'🙋'}</span><span style="flex:1"><b>${esc(x.title)}</b><small>${esc(x.kind)}${x.company?' · '+esc(x.company):''}${n?' · تقديمات: '+an(n):''}</small></span></button>`}).join('')}</div>`:`<div class="card empty">${mq.jobs||mcat.jobs?'مفيش نتائج':'مفيش وظايف لسه. اضغط ＋ لإضافة وظيفة أو طلب شغل'}</div>`}
+function jobView(id){const x=d.jobs.find(q=>q.id===id);if(!x)return;const myApps=d.apps.filter(a=>a.jobId===id);
+  openModal(`<button class="close" aria-label="إغلاق" onclick="closeModal()">×</button><h3>${esc(x.title)}</h3><p class="muted">${esc(x.kind)}${x.company?' · '+esc(x.company):''} · ${fmtDate(keyOf(new Date(x.ts)))}</p><p>${esc(x.desc)||'—'}</p>${x.phone?`<p>${ph(x.phone,true)}</p>`:''}${x.kind==='وظيفة'?`<button class="primary" onclick="applyModal('${x.id}')">قدّم على الوظيفة</button>`:''}${myApps.length?`<div class="sub2">تقديماتي (${an(myApps.length)})</div>${myApps.map(a=>`<div class="card"><b>${esc(a.name)}</b> <small class="muted">${esc(a.phone)}</small><p class="muted">${esc(a.msg)}</p></div>`).join('')}`:''}<button class="secondary" style="margin-top:8px" onclick="jobModal('${x.id}')">✎ تعديل</button>`)}
+function applyModal(id){const x=d.jobs.find(q=>q.id===id);if(!x)return;formModal('التقديم على: '+esc(x.title),inp('aName','اسمك',d.name,{max:60})+inp('aPhone','رقم التواصل','',{type:'tel',max:20,mode:'tel'})+inp('aMsg','رسالة قصيرة','',{area:1,max:300,rows:3}),()=>{const name=val('aName'),phone=val('aPhone');if(!name||!phone){msg('اكتب الاسم ورقم التواصل');return false}if(!tx(()=>{d.apps.push({id:uid2(),jobId:id,jobTitle:x.title,name,phone,msg:val('aMsg'),ts:Date.now()})}))return false;return 'تم تسجيل التقديم على جهازك'},{save:'إرسال التقديم'})}
+function jobModal(id){const x=id?d.jobs.find(q=>q.id===id):null;if(id&&!x)return;
+  formModal(x?'تعديل':'إضافة وظيفة / طلب شغل',selF('jKind','النوع',JOB_TYPES,x?x.kind:'وظيفة')+inp('jTitle','المسمى / المهنة',x&&x.title,{max:80})+inp('jCompany','الشركة أو الاسم',x&&x.company,{max:60})+inp('jDesc','التفاصيل',x&&x.desc,{area:1,max:400})+inp('jPhone','رقم التواصل',x&&x.phone,{type:'tel',max:20,mode:'tel'}),
+  ()=>{const title=val('jTitle');if(!title){msg('اكتب المسمى');return false}const o={title,kind:val('jKind'),company:val('jCompany'),desc:val('jDesc'),phone:val('jPhone')};if(!tx(()=>{if(x)Object.assign(d.jobs.find(q=>q.id===id),o);else d.jobs.push({...o,id:uid2(),country:d.country,ts:Date.now()})}))return false;return x?'تم التعديل':'تمت الإضافة'},
+  x?{del:()=>{if(!tx(()=>{d.jobs=d.jobs.filter(q=>q.id!==id)}))return false;return 'تم حذف الإعلان'}}:{})}
+PAGES.jobs={title:()=>'سوق شغل 💼',act:()=>`<button class="pact" onclick="jobModal()">＋ إعلان</button>`,render:()=>localNote()+mSearchBox('jobs')+mChips('jobs',JOB_TYPES)+`<div id="mList">${jobsListHtml()}</div>`};
+/* --- home food --- */
+function foodListHtml(){const l=mFilter('homefood',d.homefood,x=>x.title+' '+x.cook+' '+x.desc,'cat');return l.length?`<div class="mgrid">${l.map(x=>`<button class="mcard" onclick="foodView('${x.id}')">${x.img?`<img class="thumb" alt="" src="${x.img}">`:'<div class="thumb ph">🍲</div>'}<b>${esc(x.title)}</b><span class="price">${priceTxt(x.price)}</span><small class="muted">${esc(x.cook)}</small></button>`).join('')}</div>`:`<div class="card empty">${mq.homefood||mcat.homefood?'مفيش نتائج':'مفيش أكل بيتي لسه. اضغط ＋ لعرض أكلك'}</div>`}
+function foodView(id){const x=d.homefood.find(q=>q.id===id);if(!x)return;openModal(`<button class="close" aria-label="إغلاق" onclick="closeModal()">×</button><h3>${esc(x.title)}</h3>${x.img?`<img class="prev big" alt="" src="${x.img}">`:''}<div class="price">${priceTxt(x.price)}</div><p class="muted">${esc(x.cat)}${x.cook?' · من: '+esc(x.cook):''}</p><p>${esc(x.desc)||'—'}</p>${x.phone?`<p>${ph(x.phone,true)}</p>`:''}<button class="secondary" onclick="foodModal('${x.id}')">✎ تعديل</button>`)}
+function foodModal(id){const x=id?d.homefood.find(q=>q.id===id):null;if(id&&!x)return;
+  formModal(x?'تعديل':'عرض أكل بيتي',inp('fTitle','اسم الأكلة',x&&x.title,{max:80})+inp('fPrice','السعر ('+(cur()==='SAR'?'ريال':'جنيه')+')',x?x.price||'':'',{type:'number',min:0})+selF('fCat','النوع',FOOD_CATS,x?x.cat:'وجبات')+inp('fCook','اسم الطباخة / البيت',x?x.cook:'',{max:60})+inp('fDesc','الوصف',x&&x.desc,{area:1,max:400})+inp('fPhone','رقم التواصل',x&&x.phone,{type:'tel',max:20,mode:'tel'})+imgField('fImg'),
+  ()=>{const title=val('fTitle');if(!title){msg('اكتب اسم الأكلة');return false}const price=val('fPrice')===''?0:Number(val('fPrice'));if(!Number.isFinite(price)||price<0||price>1e9){msg('السعر غير صحيح');return false}const o={title,price,cat:val('fCat'),cook:val('fCook'),desc:val('fDesc'),phone:val('fPhone'),img:formImg};
+    if(!tx(()=>{if(x)Object.assign(d.homefood.find(q=>q.id===id),o);else d.homefood.push({...o,id:uid2(),country:d.country,ts:Date.now()})}))return false;return x?'تم التعديل':'تمت الإضافة'},
+  Object.assign({img:x?x.img:''},x?{del:()=>{if(!tx(()=>{d.homefood=d.homefood.filter(q=>q.id!==id)}))return false;return 'تم حذف الأكلة'}}:{}))}
+PAGES.homefood={title:()=>'أكل بيتي 🍲',act:()=>`<button class="pact" onclick="foodModal()">＋ أكلة</button>`,render:()=>localNote()+mSearchBox('homefood')+mChips('homefood',FOOD_CATS)+`<div id="mList">${foodListHtml()}</div>`};
+/* ---- services hub shortcut (shown in the services tab) ---- */
+function servicesHub(){return `<div class="section" style="margin-top:0"><h3>أقسام محلية</h3><button onclick="openPage('hub')">كل الأقسام</button></div>${hubGrid(['market','jobs','homefood'])}`}
+
+/* ---------- التواصل الدولي (واجهة فقط — يحتاج سيرفر) ---------- */
+function srvMsg(){msg('يحتاج سيرفر — الربط الدولي مصر↔السعودية غير مفعّل بعد')}
+function srvBanner(){return `<div class="card alertbox"><b>🔌 يحتاج سيرفر</b><p class="muted">الواجهة جاهزة فقط. الربط الحقيقي بين مصر والسعودية غير مفعّل، ولا توجد حسابات أو رسائل أو أشخاص هنا.</p></div>`}
+PAGES.groups={title:()=>'الجروبات',render:()=>srvBanner()+`<button class="primary" onclick="srvMsg()">＋ إنشاء جروب</button><div class="card empty" style="margin-top:12px"><div style="font-size:34px">👥</div><b>لا توجد جروبات</b><p class="muted">ستظهر جروباتك هنا بعد تفعيل الربط.</p></div><div class="card"><b>منشورات الجروب</b><div class="row" style="margin-top:8px"><input class="input" disabled placeholder="اكتب منشورًا… (يحتاج سيرفر)"><button class="pact" onclick="srvMsg()">نشر</button></div></div>`};
+PAGES.chat={title:()=>'الشات',render:()=>srvBanner()+`<div class="card empty"><div style="font-size:34px">💬</div><b>لا توجد محادثات</b><p class="muted">ستظهر محادثاتك هنا بعد تفعيل الربط.</p></div><div class="card"><div class="row"><input class="input" disabled placeholder="اكتب رسالة… (يحتاج سيرفر)"><button class="pact" onclick="srvMsg()">إرسال</button></div></div>`};
+PAGES.stories={title:()=>'الستوريز',render:()=>srvBanner()+`<div class="chips"><button class="chip" onclick="srvMsg()">＋ ستوري جديدة</button></div><div class="card empty"><div style="font-size:34px">🖼️</div><b>لا توجد ستوريز</b><p class="muted">ستوريز الأصدقاء تظهر هنا بعد تفعيل الربط.</p></div>`};
+PAGES.calls={title:()=>'مكالمات صوتية',render:()=>srvBanner()+`<div class="card empty"><div style="font-size:34px">📞</div><b>لا توجد مكالمات</b><p class="muted">المكالمات الصوتية الدولية تحتاج سيرفر إشارة وWebRTC.</p></div><div class="chips"><button class="chip" onclick="srvMsg()">📞 اتصال</button><button class="chip" onclick="srvMsg()">🎙️ كتم</button><button class="chip" onclick="srvMsg()">⛔ إنهاء</button></div>`};
+
+/* ===== Supabase: جروبات + بوستات + شات (fetch مباشر بدون مكتبات) ===== */
+const SB_URL='https://thdmlbmhloebkghmciyq.supabase.co',SB_KEY='sb_publishable_iZaj0GIiHTFd-PTcF96xJQ__0g3WEaC',SB_LS='yomak_sb';
+const cl={cnt:{},groups:null,mine:{},posts:null,msgs:null,tab:'posts',err:'',lastMsg:0};
+function cs(){try{const s=JSON.parse(localStorage.getItem(SB_LS)||'null');return s&&s.access&&s.uid?s:null}catch(e){return null}}
+function setCs(s){try{s?localStorage.setItem(SB_LS,JSON.stringify(s)):localStorage.removeItem(SB_LS)}catch(e){}}
+function sbErr(e){if(e&&e.status===401)return 'انتهت الجلسة، سجّل الدخول من جديد';if(e&&e.status===0||!navigator.onLine)return 'لا يوجد اتصال بالإنترنت';return (e&&e.message)||'حدث خطأ'}
+async function sbRaw(path,o){o=o||{};const h={apikey:SB_KEY,'Content-Type':'application/json'};if(o.token)h.Authorization='Bearer '+o.token;if(o.prefer)h.Prefer=o.prefer;
+  let r;try{r=await fetch(SB_URL+path,{method:o.method||'GET',headers:h,body:o.body?JSON.stringify(o.body):undefined})}catch(e){throw {status:0,message:'لا يوجد اتصال بالإنترنت'}}
+  let j=null;try{j=await r.json()}catch(e){}
+  if(!r.ok){let m=(j&&(j.msg||j.message||j.error_description||j.error))||('خطأ '+r.status);const c=j&&j.code;
+    if(c==='42501'||/row-level security/i.test(m))m='لا تملك صلاحية لهذا الإجراء (تأكد من تشغيل ملفات SQL كاملة) — '+m;else if(c==='42P01'||c==='PGRST205'||/does not exist|schema cache/i.test(m))m='الجدول غير موجود في Supabase — شغّل ملف SQL المطلوب — '+m;else if(c==='23503')m='الحساب غير مكتمل (profile) — سجّل خروج ثم دخول — '+m;
+    if(j&&j.details)m+=' ('+j.details+')';throw {status:r.status,message:m}}return j}
+async function sb(path,o){o=o||{};let s=cs();if(!s)throw {status:401,message:'سجّل الدخول أولًا'};
+  if(s.exp-30<Date.now()/1000){try{const j=await sbRaw('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:s.refresh}});s=saveSess(j,s.name)}catch(e){if(e.status!==0)setCs(null);throw e}}
+  return sbRaw(path,{...o,token:s.access})}
+function saveSess(j,name){const s={access:j.access_token,refresh:j.refresh_token,exp:Math.floor(Date.now()/1000)+(j.expires_in||3600),uid:j.user.id,name:name||(j.user.user_metadata&&j.user.user_metadata.name)||''};setCs(s);return s}
+function authModal(mode){const su=mode==='signup';
+  formModal(su?'إنشاء حساب':'تسجيل الدخول',(su?inp('aName','الاسم الظاهر',d.name||'',{max:40}):'')+inp('aMail','البريد الإلكتروني','',{type:'email',mode:'email',max:120})+inp('aPass','كلمة السر (٦ أحرف على الأقل)','',{type:'password',max:72})+`<button class="secondary" type="button" style="margin-top:8px" onclick="authModal('${su?'login':'signup'}')">${su?'عندي حساب — دخول':'ما عنديش حساب — إنشاء حساب'}</button>`,()=>{doAuth(su);return false},{save:su?'إنشاء الحساب':'دخول'})}
+async function doAuth(su){const mail=val('aMail'),pass=el('aPass')?el('aPass').value:'',name=su?val('aName'):'';
+  if(su&&!name){msg('اكتب الاسم');return}if(!/^\S+@\S+\.\S+$/.test(mail)){msg('البريد غير صحيح');return}if(pass.length<6){msg('كلمة السر قصيرة');return}
+  msg('جاري التنفيذ…');
+  try{let j;
+    if(su){j=await sbRaw('/auth/v1/signup',{method:'POST',body:{email:mail,password:pass,data:{name}}});if(!j.access_token){closeModal();msg('تم إنشاء الحساب — أكّد البريد من الرسالة ثم سجّل الدخول');return}}
+    else j=await sbRaw('/auth/v1/token?grant_type=password',{method:'POST',body:{email:mail,password:pass}});
+    let s=saveSess(j,name);
+    let nm=name;if(!su){try{const r=await sb('/rest/v1/profiles?id=eq.'+s.uid+'&select=name');nm=r&&r[0]&&r[0].name||''}catch(e){}}
+    nm=nm||d.name||'مستخدم';s.name=nm;setCs(s);
+    await sb('/rest/v1/profiles',{method:'POST',prefer:'resolution=merge-duplicates',body:{id:s.uid,name:nm.slice(0,40),country:d.country}});
+    cl.groups=null;cl.meTs=0;closeModal();renderPage();msg('أهلًا '+nm)
+  }catch(e){msg(sbErr(e))}}
+function sbLogout(){if(!confirm('تسجيل الخروج؟'))return;setCs(null);cl.admin=null;cl.ban=null;cl.rep=0;cl.meTs=0;cl.groups=null;cl.posts=null;cl.msgs=null;cl.mine={};closeAllLayers();msg('تم تسجيل الخروج')}
+function authCard(){return `<div class="card"><b>🔐 سجّل دخولك للتواصل</b><p class="muted">الجروبات والشات بين مصر والسعودية بحسابات حقيقية. تحتاج اتصال بالإنترنت.</p><div class="chips"><button class="chip on" onclick="authModal('login')">دخول</button><button class="chip" onclick="authModal('signup')">إنشاء حساب</button></div></div>`}
+function when(t){const x=new Date(t);if(isNaN(x))return '';return x.toLocaleString('ar-EG',{hour:'2-digit',minute:'2-digit',day:'numeric',month:'short'})}
+async function loadGroups(){const s=cs();if(!s)return;cl.err='';if(!cl.meTs||Date.now()-cl.meTs>60000){cl.meTs=Date.now();loadMe()}
+  try{const [g,m]=await Promise.all([sb('/rest/v1/groups?select=id,name,description,country,owner&order=created_at.desc&limit=100'),sb('/rest/v1/group_members?select=group_id,user_id&limit=10000')]);
+    cl.gTs=Date.now();cl.groups=g||[];cl.mine={};cl.cnt={};(m||[]).forEach(x=>{cl.cnt[x.group_id]=(cl.cnt[x.group_id]||0)+1;if(x.user_id===s.uid)cl.mine[x.group_id]=1})}catch(e){cl.gTs=Date.now();cl.err=sbErr(e);cl.groups=[]}
+  if(curPage()==='groups'||curPage()==='chat')renderPage()}
+function grpCount(g){return (cl.cnt&&cl.cnt[g.id])||0}
+function grpCard(g,chat){const mem=!!cl.mine[g.id];return `<div class="card"><b>${esc(g.name)}</b> <span class="pill">${g.country==='SA'?'🇸🇦':g.country==='EG'?'🇪🇬':''} ${an(grpCount(g))} عضو</span>${g.description?`<p class="muted">${esc(g.description)}</p>`:''}<div class="chips">${mem?`<button class="chip on" onclick="openGroup('${esc(g.id)}','${chat?'chat':'posts'}')">${chat?'💬 افتح الشات':'فتح'}</button>`:`<button class="chip" onclick="joinGroup('${esc(g.id)}')">انضمام</button>`}</div></div>`}
+function openGroup(id,tab){const g=(cl.groups||[]).find(x=>x.id===id);if(!g)return;cl.tab=tab||'posts';cl.posts=null;cl.msgs=null;cl.lastMsg=0;openPage('group',{id:g.id,name:g.name})}
+async function joinGroup(id){if(banStop())return;try{await ensureProfile();await sb('/rest/v1/group_members',{method:'POST',body:{group_id:id}});cl.mine[id]=1;msg('تم الانضمام');cl.groups=null;renderPage()}catch(e){msg(sbErr(e))}}
+function groupModal(){formModal('إنشاء جروب',inp('gName','اسم الجروب','',{max:60})+inp('gDesc','وصف (اختياري)','',{area:1,max:300,rows:3})+'<p id="gErr" class="muted" style="color:#b0352d;overflow-wrap:anywhere"></p>',()=>{createGroup();return false},{save:'إنشاء'})}
+async function ensureProfile(){const s=cs();if(!s)return;const r=await sb('/rest/v1/profiles?id=eq.'+s.uid+'&select=id');if(!r||!r.length)await sb('/rest/v1/profiles',{method:'POST',prefer:'resolution=merge-duplicates',body:{id:s.uid,name:(s.name||d.name||'مستخدم').slice(0,40),country:d.country}})}
+function showErr(id,e){const t=sbErr(e),x=el(id);if(x)x.textContent='⚠️ '+t;msg(t.slice(0,80))}
+async function createGroup(){if(banStop())return;const name=val('gName');if(name.length<2){msg('اكتب اسم الجروب (حرفين على الأقل)');return}
+  try{await ensureProfile();const r=await sb('/rest/v1/groups',{method:'POST',prefer:'return=representation',body:{name,description:val('gDesc'),country:d.country}});const id=r&&r[0]&&r[0].id;if(!id)throw {message:'تعذر إنشاء الجروب'};
+    await sb('/rest/v1/group_members',{method:'POST',body:{group_id:id}});cl.groups=null;closeModal();renderPage();msg('تم إنشاء الجروب')}catch(e){showErr('gErr',e)}}
+function whoBar(){const s=cs();return s?`<p class="muted">مسجّل باسم <b>${esc(s.name)}</b> · <a href="#" onclick="sbLogout();return false">خروج</a></p>`:''}
+PAGES.groups={title:()=>'الجروبات',act:()=>cs()?`<button class="pact" aria-label="تحديث" onclick="cl.gTs=0;renderPage()">↻</button><button class="pact" onclick="groupModal()">＋ جروب</button>`:'',
+  render:()=>{if(!cs())return authCard();const g=cl.groups;return whoBar()+(cl.err?`<div class="card alertbox">${esc(cl.err)} <button class="chip" onclick="cl.groups=null;renderPage()">إعادة المحاولة</button></div>`:'')+(g===null?'<p class="muted">جاري التحميل…</p>':g.length?g.map(x=>grpCard(x,false)).join(''):'<div class="card empty"><div style="font-size:34px">👥</div><b>لا توجد جروبات بعد</b><p class="muted">أنشئ أول جروب.</p></div>')},
+  after:()=>{if(cs()&&(cl.groups===null||Date.now()-(cl.gTs||0)>20000))loadGroups()}};
+PAGES.chat={title:()=>'الشات',render:()=>{if(!cs())return authCard();const g=cl.groups;if(g===null)return '<p class="muted">جاري التحميل…</p>';const m=g.filter(x=>cl.mine[x.id]);return whoBar()+(m.length?m.map(x=>grpCard(x,true)).join(''):'<div class="card empty"><div style="font-size:34px">💬</div><b>لا توجد محادثات</b><p class="muted">انضم لجروب من صفحة الجروبات ليظهر شاته هنا.</p><button class="chip on" onclick="openPage(\'groups\')">الجروبات</button></div>')},
+  after:()=>{if(cs()&&cl.groups===null)loadGroups()}};
+async function loadPosts(id){try{cl.posts=await sb('/rest/v1/posts?group_id=eq.'+encodeURIComponent(id)+'&select=id,body,created_at,user_id,profiles(name)&order=created_at.desc&limit=50')}catch(e){cl.posts=[];msg(sbErr(e))}if(curPage()==='group'&&cl.tab==='posts')renderPage()}
+function msgHtml(){const s=cs();return (cl.msgs||[]).map(m=>`<div class="bub${s&&m.user_id===s.uid?' me':''}"><small>${esc(m.profiles&&m.profiles.name||'')} · ${when(m.created_at)}${s&&m.user_id!==s.uid?` · <a href="#" onclick="reportItem('message','${m.id}');return false">إبلاغ</a>`:''}</small><div>${esc(m.body)}</div></div>`).join('')||'<p class="muted">ابدأ المحادثة…</p>'}
+async function loadMsgs(id,quiet){try{const r=await sb('/rest/v1/messages?group_id=eq.'+encodeURIComponent(id)+'&select=id,body,created_at,user_id,profiles(name)&order=id.desc&limit=60');const l=(r||[]).reverse(),last=l.length?l[l.length-1].id:0;
+  if(quiet&&last===cl.lastMsg&&cl.msgs)return;cl.msgs=l;cl.lastMsg=last;const b=el('msgs');if(b){b.innerHTML=msgHtml();b.scrollTop=b.scrollHeight}else if(curPage()==='group'&&cl.tab==='chat')renderPage()}catch(e){if(!quiet){cl.msgs=cl.msgs||[];msg(sbErr(e))}}}
+function curGroup(){const t=pageStack[pageStack.length-1];return t&&t.n==='group'?t.p:null}
+function setTab(t){cl.tab=t;renderPage()}
+async function sendPost(){if(banStop())return;const g=curGroup(),b=val('pBody');if(!g)return;if(!b){msg('اكتب المنشور');return}
+  try{await sb('/rest/v1/posts',{method:'POST',body:{group_id:g.id,body:b}});el('pBody').value='';await loadPosts(g.id);msg('تم النشر')}catch(e){msg(sbErr(e))}}
+async function sendMsg(){if(banStop())return;const g=curGroup(),b=val('cBody');if(!g)return;if(!b)return;
+  try{await sb('/rest/v1/messages',{method:'POST',body:{group_id:g.id,body:b}});el('cBody').value='';await loadMsgs(g.id)}catch(e){msg(sbErr(e))}}
+async function delPost(id){if(!confirm('حذف المنشور؟'))return;try{await sb('/rest/v1/posts?id=eq.'+encodeURIComponent(id),{method:'DELETE'});const g=curGroup();if(g)loadPosts(g.id)}catch(e){msg(sbErr(e))}}
+async function reportItem(kind,id){if(!confirm('إبلاغ عن هذا المحتوى؟'))return;try{await sb('/rest/v1/reports',{method:'POST',body:{kind,target:String(id),reason:'مخالف'}});msg('تم إرسال البلاغ')}catch(e){msg(sbErr(e))}}
+PAGES.group={title:p=>esc(p&&p.name||'جروب'),render:p=>{const s=cs();if(!s)return authCard();
+  const tabs=groupBar(curGroupObj())+`<div class="seg"><button class="${cl.tab==='posts'?'on':''}" onclick="setTab('posts')">📰 المنشورات</button><button class="${cl.tab==='chat'?'on':''}" onclick="setTab('chat')">💬 الشات</button></div>`;
+  if(cl.tab==='chat')return tabs+`<div id="msgs" class="msgs">${cl.msgs===null?'<p class="muted">جاري التحميل…</p>':msgHtml()}</div><div class="row" style="display:flex;gap:6px;margin-top:8px"><input id="cBody" class="input" maxlength="1000" placeholder="اكتب رسالة" aria-label="رسالة" onkeydown="if(event.key==='Enter')sendMsg()"><button class="pact" onclick="sendMsg()">إرسال</button></div>`;
+  return tabs+`<div class="card"><textarea id="pBody" class="input" rows="3" maxlength="1000" placeholder="اكتب منشورًا للجروب" aria-label="منشور"></textarea><button class="primary" style="margin-top:8px" onclick="sendPost()">نشر</button></div>`+(cl.posts===null?'<p class="muted">جاري التحميل…</p>':cl.posts.length?cl.posts.map(x=>`<div class="card"><small class="muted">${esc(x.profiles&&x.profiles.name||'')} · ${when(x.created_at)}</small><p style="white-space:pre-wrap">${esc(x.body)}</p>${x.user_id===s.uid||canMod(curGroupObj())?`<button class="chip" onclick="delPost('${esc(x.id)}')">🗑 حذف</button>`:''}${x.user_id!==s.uid?`<button class="chip" onclick="reportItem('post','${esc(x.id)}')">إبلاغ</button>`:''}</div>`).join(''):'<div class="card empty"><b>لا توجد منشورات</b></div>')},
+  after:p=>{if(!cs()||!p)return;if(cl.tab==='chat'){if(cl.msgs===null)loadMsgs(p.id);else{const b=el('msgs');if(b)b.scrollTop=b.scrollHeight}}else if(cl.posts===null)loadPosts(p.id)}};
+setInterval(()=>{const g=curGroup();if(g&&cl.tab==='chat'&&!document.hidden&&cs()&&navigator.onLine)loadMsgs(g.id,true)},2000);
+/* ===== المكالمات الصوتية: مكان تركيب المزوّد (مثلًا WebRTC + TURN) ===== */
+const CALL_PROVIDER={ready:false,name:'',start:null,answer:null,hangup:null,mute:null}; // ركّب الخدمة هنا لاحقًا
+function startCall(){if(!CALL_PROVIDER.ready||!CALL_PROVIDER.start){msg('خدمة المكالمات لم تُركّب بعد');return}CALL_PROVIDER.start()}
+function callAct(k){if(!CALL_PROVIDER.ready||!CALL_PROVIDER[k]){msg('خدمة المكالمات لم تُركّب بعد');return}CALL_PROVIDER[k]()}
+PAGES.calls={title:()=>'مكالمات صوتية',render:()=>`<div class="card alertbox"><b>📞 جاهزة للتركيب</b><p class="muted">الواجهة موجودة، ومزوّد المكالمات (WebRTC + سيرفر TURN) لم يُركَّب بعد.</p></div><div class="chips"><button class="chip" onclick="startCall()">📞 اتصال</button><button class="chip" onclick="callAct('mute')">🎙️ كتم</button><button class="chip" onclick="callAct('hangup')">⛔ إنهاء</button></div><div class="card empty"><div style="font-size:34px">📞</div><b>لا توجد مكالمات</b></div>`};
+
+/* ===== شات خاص بين شخصين ===== */
+cl.ctab='groups';cl.dm=null;cl.dmMsgs=null;cl.dmLast=0;
+async function loadDms(){try{cl.dm=await sb('/rest/v1/dm_chats?select=id,user_a,user_b,a:profiles!dm_chats_user_a_fkey(name),b:profiles!dm_chats_user_b_fkey(name)&order=created_at.desc&limit=100')}catch(e){cl.dm=[];cl.err=sbErr(e);msg(sbErr(e).slice(0,90))}if(curPage()==='chat')renderPage()}
+function dmName(x){const s=cs();const o=s&&x.user_a===s.uid?x.b:x.a;return (o&&o.name)||'مستخدم'}
+function setCtab(t){cl.ctab=t;renderPage()}
+function dmModal(){formModal('محادثة خاصة جديدة',inp('dQ','ابحث باسم الشخص','',{max:40})+'<button class="secondary" type="button" style="margin-top:8px" onclick="findPeople()">بحث</button><div id="dRes"></div><p id="dErr" class="muted" style="color:#b0352d;overflow-wrap:anywhere"></p>',()=>{findPeople();return false},{save:'بحث'})}
+async function findPeople(){const q=val('dQ').replace(/[%*,()]/g,' ').trim(),s=cs();if(q.length<2){msg('اكتب حرفين على الأقل');return}
+  try{const r=await sb('/rest/v1/profiles?select=id,name,country&name=ilike.*'+encodeURIComponent(q)+'*&id=neq.'+s.uid+'&limit=20');const b=el('dRes');if(!b)return;
+    b.innerHTML=r&&r.length?r.map(x=>`<button class="mcard" style="width:100%;margin-top:6px" data-id="${esc(x.id)}" data-nm="${esc(x.name)}" onclick="startDm(this.dataset.id,this.dataset.nm)"><b>${esc(x.name)}</b> <span class="muted">${x.country==='SA'?'🇸🇦':x.country==='EG'?'🇪🇬':''}</span></button>`).join(''):'<p class="muted">لا توجد نتائج</p>'}catch(e){showErr('dErr',e)}}
+async function startDm(other,name){if(banStop())return;const s=cs();if(!s||!/^[0-9a-f-]{36}$/i.test(other))return;const [a,b]=s.uid<other?[s.uid,other]:[other,s.uid];
+  try{await ensureProfile();let r=await sb('/rest/v1/dm_chats?select=id&user_a=eq.'+a+'&user_b=eq.'+b);let id=r&&r[0]&&r[0].id;
+    if(!id){r=await sb('/rest/v1/dm_chats',{method:'POST',prefer:'return=representation',body:{user_a:a,user_b:b}});id=r&&r[0]&&r[0].id}
+    if(!id)throw {message:'تعذر بدء المحادثة'};cl.dm=null;cl.dmMsgs=null;cl.dmLast=0;openPage('dm',{id,name})}catch(e){showErr('dErr',e)}}
+PAGES.chat={title:()=>'الشات',act:()=>cs()&&cl.ctab==='dm'?`<button class="pact" onclick="dmModal()">＋ خاص</button>`:'',render:()=>{if(!cs())return authCard();
+  const tabs=`<div class="seg"><button class="${cl.ctab==='groups'?'on':''}" onclick="setCtab('groups')">👥 شات الجروبات</button><button class="${cl.ctab==='dm'?'on':''}" onclick="setCtab('dm')">👤 شات خاص</button></div>`;
+  if(cl.ctab==='dm'){const l=cl.dm;return tabs+whoBar()+`<button class="primary" onclick="dmModal()">＋ محادثة خاصة جديدة</button>`+(l===null?'<p class="muted">جاري التحميل…</p>':l.length?l.map(x=>`<div class="card"><b>${esc(dmName(x))}</b><div class="chips"><button class="chip on" data-id="${esc(x.id)}" data-nm="${esc(dmName(x))}" onclick="openDm(this.dataset.id,this.dataset.nm)">💬 افتح</button></div></div>`).join(''):'<div class="card empty"><div style="font-size:34px">👤</div><b>لا توجد محادثات خاصة</b><p class="muted">ابحث عن شخص بالاسم وابدأ محادثة.</p></div>')}
+  const g=cl.groups;if(g===null)return tabs+'<p class="muted">جاري التحميل…</p>';const m=g.filter(x=>cl.mine[x.id]);return tabs+whoBar()+(cl.err?`<div class="card alertbox" style="overflow-wrap:anywhere">${esc(cl.err)}</div>`:'')+(m.length?m.map(x=>grpCard(x,true)).join(''):'<div class="card empty"><div style="font-size:34px">💬</div><b>لا توجد جروبات</b><p class="muted">أنشئ جروبًا أو انضم لجروب من صفحة الجروبات ليظهر شاته هنا.</p><button class="chip on" onclick="openPage(\'groups\')">الجروبات</button></div>')},
+  after:()=>{if(!cs())return;if(cl.ctab==='dm'){if(cl.dm===null)loadDms()}else if(cl.groups===null||Date.now()-(cl.gTs||0)>20000)loadGroups()}};
+function openDm(id,name){cl.dmMsgs=null;cl.dmLast=0;openPage('dm',{id,name})}
+function dmHtml(){const s=cs();return (cl.dmMsgs||[]).map(m=>`<div class="bub${s&&m.user_id===s.uid?' me':''}"><small>${when(m.created_at)}${s&&m.user_id!==s.uid?` · <a href="#" onclick="reportItem('message','dm:${m.id}');return false">إبلاغ</a>`:''}</small><div>${esc(m.body)}</div></div>`).join('')||'<p class="muted">ابدأ المحادثة…</p>'}
+async function loadDmMsgs(id,quiet){try{const r=await sb('/rest/v1/dm_messages?chat_id=eq.'+encodeURIComponent(id)+'&select=id,body,created_at,user_id&order=id.desc&limit=60');const l=(r||[]).reverse(),last=l.length?l[l.length-1].id:0;if(quiet&&last===cl.dmLast&&cl.dmMsgs)return;cl.dmMsgs=l;cl.dmLast=last;const b=el('dmsgs');if(b){b.innerHTML=dmHtml();b.scrollTop=b.scrollHeight}else if(curPage()==='dm')renderPage()}catch(e){if(!quiet){cl.dmMsgs=cl.dmMsgs||[];msg(sbErr(e).slice(0,90))}}}
+function curDm(){const t=pageStack[pageStack.length-1];return t&&t.n==='dm'?t.p:null}
+async function sendDm(){if(banStop())return;const g=curDm(),b=val('dBody');if(!g||!b)return;try{await sb('/rest/v1/dm_messages',{method:'POST',body:{chat_id:g.id,body:b}});el('dBody').value='';await loadDmMsgs(g.id)}catch(e){msg(sbErr(e).slice(0,90))}}
+PAGES.dm={title:p=>esc(p&&p.name||'محادثة'),render:p=>{if(!cs())return authCard();return `<div id="dmsgs" class="msgs">${cl.dmMsgs===null?'<p class="muted">جاري التحميل…</p>':dmHtml()}</div><div class="row" style="display:flex;gap:6px;margin-top:8px"><input id="dBody" class="input" maxlength="1000" placeholder="اكتب رسالة" aria-label="رسالة" onkeydown="if(event.key==='Enter')sendDm()"><button class="pact" onclick="sendDm()">إرسال</button></div>`},after:p=>{if(!cs()||!p)return;if(cl.dmMsgs===null)loadDmMsgs(p.id);else{const b=el('dmsgs');if(b)b.scrollTop=b.scrollHeight}}};
+setInterval(()=>{const g=curDm();if(g&&!document.hidden&&cs()&&navigator.onLine)loadDmMsgs(g.id,true)},2000);
+
+/* ===== الإشراف: حذف + إبلاغ + حظر + لوحة الإدارة ===== */
+cl.admin=null;cl.ban=null;cl.rep=0;cl.meTs=0;cl.atab='reports';cl.rlist=null;cl.blist=null;cl.names={};
+const UUID_RE=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i,NUM_RE=/^\d{1,18}$/;
+function banActive(){return !!(cl.ban&&(!cl.ban.until||new Date(cl.ban.until).getTime()>Date.now()))}
+function banMsg(){const b=cl.ban;return 'أنت محظور من المشاركة '+(b&&b.until?'حتى '+when(b.until):'بشكل دائم')+(b&&b.reason?' — '+b.reason:'')}
+function banStop(){if(banActive()){msg(banMsg());return true}cl.ban=null;return false}
+async function loadMe(){const s=cs();if(!s)return;
+  try{const [a,b]=await Promise.all([sb('/rest/v1/admins?select=user_id&user_id=eq.'+s.uid),sb('/rest/v1/bans?select=id,until,reason&user_id=eq.'+s.uid+'&order=id.desc&limit=10')]);
+    cl.admin=!!(a&&a.length);const now=Date.now();cl.ban=(b||[]).find(x=>!x.until||new Date(x.until).getTime()>now)||null}catch(e){}
+  if(cl.admin)pollReports();if(curPage()==='groups'||curPage()==='chat')renderPage()}
+function curGroupObj(){const g=curGroup();return g?((cl.groups||[]).find(x=>x.id===g.id)||null):null}
+function canMod(g){const s=cs();return !!(cl.admin||(g&&s&&g.owner===s.uid))}
+function whoBar(){const s=cs();if(!s)return '';return `<p class="muted">مسجّل باسم <b>${esc(s.name)}</b> · <a href="#" onclick="sbLogout();return false">خروج</a></p>`+(banActive()?`<div class="card alertbox"><b>⛔ ${esc(banMsg())}</b></div>`:'')+(cl.admin?`<button class="primary" style="margin-bottom:8px" onclick="openPage('admin')">🛡️ لوحة الإدارة${cl.rep?' ('+an(cl.rep)+' بلاغ جديد)':''}</button>`:'')}
+async function delRow(path){const r=await sb(path,{method:'DELETE',prefer:'return=representation'});return !!(r&&r.length)}
+function msgHtml(){const s=cs(),mod=canMod(curGroupObj());return (cl.msgs||[]).map(m=>{const me=s&&m.user_id===s.uid;return `<div class="bub${me?' me':''}"><small>${esc(m.profiles&&m.profiles.name||'')} · ${when(m.created_at)}${!me?` · <a href="#" onclick="reportItem('message','${m.id}');return false">إبلاغ</a>`:''}${me||mod?` · <a href="#" onclick="delMsg('${m.id}');return false">🗑 حذف</a>`:''}</small><div>${esc(m.body)}</div></div>`}).join('')||'<p class="muted">ابدأ المحادثة…</p>'}
+function dmHtml(){const s=cs();return (cl.dmMsgs||[]).map(m=>{const me=s&&m.user_id===s.uid;return `<div class="bub${me?' me':''}"><small>${when(m.created_at)}${!me?` · <a href="#" onclick="reportItem('dm','${m.id}');return false">إبلاغ</a>`:` · <a href="#" onclick="delDmMsg('${m.id}');return false">🗑 حذف</a>`}</small><div>${esc(m.body)}</div></div>`}).join('')||'<p class="muted">ابدأ المحادثة…</p>'}
+async function delMsg(id){if(!NUM_RE.test(String(id))||!confirm('حذف الرسالة؟'))return;const g=curGroup();try{const ok=await delRow('/rest/v1/messages?id=eq.'+id);if(!ok)msg('لم يتم الحذف (لا تملك الصلاحية)');if(g)await loadMsgs(g.id)}catch(e){msg(sbErr(e).slice(0,90))}}
+async function delDmMsg(id){if(!NUM_RE.test(String(id))||!confirm('حذف الرسالة؟'))return;const g=curDm();try{const ok=await delRow('/rest/v1/dm_messages?id=eq.'+id);if(!ok)msg('لم يتم الحذف');if(g)await loadDmMsgs(g.id)}catch(e){msg(sbErr(e).slice(0,90))}}
+async function delPost(id){if(!UUID_RE.test(String(id))||!confirm('حذف المنشور؟'))return;try{const ok=await delRow('/rest/v1/posts?id=eq.'+id);if(!ok)msg('لم يتم الحذف (لا تملك الصلاحية)');const g=curGroup();if(g)loadPosts(g.id)}catch(e){msg(sbErr(e).slice(0,90))}}
+function groupBar(g){const s=cs();if(!g||!s)return '';const own=g.owner===s.uid,a=[];
+  if(own||cl.admin)a.push(`<button class="chip" onclick="delGroup()">🗑 حذف الجروب</button>`);
+  if(!own&&cl.mine[g.id])a.push(`<button class="chip" onclick="leaveGroup()">🚪 خروج من الجروب</button>`);
+  if(!own)a.push(`<button class="chip" onclick="reportItem('group','${esc(g.id)}')">إبلاغ عن الجروب</button>`);
+  return a.length?`<div class="chips">${a.join('')}</div>`:''}
+async function delGroup(){const g=curGroup();if(!g||!UUID_RE.test(g.id)||!confirm('حذف الجروب بكل منشوراته ورسائله نهائيًا؟'))return;try{const ok=await delRow('/rest/v1/groups?id=eq.'+g.id);if(!ok){msg('لم يتم الحذف (لا تملك الصلاحية)');return}cl.groups=null;backBtn();msg('تم حذف الجروب')}catch(e){msg(sbErr(e).slice(0,90))}}
+async function leaveGroup(){const g=curGroup(),s=cs();if(!g||!s||!confirm('الخروج من الجروب؟'))return;try{await delRow('/rest/v1/group_members?group_id=eq.'+g.id+'&user_id=eq.'+s.uid);cl.groups=null;backBtn();msg('تم الخروج من الجروب')}catch(e){msg(sbErr(e).slice(0,90))}}
+async function delDm(){const g=curDm();if(!g||!UUID_RE.test(g.id)||!confirm('حذف المحادثة بالكامل لك وللطرف الآخر؟'))return;try{const ok=await delRow('/rest/v1/dm_chats?id=eq.'+g.id);if(!ok){msg('لم يتم الحذف');return}cl.dm=null;backBtn();msg('تم حذف المحادثة')}catch(e){msg(sbErr(e).slice(0,90))}}
+{const _dm=PAGES.dm.render;PAGES.dm.render=p=>cs()?`<div class="chips"><button class="chip" onclick="delDm()">🗑 حذف المحادثة</button></div>`+_dm(p):_dm(p)}
+/* --- الإبلاغ --- */
+const REASONS=['إساءة أو سب','تحرش أو إزعاج','رسائل مزعجة (سبام)','محتوى غير لائق','أخرى'];
+function findItem(kind,id){const sid=String(id),g=curGroup(),dm=curDm();
+  if(kind==='post'){const x=(cl.posts||[]).find(p=>String(p.id)===sid);return x&&{author:x.user_id,snap:x.body,ref:g&&g.id}}
+  if(kind==='message'){const x=(cl.msgs||[]).find(p=>String(p.id)===sid);return x&&{author:x.user_id,snap:x.body,ref:g&&g.id}}
+  if(kind==='dm'){const x=(cl.dmMsgs||[]).find(p=>String(p.id)===sid);return x&&{author:x.user_id,snap:x.body,ref:dm&&dm.id}}
+  if(kind==='group'){const x=(cl.groups||[]).find(p=>p.id===sid);return x&&{author:x.owner,snap:x.name+(x.description?' — '+x.description:''),ref:x.id}}
+  return null}
+function reportItem(kind,id){const o=findItem(kind,id);if(!o){msg('تعذر العثور على المحتوى');return}
+  formModal('إبلاغ للإدارة',selF('rReason','سبب البلاغ',REASONS,REASONS[0])+inp('rNote','تفاصيل (اختياري)','',{area:1,max:300,rows:2})+'<p id="rErr" class="muted" style="color:#b0352d;overflow-wrap:anywhere"></p>',()=>{sendReport(kind,id,o);return false},{save:'إرسال البلاغ'})}
+async function sendReport(kind,id,o){try{await ensureProfile();await sb('/rest/v1/reports',{method:'POST',body:{kind,target:String(id),reason:(val('rReason')+(val('rNote')?' — '+val('rNote'):'')).slice(0,400),author:UUID_RE.test(String(o.author))?o.author:null,snapshot:String(o.snap||'').slice(0,500),ref_id:o.ref?String(o.ref):null}});closeModal();msg('تم إرسال البلاغ للإدارة')}catch(e){showErr('rErr',e)}}
+/* --- لوحة الإدارة --- */
+const KIND_AR={post:'منشور',message:'رسالة جروب',dm:'رسالة خاصة',group:'جروب'};
+async function pollReports(){if(!cl.admin||!cs())return;try{const r=await sb('/rest/v1/reports?select=id&status=eq.open&limit=100');const n=(r||[]).length;if(n>cl.rep&&cl.repInit)msg('🛡️ بلاغ جديد ('+an(n)+')');cl.repInit=true;if(n!==cl.rep){cl.rep=n;if(curPage()==='groups'||curPage()==='chat')renderPage()}}catch(e){}}
+setInterval(()=>{if(cl.admin&&cs()&&!document.hidden&&navigator.onLine)pollReports()},60000);
+async function loadNames(ids){ids=[...new Set(ids.filter(x=>x&&UUID_RE.test(String(x))))].filter(x=>!cl.names[x]);if(!ids.length)return;const r=await sb('/rest/v1/profiles?select=id,name&id=in.('+ids.join(',')+')');(r||[]).forEach(p=>cl.names[p.id]=p.name)}
+function nmOf(id){return cl.names[id]||'مستخدم'}
+async function loadAdmin(){cl.aTs=Date.now();try{
+  if(cl.atab==='reports'){const r=await sb('/rest/v1/reports?select=*&status=eq.open&order=id.desc&limit=50');await loadNames((r||[]).flatMap(x=>[x.author,x.reporter]));cl.rlist=r||[];cl.rep=cl.rlist.length}
+  else if(cl.atab==='bans'){const r=await sb('/rest/v1/bans?select=*&order=id.desc&limit=50');await loadNames((r||[]).map(x=>x.user_id));cl.blist=r||[]}
+  else if(cl.groups===null)await loadGroups()}
+  catch(e){msg(sbErr(e).slice(0,90));if(cl.atab==='reports')cl.rlist=[];else if(cl.atab==='bans')cl.blist=[]}
+  if(curPage()==='admin')renderPage()}
+function setAtab(t){cl.atab=t;if(t==='reports')cl.rlist=null;if(t==='bans')cl.blist=null;renderPage()}
+function adminBody(){const L=cl.atab;
+  if(L==='reports'){const l=cl.rlist;return l===null?'<p class="muted">جاري التحميل…</p>':l.length?l.map(x=>`<div class="card"><b>${esc(KIND_AR[x.kind]||x.kind)}</b> <span class="pill">${esc(x.reason)}</span><p class="muted">من: ${esc(nmOf(x.reporter))} · ضد: <b>${esc(nmOf(x.author))}</b> · ${when(x.created_at)}</p><p style="white-space:pre-wrap;overflow-wrap:anywhere">${esc(x.snapshot)}</p><div class="chips"><button class="chip" onclick="repDelete(${Number(x.id)})">🗑 حذف المحتوى</button>${x.author?`<button class="chip" data-u="${esc(x.author)}" onclick="banModal(this.dataset.u,${Number(x.id)})">⛔ حظر الكاتب</button>`:''}<button class="chip" onclick="repClose(${Number(x.id)})">تجاهل</button></div></div>`).join(''):'<div class="card empty"><b>لا توجد بلاغات جديدة ✅</b></div>'}
+  if(L==='bans'){const l=cl.blist;return l===null?'<p class="muted">جاري التحميل…</p>':l.length?l.map(x=>{const act=!x.until||new Date(x.until).getTime()>Date.now();return `<div class="card"><b>${esc(nmOf(x.user_id))}</b> <span class="pill">${act?(x.until?'حتى '+when(x.until):'دائم'):'منتهي'}</span><p class="muted">${esc(x.reason)}</p><div class="chips"><button class="chip" onclick="unban(${Number(x.id)})">رفع الحظر</button></div></div>`}).join(''):'<div class="card empty"><b>لا يوجد محظورون</b></div>'}
+  const g=cl.groups;return g===null?'<p class="muted">جاري التحميل…</p>':g.length?g.map(x=>`<div class="card"><b>${esc(x.name)}</b> <span class="pill">${an(grpCount(x))} عضو</span><div class="chips"><button class="chip on" data-id="${esc(x.id)}" onclick="adminOpen(this.dataset.id)">فتح</button><button class="chip" data-id="${esc(x.id)}" onclick="adminDelGroup(this.dataset.id)">🗑 حذف</button></div></div>`).join(''):'<div class="card empty"><b>لا توجد جروبات</b></div>'}
+PAGES.admin={title:()=>'🛡️ لوحة الإدارة',render:()=>{if(!cs()||!cl.admin)return '<div class="card empty"><b>غير مصرّح</b><p class="muted">هذه الصفحة للإدارة فقط.</p></div>';const T=[['reports','البلاغات'+(cl.rep?' ('+an(cl.rep)+')':'')],['bans','المحظورون'],['groups','الجروبات']];return `<div class="seg">${T.map(t=>`<button class="${cl.atab===t[0]?'on':''}" onclick="setAtab('${t[0]}')">${t[1]}</button>`).join('')}</div>`+adminBody()},
+  act:()=>cl.admin?`<button class="pact" aria-label="تحديث" onclick="cl.aTs=0;cl.rlist=null;cl.blist=null;cl.gTs=0;renderPage()">↻</button>`:'',
+  after:()=>{if(!cs()||!cl.admin)return;if((cl.atab==='reports'&&cl.rlist===null)||(cl.atab==='bans'&&cl.blist===null)||(cl.atab==='groups'&&cl.groups===null)||Date.now()-(cl.aTs||0)>15000)loadAdmin()}};
+async function repClose(id){try{await sb('/rest/v1/reports?id=eq.'+Number(id),{method:'PATCH',prefer:'return=representation',body:{status:'done'}});cl.rlist=null;renderPage()}catch(e){msg(sbErr(e).slice(0,90))}}
+async function repDelete(id){const r=(cl.rlist||[]).find(x=>Number(x.id)===Number(id));if(!r||!confirm('حذف هذا المحتوى نهائيًا؟'))return;
+  const T={post:['posts',UUID_RE],message:['messages',NUM_RE],dm:['dm_messages',NUM_RE],group:['groups',UUID_RE]}[r.kind];
+  if(!T||!T[1].test(String(r.target))){msg('هدف البلاغ غير صالح');return}
+  try{const ok=await delRow('/rest/v1/'+T[0]+'?id=eq.'+r.target);msg(ok?'تم حذف المحتوى':'المحتوى محذوف مسبقًا');await repClose(id)}catch(e){msg(sbErr(e).slice(0,90))}}
+function banModal(uid,repId){if(!UUID_RE.test(String(uid)))return;
+  formModal('حظر مستخدم',selF('bDur','مدة الحظر',[['1','يوم'],['3','3 أيام'],['7','أسبوع'],['30','شهر'],['0','دائم']],'1')+inp('bReason','السبب','',{max:100})+'<p class="muted">يُمنع من النشر والرسائل وإنشاء الجروبات والانضمام خلال المدة.</p><p id="bErr" class="muted" style="color:#b0352d"></p>',()=>{doBan(uid,repId);return false},{save:'تأكيد الحظر'})}
+async function doBan(uid,repId){const n=Number(val('bDur')),until=n?new Date(Date.now()+n*864e5).toISOString():null;
+  try{await sb('/rest/v1/bans',{method:'POST',body:{user_id:uid,until,reason:val('bReason')}});if(repId)await repClose(repId);closeModal();msg('تم الحظر')}catch(e){showErr('bErr',e)}}
+async function unban(id){if(!confirm('رفع الحظر؟'))return;try{await delRow('/rest/v1/bans?id=eq.'+Number(id));cl.blist=null;renderPage();msg('تم رفع الحظر')}catch(e){msg(sbErr(e).slice(0,90))}}
+function adminOpen(id){if(!UUID_RE.test(id))return;openGroup(id,'posts')}
+async function adminDelGroup(id){if(!UUID_RE.test(id)||!confirm('حذف الجروب نهائيًا؟'))return;try{const ok=await delRow('/rest/v1/groups?id=eq.'+id);msg(ok?'تم حذف الجروب':'لم يتم الحذف');cl.groups=null;renderPage()}catch(e){msg(sbErr(e).slice(0,90))}}
+
+/* ---------- PWA ---------- */
+let deferredInstall=null;
+function pwaInit(){
+  try{if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol))navigator.serviceWorker.register('sw.js').catch(()=>{})}catch(e){}
+  window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstall=e});
+  window.addEventListener('appinstalled',()=>{deferredInstall=null});
+}
+function installApp(){if(deferredInstall){deferredInstall.prompt();deferredInstall=null}else msg('التثبيت: من قائمة المتصفح اختر "إضافة إلى الشاشة الرئيسية"')}
+
+function home(){return dayHome()+homeBase()}
+function services(){return servicesBase()}
+function startup(){checkReminders();setInterval(checkReminders,30000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkReminders()});if(typeof pwaInit==='function')pwaInit()}
+try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
+save();init();
+</script></html>
